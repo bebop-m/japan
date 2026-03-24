@@ -72,16 +72,22 @@ export function getNewSentenceCount(
   return nextLesson ? nextLesson.cardCount * 2 : 0;
 }
 
+export function getPhraseReviewItemCount(storage: AppStorageState): number {
+  return Object.values(storage.reviewItems).filter((item) => item.contentType === "phrase").length;
+}
+
 export function getMasteredSentenceCount(storage: AppStorageState): number {
   const masteredCards = Object.values(storage.reviewItems).filter((item) =>
-    isReviewStatus(item.status)
+    item.contentType === "phrase" && isReviewStatus(item.status)
   ).length;
 
-  return masteredCards * 2;
+  return masteredCards;
 }
 
 export function getStudiedSentenceCount(storage: AppStorageState): number {
-  return Object.values(storage.reviewItems).filter((item) => item.status === "studied").length * 2;
+  return Object.values(storage.reviewItems).filter(
+    (item) => item.contentType === "phrase" && item.status === "studied"
+  ).length;
 }
 
 function addDays(base: Date, days: number): string {

@@ -7,6 +7,7 @@ import { RubyText } from "@/components/ruby-text";
 import { useJapaneseInput } from "@/lib/ime/use-japanese-input";
 import { buildDiffTokens, isStrictMatch } from "@/lib/learn/answers";
 import { buildDailyCheckQuestions, type DailyCheckQuestion } from "@/lib/learn/daily-check";
+import { getNextAvailableLesson } from "@/lib/review/srs";
 import { getPreferredRecordingMimeType, transcodeRecordedBlobToWav } from "@/lib/speech/audio";
 import { assessPronunciation, fetchSpeechProxyStatus } from "@/lib/speech/client";
 import type {
@@ -25,6 +26,7 @@ type SessionPhase = "preview" | "study" | "daily-check" | "complete";
 interface LessonSessionProps {
   sceneId: SceneId;
   lesson: LessonDefinition;
+  lessonTitleMap: Record<string, string>;
 }
 
 interface StepFeedback {
@@ -115,7 +117,7 @@ function getLessonPhase(storage: AppStorageState, lesson: LessonDefinition): Ses
   return "complete";
 }
 
-export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
+export function LessonSession({ sceneId, lesson, lessonTitleMap }: LessonSessionProps) {
   const [storage, setStorage] = useState<AppStorageState>(() => readStorageState());
   const [feedback, setFeedback] = useState<StepFeedback>({
     tone: "neutral",
@@ -142,7 +144,6 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
     () => getReviewItemsForLesson(storage, lesson),
     [lesson, storage]
   );
-  const lessonProgress = storage.lessonProgress[lesson.id];
   const completedCards = lessonItems.filter((item) => item.stepState.verifyCompletedAt).length;
   const currentCardIndex = Math.max(
     lessonItems.findIndex((item) => !item.stepState.verifyCompletedAt),
@@ -153,6 +154,11 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
   const activeStep = currentItem?.stepState.currentStep === 0 ? 1 : currentItem?.stepState.currentStep ?? 1;
   const latestDailyScore = lessonItems[0]?.dailyCheckScore;
   const dailyPassed = latestDailyScore !== null ? latestDailyScore >= 80 : false;
+  const nextLesson = useMemo(() => getNextAvailableLesson(storage), [storage]);
+  const nextLessonTitle = nextLesson ? lessonTitleMap[nextLesson.lessonId] ?? nextLesson.lessonId : null;
+  const nextLessonHref = nextLesson
+    ? `/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`
+    : "/";
   const canRecord =
     typeof navigator !== "undefined" &&
     !!navigator.mediaDevices?.getUserMedia &&
@@ -609,7 +615,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
     setFeedback({
       tone: passed ? "success" : "danger",
       message: passed
-        ? `每日检验 ${score}% 通过，本课已进入已掌握。`
+        ? `每日检验 ${score}% 通过，本课已进入间隔复习。`
         : `每日检验 ${score}% 未过，本课标记为待复习。`
     });
   }
@@ -720,7 +726,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
 
         {phase === "study" && currentCard ? (
           <div className="page-stack" style={{ gap: 14 }}>
-                <div className="step-strip">
+            <div className="step-strip">
               {[1, 2, 3, 4, 5].map((step) => (
                 <div
                   key={step}
@@ -730,6 +736,11 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 </div>
               ))}
             </div>
+            {activeStep === 5 ? (
+              <p className="muted" style={{ margin: 0 }}>
+                无提示验证：不再显示假名提示，请直接写出完整日文。
+              </p>
+            ) : null}
 
             <div className="meta-row" style={{ justifyContent: "flex-end" }}>
               <PixelButton
@@ -766,6 +777,9 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                     下一步：跟读
                   </PixelButton>
                 </div>
+                <p className="muted" style={{ margin: 0 }}>
+                  发音由系统语音合成提供，仅供参考，可能与真实发音存在差异。
+                </p>
               </div>
             ) : null}
 
@@ -802,18 +816,6 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                   >
                     {isScoringSpeech ? "评分中..." : "Azure 评分"}
                   </PixelButton>
-                  <PixelButton variant="secondary" style={{ display: "none" }} onClick={() => {
-                    applyStepTransition(2, true);
-                    setRecordStatus("idle");
-                    setFeedback({
-                      tone: "success",
-                      message: "说这一步已手动确认通过，进入阅读。"
-                    });
-                  }}>
-                    手动通过
-                  </PixelButton>
-                </div>
-                <div className="split-actions">
                   <PixelButton variant="secondary" onClick={passSpeechManually}>
                     手动通过
                   </PixelButton>
@@ -1020,7 +1022,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 {latestDailyScore === null
                   ? "本课五步已完成，等待每日检验。"
                   : dailyPassed
-                    ? `每日检验 ${latestDailyScore}% 通过，已进入已掌握。`
+                    ? `每日检验 ${latestDailyScore}% 通过，已进入间隔复习。`
                     : `每日检验 ${latestDailyScore}% 未通过，当前为待复习状态。`}
               </p>
             </div>
@@ -1036,19 +1038,33 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 </strong>
               </div>
               <div className="stat-box">
-                <span className="stat-label">掌握状态</span>
+                <span className="stat-label">当前状态</span>
                 <strong className="stat-value" style={{ fontSize: "1rem" }}>
-                  {dailyPassed ? "已掌握" : "待复习"}
+                  {dailyPassed ? "已入复习" : "待复习"}
                 </strong>
               </div>
             </div>
             <div className="split-actions">
-              {!dailyPassed ? (
-                <PixelButton onClick={restartDailyCheck}>重做每日检验</PixelButton>
-              ) : null}
-              <PixelButton href={`/scene/${sceneId}`} variant="secondary">
-                返回场景
-              </PixelButton>
+              {dailyPassed ? (
+                <>
+                  <PixelButton href={nextLessonHref}>
+                    {nextLessonTitle ? `下一课：${nextLessonTitle}` : "返回首页"}
+                  </PixelButton>
+                  <PixelButton href="/review" variant="secondary">
+                    立即复习
+                  </PixelButton>
+                  <PixelButton href={`/scene/${sceneId}`} variant="ghost">
+                    返回场景
+                  </PixelButton>
+                </>
+              ) : (
+                <>
+                  <PixelButton onClick={restartDailyCheck}>重做每日检验</PixelButton>
+                  <PixelButton href={`/scene/${sceneId}`} variant="secondary">
+                    返回场景
+                  </PixelButton>
+                </>
+              )}
             </div>
           </div>
         ) : null}

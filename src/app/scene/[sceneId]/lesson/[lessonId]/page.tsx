@@ -33,6 +33,9 @@ export function generateStaticParams() {
 export default function LessonPage({ params }: LessonPageProps) {
   const sceneId = params.sceneId as SceneId;
   const lesson = getLesson(sceneId, params.lessonId);
+  const lessonTitleMap = Object.fromEntries(
+    getAllScenes().flatMap((scene) => scene.lessons.map((entry) => [entry.id, entry.title]))
+  );
 
   if (!lesson) {
     notFound();
@@ -53,7 +56,7 @@ export default function LessonPage({ params }: LessonPageProps) {
         </div>
       </PixelCard>
 
-      <LessonSession sceneId={sceneId} lesson={lesson} />
+      <LessonSession sceneId={sceneId} lesson={lesson} lessonTitleMap={lessonTitleMap} />
 
       <section className="page-stack">
         {lesson.cards.map((card) => (

@@ -11,6 +11,7 @@ import {
   getMasteredSentenceCount,
   getNewSentenceCount,
   getNextAvailableLesson,
+  getPhraseReviewItemCount,
   getStudiedSentenceCount
 } from "@/lib/review/srs";
 import type { SceneSummary } from "@/lib/types/content";
@@ -28,8 +29,8 @@ const sceneNameMap: Record<SceneSummary["id"], string> = {
 
 export function DashboardShell({ scenes }: DashboardShellProps) {
   const storage = useMemo(() => readStorageState(), []);
-  const totalSentences = scenes.reduce((total, scene) => total + scene.sentenceCount, 0);
-  const dueReviewCount = getDueReviewItems(storage).length * 2;
+  const totalReviewItems = getPhraseReviewItemCount(storage);
+  const dueReviewCount = getDueReviewItems(storage).length;
   const newSentenceCount = getNewSentenceCount(storage);
   const masteredSentenceCount = getMasteredSentenceCount(storage);
   const studiedSentenceCount = getStudiedSentenceCount(storage);
@@ -43,7 +44,7 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
     : "/";
   const progressBlocks = Math.min(
     10,
-    Math.floor((masteredSentenceCount / Math.max(totalSentences, 1)) * 10)
+    Math.floor((masteredSentenceCount / Math.max(totalReviewItems, 1)) * 10)
   );
 
   return (
@@ -67,9 +68,9 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
               <strong className="stat-value">{newSentenceCount}</strong>
             </div>
             <div className="stat-box">
-              <span className="stat-label">已掌握</span>
+              <span className="stat-label">已入复习</span>
               <strong className="stat-value">
-                {masteredSentenceCount} / {totalSentences}
+                {masteredSentenceCount} / {totalReviewItems}
               </strong>
             </div>
           </div>
@@ -81,14 +82,24 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
             <span className="badge">学习进度</span>
             <ProgressBlocks current={progressBlocks} total={10} />
           </div>
-          <div className="meta-row">
-            <span className="badge">出发储备：{departureReadyCount}</span>
-          </div>
+          {departureReadyCount > 0 ? (
+            <div className="meta-row">
+              <span className="badge">出发储备：{departureReadyCount}</span>
+            </div>
+          ) : (
+            <p className="muted" style={{ margin: 0 }}>
+              在课程或复习中收藏句子，出发模式即可使用。
+            </p>
+          )}
           <div className="split-actions">
             <PixelButton href="/review" style={{ width: "100%" }}>
               立即复习
             </PixelButton>
-            <PixelButton href="/departure" variant="secondary" style={{ width: "100%" }}>
+            <PixelButton
+              href="/departure"
+              variant={departureReadyCount > 0 ? "secondary" : "ghost"}
+              style={{ width: "100%" }}
+            >
               出发模式
             </PixelButton>
             <PixelButton href="/practice" variant="secondary" style={{ width: "100%" }}>
