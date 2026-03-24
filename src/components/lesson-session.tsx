@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PixelButton } from "@/components/pixel-button";
 import { PixelCard } from "@/components/pixel-card";
-import { ProgressBlocks } from "@/components/progress-blocks";
 import { RubyText } from "@/components/ruby-text";
 import { useJapaneseInput } from "@/lib/ime/use-japanese-input";
 import { buildDiffTokens, isStrictMatch } from "@/lib/learn/answers";
@@ -40,18 +39,6 @@ interface SpeechAttemptInput {
 }
 
 const SPEECH_PASS_SCORE = 75;
-const lessonPhaseLabelMap = {
-  preview: "待开始",
-  study: "学习中",
-  "daily-check": "每日检验",
-  complete: "总结"
-} as const;
-const lessonStatusLabelMap = {
-  locked: "未解锁",
-  available: "可开始",
-  in_progress: "进行中",
-  completed: "已完成"
-} as const;
 const dailyQuestionTypeLabelMap = {
   "listen-choice": "听音选义",
   "translate-input": "中译日输入",
@@ -695,46 +682,22 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
   return (
     <PixelCard>
       <div className="page-stack" style={{ gap: 16 }}>
-        <div className="hero" style={{ gap: 12 }}>
-          <div className="hero-title">
-            <span className="display">课程学习</span>
+        <div className="hero" style={{ gap: 8 }}>
+          <div className="meta-row" style={{ justifyContent: "space-between" }}>
+            <span className="display" style={{ fontSize: "0.9rem" }}>
+              {lesson.title}
+            </span>
             <span className={`badge ${feedback.tone === "success" ? "success" : feedback.tone === "danger" ? "danger" : ""}`.trim()}>
-              {lessonPhaseLabelMap[phase]}
+              {completedCards} / {lesson.cards.length}
             </span>
           </div>
-          <div className="stat-grid">
-            <div className="stat-box">
-              <span className="stat-label">课程进度</span>
-              <strong className="stat-value">
-                {completedCards} / {lesson.cards.length}
-              </strong>
-            </div>
-            <div className="stat-box">
-              <span className="stat-label">当前阶段</span>
-              <strong className="stat-value" style={{ fontSize: "1rem" }}>
-                {phase === "study" ? `第${activeStep}步` : lessonPhaseLabelMap[phase]}
-              </strong>
-            </div>
-            <div className="stat-box">
-              <span className="stat-label">小课状态</span>
-              <strong className="stat-value" style={{ fontSize: "1rem" }}>
-                {lessonStatusLabelMap[lessonProgress.status]}
-              </strong>
-            </div>
-          </div>
-          <div className="meta-row" style={{ justifyContent: "space-between" }}>
-            <span className="badge">{feedback.message}</span>
-            <ProgressBlocks current={completedCards} total={lesson.cards.length} />
-          </div>
+          <span className="badge">{feedback.message}</span>
         </div>
 
         {phase === "preview" ? (
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="placeholder-note">
               本课按听、说、读、写、验证五步顺序推进。全部卡片完成第五步后，自动进入每日检验。
-            </div>
-            <div className="placeholder-note" style={{ display: "none" }}>
-              这课会严格走 `听 → 说 → 读 → 写 → 验证`，全部卡片完成后自动进入每日检验。
             </div>
             <div className="split-actions">
               <PixelButton
@@ -768,15 +731,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
               ))}
             </div>
 
-            <div className="meta-row" style={{ justifyContent: "space-between" }}>
-              <div className="meta-row">
-                <span className="badge">{currentCard.id}</span>
-                {currentCard.tags.map((tag) => (
-                  <span key={tag} className="badge">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            <div className="meta-row" style={{ justifyContent: "flex-end" }}>
               <PixelButton
                 type="button"
                 variant={currentFavorited ? "secondary" : "ghost"}
@@ -824,22 +779,10 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                     </div>
                   ))}
                 </div>
-                <div className="summary-box">
-                  <div className="meta-row">
-                    <span className={`badge ${speechProxyReady ? "success" : ""}`.trim()}>
-                      {speechProxyReady ? "发音评分就绪" : "手动确认模式"}
-                    </span>
-                    <span className="badge">通过分数：{SPEECH_PASS_SCORE}</span>
-                    {speechProxyStatus?.region ? (
-                      <span className="badge">{speechProxyStatus.region}</span>
-                    ) : null}
-                  </div>
-                  <p className="muted" style={{ marginBottom: 0 }}>
-                    优先使用 Azure 发音评分；如果代理不可用，仍可通过回放加手动确认进入下一步。
-                  </p>
-                </div>
-                <div className="placeholder-note" style={{ display: "none" }}>
-                  Azure 发音评分通过代理接入；当前仍保留“录音回放 + 手动确认”降级路径。
+                <div className="meta-row">
+                  <span className={`badge ${speechProxyReady ? "success" : ""}`.trim()}>
+                    {speechProxyReady ? "发音评分就绪" : "手动确认模式"}
+                  </span>
                 </div>
                 <div className="split-actions">
                   {recordStatus !== "recording" ? (

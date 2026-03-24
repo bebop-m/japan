@@ -167,9 +167,9 @@ main {
   border: 3px solid var(--border);
   background: var(--accent);
   color: #f8f4e7;
-  font-family: var(--font-display), var(--font-body), monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
   box-shadow: 0 6px 0 0 var(--border);
   transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
 }
@@ -252,6 +252,55 @@ main {
 .turn-list {
   display: grid;
   gap: 16px;
+}
+
+.lesson-compact-list {
+  display: grid;
+  gap: 0;
+}
+
+.lesson-compact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 4px;
+  border-bottom: 1px solid rgba(61, 58, 46, 0.15);
+  font-size: 1rem;
+}
+
+.lesson-compact-row:last-child {
+  border-bottom: none;
+}
+
+.lesson-compact-row.locked {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.lesson-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lesson-compact-row.available .lesson-dot,
+.lesson-compact-row.in_progress .lesson-dot {
+  background: var(--accent);
+}
+
+.lesson-compact-row.completed .lesson-dot {
+  background: var(--success);
+}
+
+.lesson-compact-title {
+  flex: 1;
+}
+
+.lesson-compact-check {
+  color: var(--success);
+  font-weight: 700;
 }
 
 .step-strip {

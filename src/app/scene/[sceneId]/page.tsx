@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
 import { LessonList } from "@/components/lesson-list";
 import { PixelButton } from "@/components/pixel-button";
-import { PixelCard } from "@/components/pixel-card";
-import { PixelHeading } from "@/components/pixel-heading";
 import { getAllScenes, getScene } from "@/lib/content";
 import type { SceneId } from "@/lib/types/content";
 
@@ -36,28 +34,14 @@ export default function ScenePage({ params }: ScenePageProps) {
 
   return (
     <div className="page-stack">
-      <PixelHeading
-        kicker={`${scene.code} / ${sceneNameMap[sceneId]}`}
-        title={`${scene.icon} ${sceneNameMap[sceneId]}`}
-        description={scene.description}
-      />
-
-      <PixelCard>
-        <div className="stat-grid">
-          <div className="stat-box">
-            <span className="stat-label">课</span>
-            <strong className="stat-value">{scene.lessonCount}</strong>
-          </div>
-          <div className="stat-box">
-            <span className="stat-label">句</span>
-            <strong className="stat-value">{scene.sentenceCount}</strong>
-          </div>
-          <div className="stat-box">
-            <span className="stat-label">单词库</span>
-            <strong className="stat-value">{scene.wordBank.length}</strong>
-          </div>
-        </div>
-      </PixelCard>
+      <div className="page-stack" style={{ gap: 6 }}>
+        <h2 className="section-title">
+          {scene.icon} {sceneNameMap[sceneId]}
+        </h2>
+        <p className="muted" style={{ margin: 0 }}>
+          {scene.description}
+        </p>
+      </div>
 
       <section className="page-stack">
         <div className="split-actions">

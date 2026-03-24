@@ -77,7 +77,7 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
             <span className="badge">继续：{continueLabel}</span>
             <span className="badge">待复习：{studiedSentenceCount}</span>
           </div>
-          <div className="meta-row" style={{ justifyContent: "space-between" }}>
+          <div className="meta-row" style={{ alignItems: "center", gap: 10 }}>
             <span className="badge">学习进度</span>
             <ProgressBlocks current={progressBlocks} total={10} />
           </div>
