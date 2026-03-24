@@ -1,4 +1,5 @@
-import type { SceneId } from "@/lib/types/content";
+import type { SceneId, SceneSummary } from "@/lib/types/content";
+import type { AppStorageState } from "@/lib/types/storage";
 
 export interface HomeNextLesson {
   sceneId: SceneId;
@@ -24,6 +25,14 @@ export interface DepartureCountdownState {
   title: string;
   description: string;
   ctaLabel: string;
+}
+
+export interface HomeCurriculumCompletion {
+  isCurriculumComplete: boolean;
+  completedLessonCount: number;
+  totalLessonCount: number;
+  completedSceneCount: number;
+  totalSceneCount: number;
 }
 
 function parseDateOnly(value: string | null): Date | null {
@@ -199,5 +208,31 @@ export function resolvePrimaryAction(input: {
     label: "开始练习",
     href: "/practice",
     badge: "今日主任务"
+  };
+}
+
+export function resolveCurriculumCompletion(input: {
+  lessonProgress: AppStorageState["lessonProgress"];
+  scenes: Pick<SceneSummary, "id" | "lessonCount">[];
+}): HomeCurriculumCompletion {
+  const lessons = Object.values(input.lessonProgress);
+  const totalLessonCount = input.scenes.reduce((total, scene) => total + scene.lessonCount, 0);
+  const completedLessonCount = lessons.filter((lesson) => lesson.status === "completed").length;
+  const completedSceneCount = input.scenes.filter((scene) => {
+    const sceneLessons = lessons.filter((lesson) => lesson.sceneId === scene.id);
+
+    return (
+      scene.lessonCount > 0 &&
+      sceneLessons.length >= scene.lessonCount &&
+      sceneLessons.every((lesson) => lesson.status === "completed")
+    );
+  }).length;
+
+  return {
+    isCurriculumComplete: totalLessonCount > 0 && completedLessonCount >= totalLessonCount,
+    completedLessonCount,
+    totalLessonCount,
+    completedSceneCount,
+    totalSceneCount: input.scenes.length
   };
 }
