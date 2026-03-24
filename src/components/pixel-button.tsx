@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
 
 type Variant = "primary" | "secondary" | "ghost";
 
@@ -7,6 +7,7 @@ interface SharedProps {
   children: ReactNode;
   variant?: Variant;
   className?: string;
+  style?: CSSProperties;
 }
 
 interface LinkProps extends SharedProps {
@@ -30,16 +31,20 @@ export function PixelButton(props: LinkProps | ButtonProps) {
 
   if ("href" in props && props.href) {
     return (
-      <Link href={props.href} className={getClassName(variant, props.className)}>
+      <Link
+        href={props.href}
+        className={getClassName(variant, props.className)}
+        style={props.style}
+      >
         {props.children}
       </Link>
     );
   }
 
-  const { children, className, ...buttonProps } = props;
+  const { children, className, style, ...buttonProps } = props;
 
   return (
-    <button className={getClassName(variant, className)} {...buttonProps}>
+    <button className={getClassName(variant, className)} style={style} {...buttonProps}>
       {children}
     </button>
   );

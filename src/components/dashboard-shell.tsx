@@ -21,6 +21,9 @@ interface DashboardShellProps {
 
 export function DashboardShell({ scenes }: DashboardShellProps) {
   const storage = useMemo(() => readStorageState(), []);
+  const sceneLabelMap = Object.fromEntries(
+    scenes.map((scene) => [scene.id, scene.shortLabel])
+  ) as Record<SceneSummary["id"], string>;
   const totalSentences = scenes.reduce((total, scene) => total + scene.sentenceCount, 0);
   const dueReviewCount = getDueReviewItems(storage).length * 2;
   const newSentenceCount = getNewSentenceCount(storage);
@@ -29,8 +32,8 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
   const departureReadyCount = getDepartureReadyReviewItems(storage).length;
   const nextLesson = getNextAvailableLesson(storage);
   const continueLabel = nextLesson
-    ? `${nextLesson.sceneId.toUpperCase()} / ${nextLesson.lessonId}`
-    : "All lessons opened";
+    ? `${sceneLabelMap[nextLesson.sceneId]} / ${nextLesson.lessonId}`
+    : "全部课程已解锁";
   const continueHref = nextLesson
     ? `/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`
     : "/";
@@ -45,51 +48,53 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
         <div className="hero">
           <div className="hero-title">
             <span className="display">NIHONGO.GO</span>
-            <span className="badge success">SRS ACTIVE</span>
+            <span className="badge success">间隔复习</span>
           </div>
           <p className="muted" style={{ margin: 0 }}>
-            Daily Check graduates now flow into SRS automatically, and Departure mode now pulls from your favorited lines plus core travel sentences.
+            完成每日检验后句子自动进入间隔复习，收藏句和核心句进入出发模式。
           </p>
           <div className="stat-grid">
             <div className="stat-box">
-              <span className="stat-label">Today Review</span>
+              <span className="stat-label">今日复习</span>
               <strong className="stat-value">{dueReviewCount}</strong>
             </div>
             <div className="stat-box">
-              <span className="stat-label">Today New</span>
+              <span className="stat-label">今日新句</span>
               <strong className="stat-value">{newSentenceCount}</strong>
             </div>
             <div className="stat-box">
-              <span className="stat-label">Mastered</span>
+              <span className="stat-label">已掌握</span>
               <strong className="stat-value">
                 {masteredSentenceCount} / {totalSentences}
               </strong>
             </div>
           </div>
           <div className="meta-row">
-            <span className="badge">Continue: {continueLabel}</span>
-            <span className="badge">Need revisit: {studiedSentenceCount}</span>
+            <span className="badge">继续：{continueLabel}</span>
+            <span className="badge">待复习：{studiedSentenceCount}</span>
           </div>
           <div className="meta-row" style={{ justifyContent: "space-between" }}>
-            <span className="badge">PIXEL BOARD</span>
+            <span className="badge">学习进度</span>
             <ProgressBlocks current={progressBlocks} total={10} />
           </div>
           <div className="meta-row">
-            <span className="badge">Departure Ready: {departureReadyCount}</span>
+            <span className="badge">出发储备：{departureReadyCount}</span>
           </div>
           <div className="split-actions">
-            <PixelButton href="/review">REVIEW TODAY</PixelButton>
-            <PixelButton href="/departure" variant="secondary">
-              DEPARTURE MODE
+            <PixelButton href="/review" style={{ width: "100%" }}>
+              立即复习
             </PixelButton>
-            <PixelButton href="/practice" variant="secondary">
-              PRACTICE MODE
+            <PixelButton href="/departure" variant="secondary" style={{ width: "100%" }}>
+              出发模式
             </PixelButton>
-            <PixelButton href={continueHref} variant="secondary">
-              CONTINUE LESSON
+            <PixelButton href="/practice" variant="secondary" style={{ width: "100%" }}>
+              练习模式
             </PixelButton>
-            <PixelButton href="/speech-lab" variant="ghost">
-              IOS SPEECH LAB
+            <PixelButton href={continueHref} variant="secondary" style={{ width: "100%" }}>
+              继续课程
+            </PixelButton>
+            <PixelButton href="/speech-lab" variant="ghost" style={{ width: "100%" }}>
+              发音测试
             </PixelButton>
           </div>
         </div>
@@ -97,9 +102,9 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
 
       <section className="page-stack">
         <div>
-          <h2 className="section-title">Scene Map</h2>
+          <h2 className="section-title">场景地图</h2>
           <p className="muted" style={{ margin: 0 }}>
-            Lessons still unlock scene by scene, while review and practice stay in their own dedicated queues.
+            场景按顺序解锁，复习和练习在独立队列中进行。
           </p>
         </div>
         <div className="scene-grid">
@@ -108,15 +113,15 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
               <div className="scene-card">
                 <div className="meta-row">
                   <span className="badge">{scene.code}</span>
-                  <span className="badge">{scene.lessonCount} lessons</span>
-                  <span className="badge">{scene.sentenceCount} sentences</span>
+                  <span className="badge">{scene.lessonCount} 课</span>
+                  <span className="badge">{scene.sentenceCount} 句</span>
                 </div>
                 <h3>
                   {scene.icon} {scene.label}
                 </h3>
                 <p className="muted">{scene.description}</p>
                 <div className="split-actions">
-                  <PixelButton href={`/scene/${scene.id}`}>OPEN {scene.shortLabel}</PixelButton>
+                  <PixelButton href={`/scene/${scene.id}`}>进入{scene.shortLabel}</PixelButton>
                 </div>
               </div>
             </PixelCard>

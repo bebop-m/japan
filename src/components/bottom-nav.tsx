@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const items = [
-  { href: "/", icon: "HOME", label: "HOME" },
-  { href: "/scene/airport", icon: "AIR", label: "AIRPORT" },
-  { href: "/scene/hotel", icon: "HOTEL", label: "HOTEL" },
-  { href: "/scene/izakaya", icon: "FOOD", label: "IZAKAYA" },
-  { href: "/scene/shopping", icon: "SHOP", label: "SHOP" }
+  { href: "/", label: "首页" },
+  { href: "/scene/airport", label: "机场" },
+  { href: "/scene/hotel", label: "酒店" },
+  { href: "/scene/izakaya", label: "居酒屋" },
+  { href: "/scene/shopping", label: "购物" }
 ];
 
 export function BottomNav() {
@@ -29,7 +29,6 @@ export function BottomNav() {
               href={item.href}
               className={`bottom-nav-item ${active ? "active" : ""}`.trim()}
             >
-              <span>{item.icon}</span>
               <span>{item.label}</span>
             </Link>
           );

@@ -197,7 +197,7 @@ main {
 .stat-grid {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .stat-box {
@@ -346,10 +346,12 @@ rt {
 }
 
 .bottom-nav-item {
-  display: grid;
-  justify-items: center;
-  gap: 4px;
-  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  font-size: 0.88rem;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -357,10 +359,8 @@ rt {
   color: var(--accent-strong);
 }
 
-.bottom-nav-item span:last-child {
-  font-family: var(--font-display), monospace;
-  font-size: 0.54rem;
-  text-transform: uppercase;
+.bottom-nav-item span {
+  font-family: var(--font-body), sans-serif;
 }
 
 .placeholder-note,
