@@ -4,6 +4,10 @@ import { useMemo } from "react";
 import { PixelButton } from "@/components/pixel-button";
 import { PixelCard } from "@/components/pixel-card";
 import { ProgressBlocks } from "@/components/progress-blocks";
+import {
+  resolveDepartureCountdown,
+  resolvePrimaryAction
+} from "@/lib/dashboard/home";
 import { getDepartureReadyReviewItems } from "@/lib/storage/favorites";
 import { readStorageState } from "@/lib/storage/local";
 import {
@@ -18,6 +22,7 @@ import type { SceneSummary } from "@/lib/types/content";
 
 interface DashboardShellProps {
   scenes: SceneSummary[];
+  lessonTitleMap: Record<string, string>;
 }
 
 const sceneNameMap: Record<SceneSummary["id"], string> = {
@@ -27,7 +32,13 @@ const sceneNameMap: Record<SceneSummary["id"], string> = {
   shopping: "购物"
 };
 
-export function DashboardShell({ scenes }: DashboardShellProps) {
+interface DashboardAction {
+  href: string;
+  label: string;
+  variant: "secondary" | "ghost";
+}
+
+export function DashboardShell({ scenes, lessonTitleMap }: DashboardShellProps) {
   const storage = useMemo(() => readStorageState(), []);
   const totalReviewItems = getPhraseReviewItemCount(storage);
   const dueReviewCount = getDueReviewItems(storage).length;
@@ -36,16 +47,66 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
   const studiedSentenceCount = getStudiedSentenceCount(storage);
   const departureReadyCount = getDepartureReadyReviewItems(storage).length;
   const nextLesson = getNextAvailableLesson(storage);
-  const continueLabel = nextLesson
-    ? `${sceneNameMap[nextLesson.sceneId]} / ${nextLesson.lessonId}`
-    : "全部课程已解锁";
-  const continueHref = nextLesson
-    ? `/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`
-    : "/";
+  const nextLessonInfo = nextLesson
+    ? {
+        ...nextLesson,
+        title: lessonTitleMap[nextLesson.lessonId] ?? nextLesson.lessonId,
+        href: `/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`,
+        sceneLabel: sceneNameMap[nextLesson.sceneId]
+      }
+    : null;
+  const continueLabel = nextLessonInfo
+    ? `${nextLessonInfo.sceneLabel} / ${nextLessonInfo.title}`
+    : "主线课程已清空";
   const progressBlocks = Math.min(
     10,
     Math.floor((masteredSentenceCount / Math.max(totalReviewItems, 1)) * 10)
   );
+  const countdown = resolveDepartureCountdown({
+    departureDateISO: storage.userSettings.departureDateISO,
+    totalReviewItems,
+    masteredSentenceCount,
+    departureReadyCount
+  });
+  const primaryAction = resolvePrimaryAction({
+    countdown,
+    dueReviewCount,
+    nextLesson: nextLessonInfo,
+    departureReadyCount
+  });
+  const secondaryActions = [
+    primaryAction.key !== "review"
+      ? {
+          href: "/review",
+          label: "复习队列",
+          variant: "secondary" as const
+        }
+      : null,
+    primaryAction.key !== "lesson" && nextLessonInfo
+      ? {
+          href: nextLessonInfo.href,
+          label: `继续：${nextLessonInfo.title}`,
+          variant: "secondary" as const
+        }
+      : null,
+    primaryAction.key !== "departure"
+      ? {
+          href: "/departure",
+          label: "出发模式",
+          variant:
+            departureReadyCount > 0 || countdown.kind === "urgent" || countdown.kind === "today"
+              ? ("secondary" as const)
+              : ("ghost" as const)
+        }
+      : null,
+    primaryAction.key !== "practice"
+      ? {
+          href: "/practice",
+          label: "练习模式",
+          variant: "secondary" as const
+        }
+      : null
+  ].filter((action): action is DashboardAction => Boolean(action));
 
   return (
     <div className="page-stack">
@@ -53,11 +114,47 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
         <div className="hero">
           <div className="hero-title">
             <span className="display">NIHONGO.GO</span>
-            <span className="badge success">间隔复习</span>
+            <span className="badge success">今日主任务</span>
           </div>
-          <p className="muted" style={{ margin: 0 }}>
-            完成每日检验后句子自动进入间隔复习，收藏句和核心句进入出发模式。
-          </p>
+          <div className="summary-box">
+            <div className="page-stack" style={{ gap: 12 }}>
+              <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
+                <span className="badge success">{primaryAction.badge}</span>
+                {primaryAction.key === "lesson" && nextLessonInfo ? (
+                  <span className="badge">{`${nextLessonInfo.sceneLabel} / ${nextLessonInfo.title}`}</span>
+                ) : null}
+              </div>
+              <div>
+                <h2 className="section-title">{primaryAction.title}</h2>
+                <p className="muted" style={{ margin: 0 }}>
+                  {primaryAction.description}
+                </p>
+              </div>
+              <PixelButton href={primaryAction.href} style={{ width: "100%" }}>
+                {primaryAction.label}
+              </PixelButton>
+            </div>
+          </div>
+          <div className="summary-box">
+            <div className="page-stack" style={{ gap: 12 }}>
+              <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
+                <span className={`badge ${countdown.tone === "success" ? "success" : countdown.tone === "danger" ? "danger" : ""}`.trim()}>
+                  {countdown.title}
+                </span>
+                <PixelButton href="/settings" variant="ghost">
+                  设置与备份
+                </PixelButton>
+              </div>
+              <p className="muted" style={{ margin: 0 }}>
+                {countdown.description}
+              </p>
+              {countdown.daysUntil !== null ? (
+                <span className="badge">
+                  {countdown.daysUntil === 0 ? "今天出发" : `倒计时：${countdown.daysUntil} 天`}
+                </span>
+              ) : null}
+            </div>
+          </div>
           <div className="stat-grid">
             <div className="stat-box">
               <span className="stat-label">今日复习</span>
@@ -92,25 +189,16 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
             </p>
           )}
           <div className="split-actions">
-            <PixelButton href="/review" style={{ width: "100%" }}>
-              立即复习
-            </PixelButton>
-            <PixelButton
-              href="/departure"
-              variant={departureReadyCount > 0 ? "secondary" : "ghost"}
-              style={{ width: "100%" }}
-            >
-              出发模式
-            </PixelButton>
-            <PixelButton href="/practice" variant="secondary" style={{ width: "100%" }}>
-              练习模式
-            </PixelButton>
-            <PixelButton href={continueHref} variant="secondary" style={{ width: "100%" }}>
-              继续课程
-            </PixelButton>
-            <PixelButton href="/speech-lab" variant="ghost" style={{ width: "100%" }}>
-              发音测试
-            </PixelButton>
+            {secondaryActions.map((action) => (
+              <PixelButton
+                key={action.href}
+                href={action.href}
+                variant={action.variant}
+                style={{ width: "100%" }}
+              >
+                {action.label}
+              </PixelButton>
+            ))}
           </div>
         </div>
       </PixelCard>

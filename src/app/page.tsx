@@ -1,6 +1,10 @@
 import { DashboardShell } from "@/components/dashboard-shell";
-import { getSceneSummaries } from "@/lib/content";
+import { getAllScenes, getSceneSummaries } from "@/lib/content";
 
 export default function HomePage() {
-  return <DashboardShell scenes={getSceneSummaries()} />;
+  const lessonTitleMap = Object.fromEntries(
+    getAllScenes().flatMap((scene) => scene.lessons.map((lesson) => [lesson.id, lesson.title]))
+  );
+
+  return <DashboardShell scenes={getSceneSummaries()} lessonTitleMap={lessonTitleMap} />;
 }

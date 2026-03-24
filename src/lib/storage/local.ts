@@ -5,8 +5,40 @@ import {
 import type { AppStorageState } from "@/lib/types/storage";
 import { STORAGE_KEY, STORAGE_VERSION } from "@/lib/types/storage";
 
+const LEGACY_STORAGE_KEYS = ["nihongo-go/storage/v1"] as const;
+type StorageMigrationInput = Partial<Omit<AppStorageState, "version">> & {
+  version?: number;
+};
+
 function canUseStorage(): boolean {
   return typeof window !== "undefined" && "localStorage" in window;
+}
+
+function readPersistedStorage(): { key: string | null; raw: string | null } {
+  if (!canUseStorage()) {
+    return {
+      key: null,
+      raw: null
+    };
+  }
+
+  const keys = [STORAGE_KEY, ...LEGACY_STORAGE_KEYS];
+
+  for (const key of keys) {
+    const raw = window.localStorage.getItem(key);
+
+    if (raw) {
+      return {
+        key,
+        raw
+      };
+    }
+  }
+
+  return {
+    key: null,
+    raw: null
+  };
 }
 
 export function readStorageState(): AppStorageState {
@@ -17,7 +49,8 @@ export function readStorageState(): AppStorageState {
   }
 
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const persisted = readPersistedStorage();
+    const raw = persisted.raw;
 
     if (!raw) {
       return fallback;
@@ -30,7 +63,13 @@ export function readStorageState(): AppStorageState {
       return fallback;
     }
 
-    return mergeCatalogIntoStorageState(migrated);
+    const normalized = mergeCatalogIntoStorageState(migrated);
+
+    if (persisted.key !== STORAGE_KEY || normalized.version !== STORAGE_VERSION) {
+      writeStorageState(normalized);
+    }
+
+    return normalized;
   } catch {
     return fallback;
   }
@@ -41,11 +80,17 @@ export function migrateStorage(raw: unknown): AppStorageState | null {
     return null;
   }
 
-  const parsed = raw as Partial<AppStorageState>;
+  const parsed = raw as StorageMigrationInput;
 
   switch (parsed.version) {
+    case 1:
+      return normalizeStoredState({
+        ...parsed,
+        version: STORAGE_VERSION,
+        lastMigratedAt: new Date().toISOString()
+      } as Partial<AppStorageState>);
     case STORAGE_VERSION:
-      return normalizeStoredState(parsed);
+      return normalizeStoredState(parsed as Partial<AppStorageState>);
     default:
       // Future storage migrations must be implemented here before bumping STORAGE_VERSION.
       // Returning null falls back to the seeded default state; do not rely on that once
@@ -82,11 +127,17 @@ export function writeStorageState(state: AppStorageState): void {
     return;
   }
 
+  const normalized = {
+    ...mergeCatalogIntoStorageState(state),
+    version: STORAGE_VERSION
+  };
+
   window.localStorage.setItem(
     STORAGE_KEY,
-    JSON.stringify({
-      ...mergeCatalogIntoStorageState(state),
-      version: STORAGE_VERSION
-    })
+    JSON.stringify(normalized)
   );
+
+  for (const key of LEGACY_STORAGE_KEYS) {
+    window.localStorage.removeItem(key);
+  }
 }

@@ -1,7 +1,7 @@
 import type { ContentType, SceneId } from "@/lib/types/content";
 
-export const STORAGE_VERSION = 1;
-export const STORAGE_KEY = "nihongo-go/storage/v1";
+export const STORAGE_VERSION = 2;
+export const STORAGE_KEY = "nihongo-go/storage/v2";
 
 export type ReviewStatus =
   | "unseen"
@@ -82,6 +82,7 @@ export interface UserSettings {
   hintsEnabled: boolean;
   reducedMotion: boolean;
   kanaHintStyle: "hidden" | "first-word" | "full";
+  departureDateISO: string | null;
 }
 
 export interface SpeechLabSnapshot {

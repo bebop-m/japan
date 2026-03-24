@@ -111,7 +111,8 @@ export function createDefaultStorageState(): AppStorageState {
       speechScoringMode: "manual",
       hintsEnabled: true,
       reducedMotion: false,
-      kanaHintStyle: "first-word"
+      kanaHintStyle: "first-word",
+      departureDateISO: null
     },
     speechLab: createDefaultSpeechLab(),
     session: {
