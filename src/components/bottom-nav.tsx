@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 
 const items = [
   { href: "/", label: "首页" },
-  { href: "/review", label: "复习" },
-  { href: "/practice", label: "练习" },
-  { href: "/departure", label: "出发" },
-  { href: "/settings", label: "设置" }
+  { href: "/scene/airport", label: "机场" },
+  { href: "/scene/hotel", label: "酒店" },
+  { href: "/scene/izakaya", label: "居酒屋" },
+  { href: "/scene/shopping", label: "购物" }
 ];
 
 export function BottomNav() {

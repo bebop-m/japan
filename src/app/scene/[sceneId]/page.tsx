@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { SceneGatewayPanel } from "@/components/scene-gateway-panel";
+import { SceneBookPanel } from "@/components/scene-book-panel";
 import { getAllScenes, getScene } from "@/lib/content";
 import type { SceneId } from "@/lib/types/content";
 
@@ -24,9 +24,5 @@ export default function ScenePage({ params }: ScenePageProps) {
 
   const scene = getScene(sceneId);
 
-  return (
-    <div className="compact-page">
-      <SceneGatewayPanel scene={scene} />
-    </div>
-  );
+  return <SceneBookPanel scene={scene} />;
 }
