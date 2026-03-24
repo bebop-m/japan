@@ -6,9 +6,9 @@ export default function PracticePage() {
   return (
     <div className="page-stack">
       <PixelHeading
-        kicker="Phase 4 / Practice"
-        title="Drill learned lines until they are exact."
-        description="Practice runs on learned items only, uses strict Japanese input matching, and loops every mistake back until the round is clean."
+        kicker="练习模式"
+        title="对已学句子进行精准练习。"
+        description="仅练习已完成第五步的句子，严格匹配日文，答错自动进入重练轮，不影响SRS间隔。"
       />
       <PracticeSession
         scenes={getSceneSummaries()}

@@ -7,10 +7,10 @@ import { readStorageState } from "@/lib/storage/local";
 import type { SceneDefinition } from "@/lib/types/content";
 
 const statusLabel = {
-  locked: "LOCKED",
-  available: "READY",
-  in_progress: "IN PROGRESS",
-  completed: "DONE"
+  locked: "未解锁",
+  available: "可开始",
+  in_progress: "进行中",
+  completed: "已完成"
 } as const;
 
 export function LessonList({ scene }: { scene: SceneDefinition }) {
@@ -24,7 +24,7 @@ export function LessonList({ scene }: { scene: SceneDefinition }) {
           <div className="meta-row">
             <span className={`lesson-status ${status}`}>{statusLabel[status]}</span>
             <span className="badge">{lesson.code}</span>
-            <span className="badge">{lesson.cards.length} dialogue cards</span>
+            <span className="badge">{lesson.cards.length} 句型卡</span>
           </div>
           <div className="page-stack" style={{ gap: 10 }}>
             <h3>{lesson.title}</h3>
@@ -36,7 +36,7 @@ export function LessonList({ scene }: { scene: SceneDefinition }) {
               className={`pixel-button ${isUnlocked ? "" : "ghost"}`.trim()}
               aria-disabled={!isUnlocked}
             >
-              OPEN LESSON
+              进入课程
             </Link>
           </div>
         </article>

@@ -19,11 +19,15 @@ interface DashboardShellProps {
   scenes: SceneSummary[];
 }
 
+const sceneNameMap: Record<SceneSummary["id"], string> = {
+  airport: "机场",
+  hotel: "酒店",
+  izakaya: "居酒屋",
+  shopping: "购物"
+};
+
 export function DashboardShell({ scenes }: DashboardShellProps) {
   const storage = useMemo(() => readStorageState(), []);
-  const sceneLabelMap = Object.fromEntries(
-    scenes.map((scene) => [scene.id, scene.shortLabel])
-  ) as Record<SceneSummary["id"], string>;
   const totalSentences = scenes.reduce((total, scene) => total + scene.sentenceCount, 0);
   const dueReviewCount = getDueReviewItems(storage).length * 2;
   const newSentenceCount = getNewSentenceCount(storage);
@@ -32,7 +36,7 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
   const departureReadyCount = getDepartureReadyReviewItems(storage).length;
   const nextLesson = getNextAvailableLesson(storage);
   const continueLabel = nextLesson
-    ? `${sceneLabelMap[nextLesson.sceneId]} / ${nextLesson.lessonId}`
+    ? `${sceneNameMap[nextLesson.sceneId]} / ${nextLesson.lessonId}`
     : "全部课程已解锁";
   const continueHref = nextLesson
     ? `/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`
@@ -117,11 +121,11 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
                   <span className="badge">{scene.sentenceCount} 句</span>
                 </div>
                 <h3>
-                  {scene.icon} {scene.label}
+                  {scene.icon} {sceneNameMap[scene.id]}
                 </h3>
                 <p className="muted">{scene.description}</p>
                 <div className="split-actions">
-                  <PixelButton href={`/scene/${scene.id}`}>进入{scene.shortLabel}</PixelButton>
+                  <PixelButton href={`/scene/${scene.id}`}>进入{sceneNameMap[scene.id]}</PixelButton>
                 </div>
               </div>
             </PixelCard>

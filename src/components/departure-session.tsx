@@ -36,6 +36,17 @@ interface ResolvedPrompt {
 }
 
 const quantityOptions = [8, 12, 20] as const;
+const sceneNameMap: Record<SceneId, string> = {
+  airport: "机场",
+  hotel: "酒店",
+  izakaya: "居酒屋",
+  shopping: "购物"
+};
+const promptLabelMap: Record<string, string> = {
+  "YOU SAY": "你说",
+  "PARTNER SAYS": "对方说",
+  "WORD BANK": "单词库"
+};
 
 export function DepartureSession({
   scenes,
@@ -51,7 +62,7 @@ export function DepartureSession({
   const [index, setIndex] = useState(0);
   const [resolvedPrompt, setResolvedPrompt] = useState<ResolvedPrompt | null>(null);
   const [feedback, setFeedback] = useState(
-    "Departure mode only drills favorited and core lines, with strict exact-match retry rounds."
+    "本轮仅使用收藏句和核心句，答错循环重练直到全部正确。"
   );
   const [seedCount, setSeedCount] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
@@ -61,7 +72,7 @@ export function DepartureSession({
   const sceneLabelMap = useMemo(
     () =>
       Object.fromEntries(
-        scenes.map((scene) => [scene.id, `${scene.icon} ${scene.shortLabel}`])
+        scenes.map((scene) => [scene.id, `${scene.icon} ${sceneNameMap[scene.id]}`])
       ) as Record<SceneId, string>,
     [scenes]
   );
@@ -125,9 +136,7 @@ export function DepartureSession({
     const nextQueue = pickDeparturePrompts(pool, requestedCount);
 
     if (nextQueue.length === 0) {
-      setFeedback(
-        "No departure prompts are ready yet. Finish STEP 5 on core cards or favorite lines in lesson and review first."
-      );
+      setFeedback("暂无出发题目。请先完成核心卡片的第五步，或在课程/复习中收藏句子。");
       return;
     }
 
@@ -146,7 +155,7 @@ export function DepartureSession({
     setSeedCount(nextQueue.length);
     setAttemptCount(0);
     setMistakeCount(0);
-    setFeedback("Chinese prompt only. Type the full Japanese answer exactly.");
+    setFeedback("仅中文提示，请完整输入日文答案。");
     input.reset();
   }
 
@@ -198,8 +207,8 @@ export function DepartureSession({
 
     setFeedback(
       passed
-        ? "Exact match. Move to the next departure prompt."
-        : "Not exact. This prompt has been added to the retry round."
+        ? "完全匹配，进入下一题。"
+        : "不完全匹配，已加入重练轮。"
     );
   }
 
@@ -215,7 +224,7 @@ export function DepartureSession({
 
     if (!isLastPrompt) {
       setIndex((current) => current + 1);
-      setFeedback("Next departure prompt ready. Keep the answer exact.");
+      setFeedback("下一题已准备好，请继续完整输入。");
       return;
     }
 
@@ -224,12 +233,12 @@ export function DepartureSession({
       setRoundMistakes([]);
       setRound((current) => current + 1);
       setIndex(0);
-      setFeedback("Retry round started. Only previous misses remain.");
+      setFeedback("重练轮开始，仅包含此前答错的题。");
       return;
     }
 
     setPhase("done");
-    setFeedback("Departure sprint clear. Every queued prompt now matches exactly.");
+    setFeedback("出发完成，所有题目已全部答对。");
   }
 
   if (phase === "done") {
@@ -238,35 +247,35 @@ export function DepartureSession({
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
-              <span className="display">DEPARTURE CLEAR</span>
-              <span className="badge success">BOARDING READY</span>
+              <span className="display">出发完成</span>
+              <span className="badge success">准备登机</span>
             </div>
             <p className="muted" style={{ margin: 0 }}>
-              Favorites and core lines were drilled until clean, without changing your SRS intervals.
+              收藏句和核心句已全部答对，SRS间隔未受影响。
             </p>
           </div>
 
           <div className="stat-grid">
             <div className="stat-box">
-              <span className="stat-label">Initial Queue</span>
+              <span className="stat-label">初始题数</span>
               <strong className="stat-value">{seedCount}</strong>
             </div>
             <div className="stat-box">
-              <span className="stat-label">Total Attempts</span>
+              <span className="stat-label">总尝试次数</span>
               <strong className="stat-value">{attemptCount}</strong>
             </div>
             <div className="stat-box">
-              <span className="stat-label">Mistakes Cleared</span>
+              <span className="stat-label">已纠正错误</span>
               <strong className="stat-value">{mistakeCount}</strong>
             </div>
           </div>
 
           <div className="split-actions">
-            <PixelButton onClick={() => resetSession("Setup reset. You can launch another departure sprint.")}>
-              RUN AGAIN
+            <PixelButton onClick={() => resetSession("已重置，可开始新一轮冲刺。")}>
+              再来一轮
             </PixelButton>
             <PixelButton href="/" variant="secondary">
-              BACK HOME
+              返回首页
             </PixelButton>
           </div>
         </div>
@@ -279,21 +288,21 @@ export function DepartureSession({
     const primaryActionLabel =
       index === queue.length - 1
         ? roundMistakes.length > 0
-          ? `START ROUND ${round + 1}`
-          : "FINISH SPRINT"
-        : "NEXT PROMPT";
+          ? `开始第 ${round + 1} 轮`
+          : "结束冲刺"
+        : "下一题";
 
     return (
       <PixelCard>
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
-              <span className="display">DEPARTURE MODE</span>
-              <span className="badge success">ROUND {round}</span>
+              <span className="display">出发模式</span>
+              <span className="badge success">第 {round} 轮</span>
             </div>
             <div className="meta-row" style={{ justifyContent: "space-between" }}>
               <span className="badge">
-                Prompt {index + 1} / {queue.length}
+                题目 {index + 1} / {queue.length}
               </span>
               <ProgressBlocks current={progressBlocksCurrent} total={progressBlocksTotal} />
             </div>
@@ -305,30 +314,30 @@ export function DepartureSession({
           <div className="meta-row">
             <span className="badge">{sceneLabel}</span>
             <span className="badge">
-              {currentPrompt.isFavorited ? "FAVORITE" : "CORE"}
+              {currentPrompt.isFavorited ? "收藏" : "核心"}
             </span>
             <span className="badge">
-              {currentPrompt.contentType === "phrase" ? "SENTENCE" : "WORD"}
+              {currentPrompt.contentType === "phrase" ? "句子" : "单词"}
             </span>
-            <span className="badge">{currentPrompt.label}</span>
+            <span className="badge">{promptLabelMap[currentPrompt.label] ?? currentPrompt.label}</span>
           </div>
 
           <div className="turn">
-            <div className="turn-role">ZH PROMPT</div>
+            <div className="turn-role">中文提示</div>
             <div className="turn-zh">{currentPrompt.promptZh}</div>
           </div>
 
           <textarea
-            aria-label="Departure input"
+            aria-label="出发输入框"
             className="pixel-textarea"
-            placeholder="Type the full Japanese answer here"
+            placeholder="在此输入日文"
             {...input.bind}
           />
 
           {resolvedPrompt ? (
             <div className="page-stack" style={{ gap: 12 }}>
               <div className="turn">
-                <div className="turn-role">ANSWER</div>
+                <div className="turn-role">答案</div>
                 <div className="turn-ja">
                   <RubyText tokens={currentPrompt.ruby} />
                 </div>
@@ -337,7 +346,7 @@ export function DepartureSession({
 
               <div className="meta-row">
                 <span className={`badge ${resolvedPrompt.passed ? "success" : "danger"}`.trim()}>
-                  {resolvedPrompt.passed ? "EXACT MATCH" : "RETRY LATER"}
+                  {resolvedPrompt.passed ? "完全匹配" : "稍后重试"}
                 </span>
               </div>
 
@@ -359,9 +368,9 @@ export function DepartureSession({
             </div>
           ) : (
             <div className="split-actions">
-              <PixelButton onClick={resolvePrompt}>SUBMIT EXACT MATCH</PixelButton>
+              <PixelButton onClick={resolvePrompt}>提交答案</PixelButton>
               <PixelButton variant="ghost" onClick={input.reset}>
-                CLEAR INPUT
+                清空
               </PixelButton>
             </div>
           )}
@@ -375,34 +384,34 @@ export function DepartureSession({
       <div className="page-stack">
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
-            <span className="display">DEPARTURE MODE</span>
-            <span className="badge success">READY</span>
+            <span className="display">出发模式</span>
+            <span className="badge success">待开始</span>
           </div>
           <p className="muted" style={{ margin: 0 }}>
-            This sprint only uses favorited lines plus core travel sentences, and every miss loops back until clean.
+            本轮仅使用收藏句和核心句，答错循环重练直到全部正确。
           </p>
         </div>
 
         <div className="stat-grid">
           <div className="stat-box">
-            <span className="stat-label">Ready Cards</span>
+            <span className="stat-label">可用卡片</span>
             <strong className="stat-value">{readyItems.length}</strong>
           </div>
           <div className="stat-box">
-            <span className="stat-label">Favorites</span>
+            <span className="stat-label">收藏</span>
             <strong className="stat-value">{favoriteItems.length}</strong>
           </div>
           <div className="stat-box">
-            <span className="stat-label">Core Backup</span>
+            <span className="stat-label">核心备份</span>
             <strong className="stat-value">{coreOnlyItems.length}</strong>
           </div>
         </div>
 
         <div className="summary-box">
           <div className="meta-row">
-            <span className="badge">Favorite-only cards: {favoriteOnlyItems.length}</span>
-            <span className="badge">Prompts available: {pool.length}</span>
-            <span className="badge">Requested: {requestedCount}</span>
+            <span className="badge">仅收藏卡片：{favoriteOnlyItems.length}</span>
+            <span className="badge">可用题目：{pool.length}</span>
+            <span className="badge">已选：{requestedCount}</span>
           </div>
           <p className="muted" style={{ marginBottom: 0 }}>
             {feedback}
@@ -410,7 +419,7 @@ export function DepartureSession({
         </div>
 
         <div className="field-stack">
-          <h2 className="section-title">Queue Size</h2>
+          <h2 className="section-title">队列大小</h2>
           <div className="choice-grid option-grid">
             {quantityOptions.map((value) => (
               <button
@@ -420,7 +429,7 @@ export function DepartureSession({
                 onClick={() => setQuantityMode(value)}
               >
                 <strong>{value}</strong>
-                <div className="muted">Sprint prompts</div>
+                <div className="muted">冲刺题数</div>
               </button>
             ))}
             <button
@@ -428,26 +437,26 @@ export function DepartureSession({
               className={`choice-button ${quantityMode === "all" ? "active" : ""}`.trim()}
               onClick={() => setQuantityMode("all")}
             >
-              <strong>All</strong>
-              <div className="muted">Use the full pool</div>
+              <strong>全部</strong>
+              <div className="muted">使用全部</div>
             </button>
           </div>
         </div>
 
         <div className="split-actions">
           <PixelButton onClick={startDeparture} aria-disabled={pool.length === 0}>
-            START DEPARTURE
+            开始出发
           </PixelButton>
           {nextLesson ? (
             <PixelButton
               href={`/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`}
               variant="secondary"
             >
-              CONTINUE LESSON
+              继续课程
             </PixelButton>
           ) : (
             <PixelButton href="/review" variant="secondary">
-              OPEN REVIEW
+              去复习
             </PixelButton>
           )}
         </div>

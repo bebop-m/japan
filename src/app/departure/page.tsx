@@ -6,9 +6,9 @@ export default function DeparturePage() {
   return (
     <div className="page-stack">
       <PixelHeading
-        kicker="Phase 6 / Departure"
-        title="Sprint the lines you actually need before takeoff."
-        description="Departure mode only pulls from favorited lines and isCore travel sentences, keeps the prompt fixed at Chinese to Japanese, and loops every miss back until the round is clean."
+        kicker="出发模式"
+        title="出发前冲刺演练最需要的句子。"
+        description="仅使用收藏句和核心句，中文提示日文回答，答错循环重练直到全部正确。"
       />
       <DepartureSession
         scenes={getSceneSummaries()}

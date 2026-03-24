@@ -35,7 +35,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<ReviewPhase>(() => (queue.length > 0 ? "prompt" : "done"));
   const [pendingRating, setPendingRating] = useState<SrsRating | null>(null);
-  const [feedback, setFeedback] = useState("Reveal the answer, then self-rate.");
+  const [feedback, setFeedback] = useState("翻开答案，然后自评。");
   const [diffPreview, setDiffPreview] = useState<string[]>([]);
   const input = useJapaneseInput();
 
@@ -96,9 +96,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
     ) {
       setPendingRating(rating);
       setPhase("reinforce");
-      setFeedback(
-        "This card has been missed twice in a row. Type the full Japanese answer before moving on."
-      );
+      setFeedback("该卡片连续两次未答对，请完整打出日文答案再继续。");
       return;
     }
 
@@ -111,10 +109,10 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
 
     moveNext(
       rating === "good"
-        ? "Marked as know. Interval doubled."
+        ? "已标记认识，间隔翻倍。"
         : rating === "hard"
-          ? "Marked as fuzzy. Interval unchanged."
-          : "Marked as again. This card will come back tomorrow."
+          ? "已标记模糊，间隔不变。"
+          : "已标记再来，明天重新复习。"
     );
   }
 
@@ -143,7 +141,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
     );
 
     if (!passed) {
-      setFeedback("Still not exact. Keep typing until the answer matches exactly.");
+      setFeedback("还不完全正确，继续输入直到完全匹配。");
       return;
     }
 
@@ -154,7 +152,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
       );
     });
 
-    moveNext("Reinforcement complete. The item stays on a 1-day interval.");
+    moveNext("强化完成，该卡片保持1天间隔。");
   }
 
   if (!currentEntry || !currentCard || !currentItem || !currentTurn || !partnerTurn) {
@@ -163,15 +161,15 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
         <div className="page-stack">
           <div className="summary-box">
             <h2 className="section-title" style={{ marginTop: 0 }}>
-              Review Queue Empty
+              复习队列为空
             </h2>
             <p className="muted" style={{ margin: 0 }}>
-              No SRS reviews are due right now. Finish a lesson and pass Daily Check, then come back here.
+              当前没有到期的复习。完成课程并通过每日检验后再来。
             </p>
           </div>
           <div className="split-actions">
             <PixelButton href="/" variant="secondary">
-              BACK HOME
+              返回首页
             </PixelButton>
           </div>
         </div>
@@ -184,15 +182,15 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
       <div className="page-stack" style={{ gap: 16 }}>
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
-            <span className="display">SRS REVIEW</span>
+            <span className="display">SRS 复习</span>
             <span className="badge success">
-              {phase === "done" ? "DONE" : `${index + 1} / ${queue.length}`}
+              {phase === "done" ? "完成" : `${index + 1} / ${queue.length}`}
             </span>
           </div>
           {phase !== "done" ? (
             <div className="meta-row" style={{ justifyContent: "space-between" }}>
               <span className="badge">
-                {currentEntry.direction === "zh-to-ja" ? "ZH TO JA" : "JA TO ZH"}
+                {currentEntry.direction === "zh-to-ja" ? "中→日" : "日→中"}
               </span>
               <PixelButton
                 type="button"
@@ -200,7 +198,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
                 onClick={toggleCurrentFavorite}
                 aria-pressed={currentFavorited}
               >
-                {currentFavorited ? "★ FAVORITED" : "☆ SAVE TO DEPARTURE"}
+                {currentFavorited ? "★ 已收藏" : "☆ 加入出发"}
               </PixelButton>
             </div>
           ) : null}
@@ -214,7 +212,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="turn">
               <div className="turn-role">
-                {currentEntry.direction === "zh-to-ja" ? "ZH TO JA" : "JA TO ZH"}
+                {currentEntry.direction === "zh-to-ja" ? "中→日" : "日→中"}
               </div>
               {currentEntry.direction === "zh-to-ja" ? (
                 <div className="turn-zh">{currentTurn.zh}</div>
@@ -231,10 +229,10 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
               <PixelButton
                 onClick={() => {
                   setPhase("reveal");
-                  setFeedback("Reveal complete. Rate how well you recalled it.");
+                  setFeedback("已翻开，请自评记忆程度。");
                 }}
               >
-                REVEAL ANSWER
+                翻开答案
               </PixelButton>
             </div>
           </div>
@@ -244,7 +242,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="turn-list">
               <div className="turn">
-                <div className="turn-role">YOU SAY</div>
+                <div className="turn-role">你说</div>
                 <div className="turn-ja">
                   <RubyText tokens={currentTurn.ruby} />
                 </div>
@@ -252,7 +250,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
                 <div className="turn-zh">{currentTurn.zh}</div>
               </div>
               <div className="turn">
-                <div className="turn-role">PARTNER SAYS</div>
+                <div className="turn-role">对方说</div>
                 <div className="turn-ja">
                   <RubyText tokens={partnerTurn.ruby} />
                 </div>
@@ -262,12 +260,12 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
             </div>
             <div className="split-actions">
               <PixelButton variant="ghost" onClick={() => applyRating("again")}>
-                AGAIN
+                再来
               </PixelButton>
               <PixelButton variant="secondary" onClick={() => applyRating("hard")}>
-                HARD
+                模糊
               </PixelButton>
-              <PixelButton onClick={() => applyRating("good")}>GOOD</PixelButton>
+              <PixelButton onClick={() => applyRating("good")}>认识</PixelButton>
             </div>
           </div>
         ) : null}
@@ -275,14 +273,14 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
         {phase === "reinforce" ? (
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="turn">
-              <div className="turn-role">REINFORCE</div>
+              <div className="turn-role">强化输入</div>
               <div className="turn-zh">{currentTurn.zh}</div>
-              <div className="turn-kana">Type the full Japanese answer exactly.</div>
+              <div className="turn-kana">请完整输入日文答案</div>
             </div>
             <textarea
-              aria-label="Reinforce input"
+              aria-label="强化输入框"
               className="pixel-textarea"
-              placeholder="Type Japanese exactly here"
+              placeholder="在此输入日文"
               {...input.bind}
             />
             {diffPreview.length > 0 ? (
@@ -299,7 +297,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
               </div>
             ) : null}
             <div className="split-actions">
-              <PixelButton onClick={submitReinforce}>SUBMIT REINFORCE</PixelButton>
+              <PixelButton onClick={submitReinforce}>提交强化输入</PixelButton>
             </div>
           </div>
         ) : null}
@@ -308,15 +306,15 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="summary-box">
               <h2 className="section-title" style={{ marginTop: 0 }}>
-                Review Complete
+                复习完成
               </h2>
               <p className="muted" style={{ margin: 0 }}>
-                Today&apos;s due review queue is done. Home will now show the updated counts and next lesson.
+                今日复习队列已完成，返回首页查看更新后的数据。
               </p>
             </div>
             <div className="split-actions">
               <PixelButton href="/" variant="secondary">
-                BACK HOME
+                返回首页
               </PixelButton>
             </div>
           </div>

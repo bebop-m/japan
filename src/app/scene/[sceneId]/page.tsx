@@ -6,6 +6,13 @@ import { PixelHeading } from "@/components/pixel-heading";
 import { getAllScenes, getScene } from "@/lib/content";
 import type { SceneId } from "@/lib/types/content";
 
+const sceneNameMap: Record<SceneId, string> = {
+  airport: "机场",
+  hotel: "酒店",
+  izakaya: "居酒屋",
+  shopping: "购物"
+};
+
 interface ScenePageProps {
   params: {
     sceneId: string;
@@ -30,23 +37,23 @@ export default function ScenePage({ params }: ScenePageProps) {
   return (
     <div className="page-stack">
       <PixelHeading
-        kicker={`${scene.code} / ${scene.shortLabel}`}
-        title={`${scene.icon} ${scene.label}`}
+        kicker={`${scene.code} / ${sceneNameMap[sceneId]}`}
+        title={`${scene.icon} ${sceneNameMap[sceneId]}`}
         description={scene.description}
       />
 
       <PixelCard>
         <div className="stat-grid">
           <div className="stat-box">
-            <span className="stat-label">Lessons</span>
+            <span className="stat-label">课</span>
             <strong className="stat-value">{scene.lessonCount}</strong>
           </div>
           <div className="stat-box">
-            <span className="stat-label">Sentences</span>
+            <span className="stat-label">句</span>
             <strong className="stat-value">{scene.sentenceCount}</strong>
           </div>
           <div className="stat-box">
-            <span className="stat-label">Word Bank</span>
+            <span className="stat-label">单词库</span>
             <strong className="stat-value">{scene.wordBank.length}</strong>
           </div>
         </div>
@@ -54,9 +61,9 @@ export default function ScenePage({ params }: ScenePageProps) {
 
       <section className="page-stack">
         <div className="split-actions">
-          <PixelButton href="/">BACK HOME</PixelButton>
+          <PixelButton href="/">返回首页</PixelButton>
           <PixelButton href="/speech-lab" variant="secondary">
-            TEST SPEECH PATH
+            发音测试
           </PixelButton>
         </div>
         <LessonList scene={scene} />

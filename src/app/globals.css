@@ -94,7 +94,7 @@ main {
 }
 
 .display {
-  font-family: var(--font-display), monospace;
+  font-family: var(--font-display), var(--font-body), monospace;
   font-size: clamp(1rem, 2.6vw, 1.4rem);
   line-height: 1.5;
   text-transform: uppercase;
@@ -108,7 +108,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-display), monospace;
+  font-family: var(--font-display), var(--font-body), monospace;
   font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -116,6 +116,7 @@ main {
 
 .badge,
 .lesson-status {
+  font-family: var(--font-body), sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -134,7 +135,6 @@ main {
 }
 
 .lesson-status {
-  font-family: var(--font-display), monospace;
   font-size: 0.62rem;
 }
 
@@ -167,7 +167,7 @@ main {
   border: 3px solid var(--border);
   background: var(--accent);
   color: #f8f4e7;
-  font-family: var(--font-display), monospace;
+  font-family: var(--font-display), var(--font-body), monospace;
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   box-shadow: 0 6px 0 0 var(--border);
@@ -207,6 +207,7 @@ main {
 }
 
 .stat-label {
+  font-family: var(--font-body), sans-serif;
   display: block;
   margin-bottom: 10px;
   font-size: 0.88rem;
@@ -263,7 +264,7 @@ main {
   border: 2px solid var(--border);
   padding: 10px 8px;
   text-align: center;
-  font-family: var(--font-display), monospace;
+  font-family: var(--font-display), var(--font-body), monospace;
   font-size: 0.56rem;
   background: rgba(255, 255, 255, 0.45);
 }
@@ -285,7 +286,7 @@ main {
 
 .turn-role {
   margin-bottom: 8px;
-  font-family: var(--font-display), monospace;
+  font-family: var(--font-display), var(--font-body), monospace;
   font-size: 0.6rem;
   color: var(--ink-soft);
   text-transform: uppercase;

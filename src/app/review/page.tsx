@@ -6,9 +6,9 @@ export default function ReviewPage() {
   return (
     <div className="page-stack">
       <PixelHeading
-        kicker="Phase 3 / SRS"
-        title="Review what is due today."
-        description="Again resets to 1 day, hard keeps the interval, and good doubles it. Two consecutive misses trigger strict reinforcement input."
+        kicker="SRS 间隔复习"
+        title="复习今天到期的句子。"
+        description="再来 重置为1天，模糊 保持间隔，认识 间隔翻倍。连续两次再来触发强化输入。"
       />
       <ReviewSession cards={getAllPhraseCards()} />
     </div>

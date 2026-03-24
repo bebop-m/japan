@@ -7,6 +7,13 @@ import { RubyText } from "@/components/ruby-text";
 import { getAllScenes, getLesson } from "@/lib/content";
 import type { SceneId } from "@/lib/types/content";
 
+const sceneNameMap: Record<SceneId, string> = {
+  airport: "机场",
+  hotel: "酒店",
+  izakaya: "居酒屋",
+  shopping: "购物"
+};
+
 interface LessonPageProps {
   params: {
     sceneId: string;
@@ -34,15 +41,15 @@ export default function LessonPage({ params }: LessonPageProps) {
   return (
     <div className="page-stack">
       <PixelHeading
-        kicker={`${sceneId.toUpperCase()} / ${lesson.code}`}
+        kicker={`${sceneNameMap[sceneId]} / ${lesson.code}`}
         title={lesson.title}
         description={lesson.overview}
       />
 
       <PixelCard soft>
         <div className="meta-row">
-          <span className="badge">{lesson.cards.length} dialogue cards</span>
-          <span className="badge">{lesson.wordBank.length} keywords</span>
+          <span className="badge">{lesson.cards.length} 句型卡</span>
+          <span className="badge">{lesson.wordBank.length} 关键词</span>
         </div>
       </PixelCard>
 
@@ -54,7 +61,7 @@ export default function LessonPage({ params }: LessonPageProps) {
             <article className="phrase-card">
               <div className="meta-row">
                 <span className="badge">{card.id}</span>
-                <span className="badge">{card.isCore ? "CORE" : "ROUTINE"}</span>
+                <span className="badge">{card.isCore ? "核心" : "日常"}</span>
                 {card.tags.map((tag) => (
                   <span key={tag} className="badge">
                     {tag}
@@ -65,7 +72,7 @@ export default function LessonPage({ params }: LessonPageProps) {
                 {card.turns.map((turn) => (
                   <div key={turn.id} className="turn">
                     <div className="turn-role">
-                      {turn.role === "learner" ? "YOU SAY" : "PARTNER SAYS"}
+                      {turn.role === "learner" ? "你说" : "对方说"}
                     </div>
                     <div className="turn-ja">
                       <RubyText tokens={turn.ruby} />
@@ -81,7 +88,7 @@ export default function LessonPage({ params }: LessonPageProps) {
       </section>
 
       <PixelCard>
-        <h2 className="section-title">IME Input Sandbox</h2>
+        <h2 className="section-title">输入法测试台</h2>
         <JapaneseInputLab />
       </PixelCard>
     </div>

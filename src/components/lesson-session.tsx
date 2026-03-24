@@ -40,6 +40,23 @@ interface SpeechAttemptInput {
 }
 
 const SPEECH_PASS_SCORE = 75;
+const lessonPhaseLabelMap = {
+  preview: "待开始",
+  study: "学习中",
+  "daily-check": "每日检验",
+  complete: "总结"
+} as const;
+const lessonStatusLabelMap = {
+  locked: "未解锁",
+  available: "可开始",
+  in_progress: "进行中",
+  completed: "已完成"
+} as const;
+const dailyQuestionTypeLabelMap = {
+  "listen-choice": "听音选义",
+  "translate-input": "中译日输入",
+  "reply-input": "对话补全"
+} as const;
 
 function playJapaneseSequence(lines: string[]) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {
@@ -115,7 +132,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
   const [storage, setStorage] = useState<AppStorageState>(() => readStorageState());
   const [feedback, setFeedback] = useState<StepFeedback>({
     tone: "neutral",
-    message: "先点 START LESSON，之后流程会严格按五步推进。"
+    message: "先点开始课程，之后流程会严格按五步推进。"
   });
   const [diffPreview, setDiffPreview] = useState<string[]>([]);
   const [dailyQuestions, setDailyQuestions] = useState<DailyCheckQuestion[]>([]);
@@ -196,7 +213,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
       setDailyResults([]);
       setFeedback({
         tone: "neutral",
-        message: "Daily Check 已开始，题型会混合听音、翻译输入和对话补全。"
+        message: "每日检验已开始，题型会混合听音、翻译输入和对话补全。"
       });
       input.reset();
       setDiffPreview([]);
@@ -207,7 +224,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
     if (phase === "preview") {
       setFeedback({
         tone: "neutral",
-        message: "Start the lesson to enter the five-step loop."
+        message: "开始课程后，将依次进入听、说、读、写、验证五步。"
       });
     }
   }, [phase]);
@@ -295,7 +312,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
 
     setFeedback({
       tone: "neutral",
-      message: "STEP 1 从听开始，只看中文，不提前暴露日文。"
+      message: "第一步从听开始，只看中文，不提前暴露日文。"
     });
   }
   async function startRecording() {
@@ -368,7 +385,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
 
   async function scoreSpeechWithAzure() {
     if (!recordingBlob || !currentCard) {
-      setRecordingError("Record your line before requesting Azure scoring.");
+      setRecordingError("请先录音再请求评分。");
       return;
     }
 
@@ -394,12 +411,14 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
       setFeedback({
         tone: passed ? "success" : "danger",
         message: passed
-          ? `Azure score ${Math.round(score)} passed. Move on to reading.`
-          : `Azure score ${Math.round(score)} is below ${SPEECH_PASS_SCORE}. Replay or use manual pass after review.`
+          ? `发音评分 ${Math.round(score)} 通过，进入阅读步骤。`
+          : `评分 ${Math.round(score)} 未达标（${SPEECH_PASS_SCORE}分），可重录或手动通过。`
       });
     } catch (error) {
       const message =
-        error instanceof Error ? error.message : "Azure scoring is unavailable right now.";
+        error instanceof Error && error.message
+          ? "发音评分暂不可用。"
+          : "发音评分暂不可用。";
       setRecordingError(message);
       updateSpeechLabSnapshot((snapshot) => {
         snapshot.lastCheckedAt = new Date().toISOString();
@@ -410,7 +429,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
       });
       setFeedback({
         tone: "danger",
-        message: "Azure scoring failed. The manual playback confirmation fallback is still available."
+        message: "评分失败，可使用手动确认继续。"
       });
     } finally {
       setIsScoringSpeech(false);
@@ -426,7 +445,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
     setRecordStatus("idle");
     setFeedback({
       tone: "success",
-      message: "Manual confirmation accepted. Move on to reading."
+      message: "手动确认通过，进入阅读步骤。"
     });
   }
 
@@ -549,7 +568,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
           step === 4
             ? "写这一步已过，进入无提示验证。"
             : currentCardIndex === lesson.cards.length - 1
-              ? "本课五步已全部完成，马上进入 Daily Check。"
+              ? "本课五步已全部完成，马上进入每日检验。"
               : "这张卡通过验证，已切到下一张。"
       });
       return;
@@ -560,7 +579,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
       message:
         step === 4
           ? "写这一步还没对上，继续看差异后重试。"
-          : "验证失败，按方案回到 STEP 4 重写。"
+          : "验证失败，按方案回到第4步重写。"
     });
   }
 
@@ -603,8 +622,8 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
     setFeedback({
       tone: passed ? "success" : "danger",
       message: passed
-        ? `Daily Check ${score}% 通过，本课已进入已掌握。`
-        : `Daily Check ${score}% 未过，本课标记为待复习。`
+        ? `每日检验 ${score}% 通过，本课已进入已掌握。`
+        : `每日检验 ${score}% 未过，本课标记为待复习。`
     });
   }
 
@@ -655,7 +674,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
 
     setFeedback({
       tone: "neutral",
-      message: "Daily Check 已重开。"
+      message: "每日检验已重开。"
     });
   }
 
@@ -678,15 +697,9 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
       <div className="page-stack" style={{ gap: 16 }}>
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
-            <span className="display">LESSON LOOP</span>
+            <span className="display">课程学习</span>
             <span className={`badge ${feedback.tone === "success" ? "success" : feedback.tone === "danger" ? "danger" : ""}`.trim()}>
-              {phase === "preview"
-                ? "READY"
-                : phase === "study"
-                  ? "LEARNING"
-                  : phase === "daily-check"
-                    ? "DAILY CHECK"
-                    : "SUMMARY"}
+              {lessonPhaseLabelMap[phase]}
             </span>
           </div>
           <div className="stat-grid">
@@ -699,13 +712,13 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
             <div className="stat-box">
               <span className="stat-label">当前阶段</span>
               <strong className="stat-value" style={{ fontSize: "1rem" }}>
-                {phase === "study" ? `STEP ${activeStep}` : phase.toUpperCase()}
+                {phase === "study" ? `第${activeStep}步` : lessonPhaseLabelMap[phase]}
               </strong>
             </div>
             <div className="stat-box">
               <span className="stat-label">小课状态</span>
               <strong className="stat-value" style={{ fontSize: "1rem" }}>
-                {lessonProgress.status}
+                {lessonStatusLabelMap[lessonProgress.status]}
               </strong>
             </div>
           </div>
@@ -718,10 +731,10 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
         {phase === "preview" ? (
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="placeholder-note">
-              This lesson enforces the full sequence: listen, speak, read, write, then verify. After every card clears Step 5, Daily Check starts automatically.
+              本课按听、说、读、写、验证五步顺序推进。全部卡片完成第五步后，自动进入每日检验。
             </div>
             <div className="placeholder-note" style={{ display: "none" }}>
-              这课会严格走 `听 → 说 → 读 → 写 → 验证`，全部卡片完成后自动进入 Daily Check。
+              这课会严格走 `听 → 说 → 读 → 写 → 验证`，全部卡片完成后自动进入每日检验。
             </div>
             <div className="split-actions">
               <PixelButton
@@ -729,14 +742,14 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                   startLesson();
                   setFeedback({
                     tone: "neutral",
-                    message: "Step 1 starts with audio only. Listen first before revealing Japanese."
+                    message: "第一步只听音，先听再看日文。"
                   });
                 }}
               >
-                START LESSON
+                开始课程
               </PixelButton>
               <PixelButton variant="ghost" onClick={() => playJapaneseSequence(lesson.cards[0].turns.map((turn) => turn.ja))}>
-                PLAY FIRST SAMPLE
+                播放示例
               </PixelButton>
             </div>
           </div>
@@ -744,13 +757,13 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
 
         {phase === "study" && currentCard ? (
           <div className="page-stack" style={{ gap: 14 }}>
-            <div className="step-strip">
+                <div className="step-strip">
               {[1, 2, 3, 4, 5].map((step) => (
                 <div
                   key={step}
                   className={`step-pill ${activeStep === step ? "active" : ""} ${activeStep > step || (step === 5 && currentItem.stepState.verifyCompletedAt) ? "done" : ""}`.trim()}
                 >
-                  STEP {step}
+                  第{step}步
                 </div>
               ))}
             </div>
@@ -770,7 +783,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 onClick={toggleCurrentFavorite}
                 aria-pressed={currentFavorited}
               >
-                {currentFavorited ? "★ FAVORITED" : "☆ SAVE TO DEPARTURE"}
+                {currentFavorited ? "★ 已收藏" : "☆ 加入出发"}
               </PixelButton>
             </div>
 
@@ -779,7 +792,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 <div className="turn-list">
                   {currentCard.turns.map((turn) => (
                     <div key={turn.id} className="turn">
-                      <div className="turn-role">{turn.role === "learner" ? "YOU SAY / 中文提示" : "PARTNER / 中文提示"}</div>
+                      <div className="turn-role">{turn.role === "learner" ? "你说 / 中文提示" : "对方 / 中文提示"}</div>
                       <div className="turn-zh">{turn.zh}</div>
                     </div>
                   ))}
@@ -789,13 +802,13 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                     const played = playJapaneseSequence(currentCard.turns.map((turn) => turn.ja));
                     setFeedback({
                       tone: played ? "neutral" : "danger",
-                      message: played ? "示例音频已播放，可以重复听。" : "当前设备不支持 TTS 播放。"
+                      message: played ? "示例音频已播放，可以重复听。" : "当前设备不支持语音播放。"
                     });
                   }}>
-                    PLAY AUDIO
+                    播放音频
                   </PixelButton>
                   <PixelButton variant="secondary" onClick={() => applyStepTransition(1, true)}>
-                    NEXT: SPEAK
+                    下一步：跟读
                   </PixelButton>
                 </div>
               </div>
@@ -806,7 +819,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 <div className="turn-list">
                   {currentCard.turns.map((turn) => (
                     <div key={turn.id} className="turn">
-                      <div className="turn-role">{turn.role === "learner" ? "YOU SAY / かな" : "PARTNER / かな"}</div>
+                      <div className="turn-role">{turn.role === "learner" ? "你说 / 假名" : "对方 / 假名"}</div>
                       <div className="turn-kana">{turn.kana}</div>
                     </div>
                   ))}
@@ -814,37 +827,37 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 <div className="summary-box">
                   <div className="meta-row">
                     <span className={`badge ${speechProxyReady ? "success" : ""}`.trim()}>
-                      {speechProxyReady ? "AZURE READY" : "MANUAL FALLBACK"}
+                      {speechProxyReady ? "发音评分就绪" : "手动确认模式"}
                     </span>
-                    <span className="badge">Pass Score: {SPEECH_PASS_SCORE}</span>
+                    <span className="badge">通过分数：{SPEECH_PASS_SCORE}</span>
                     {speechProxyStatus?.region ? (
                       <span className="badge">{speechProxyStatus.region}</span>
                     ) : null}
                   </div>
                   <p className="muted" style={{ marginBottom: 0 }}>
-                    Azure scoring runs first when the Edge proxy is configured. If it is unavailable, playback plus manual confirmation still unlocks the next step.
+                    优先使用 Azure 发音评分；如果代理不可用，仍可通过回放加手动确认进入下一步。
                   </p>
                 </div>
                 <div className="placeholder-note" style={{ display: "none" }}>
-                  Azure 发音评分要到 Phase 5 才接入；当前走“录音回放 + 手动确认”降级路径。
+                  Azure 发音评分通过代理接入；当前仍保留“录音回放 + 手动确认”降级路径。
                 </div>
                 <div className="split-actions">
                   {recordStatus !== "recording" ? (
                     <PixelButton onClick={() => void startRecording()}>
-                      {canRecord ? "START RECORD" : "MANUAL ONLY"}
+                      {canRecord ? "开始录音" : "仅手动确认"}
                     </PixelButton>
                   ) : (
-                    <PixelButton onClick={stopRecording}>STOP RECORD</PixelButton>
+                    <PixelButton onClick={stopRecording}>停止录音</PixelButton>
                   )}
                   <PixelButton variant="ghost" onClick={playBackRecording}>
-                    PLAY BACK
+                    回放
                   </PixelButton>
                   <PixelButton
                     variant="secondary"
                     onClick={() => void scoreSpeechWithAzure()}
                     aria-disabled={!recordingBlob || isScoringSpeech || !speechProxyReady}
                   >
-                    {isScoringSpeech ? "SCORING..." : "SCORE WITH AZURE"}
+                    {isScoringSpeech ? "评分中..." : "Azure 评分"}
                   </PixelButton>
                   <PixelButton variant="secondary" style={{ display: "none" }} onClick={() => {
                     applyStepTransition(2, true);
@@ -854,40 +867,40 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                       message: "说这一步已手动确认通过，进入阅读。"
                     });
                   }}>
-                    MANUAL PASS
+                    手动通过
                   </PixelButton>
                 </div>
                 <div className="split-actions">
                   <PixelButton variant="secondary" onClick={passSpeechManually}>
-                    MANUAL PASS
+                    手动通过
                   </PixelButton>
                 </div>
                 {speechResult ? (
                   <div className="page-stack" style={{ gap: 12 }}>
                     <div className="stat-grid">
                       <div className="stat-box">
-                        <span className="stat-label">Pronunciation</span>
+                        <span className="stat-label">发音</span>
                         <strong className="stat-value">
                           {speechResult.scores.pronunciation ?? speechResult.scores.accuracy ?? "--"}
                         </strong>
                       </div>
                       <div className="stat-box">
-                        <span className="stat-label">Accuracy</span>
+                        <span className="stat-label">准确度</span>
                         <strong className="stat-value">
                           {speechResult.scores.accuracy ?? "--"}
                         </strong>
                       </div>
                       <div className="stat-box">
-                        <span className="stat-label">Fluency</span>
+                        <span className="stat-label">流利度</span>
                         <strong className="stat-value">
                           {speechResult.scores.fluency ?? "--"}
                         </strong>
                       </div>
                     </div>
                     <div className="turn">
-                      <div className="turn-role">AZURE RESULT</div>
+                      <div className="turn-role">评分结果</div>
                       <div className="turn-zh">
-                        Recognized: {speechResult.recognizedText || "No text returned"}
+                        识别内容：{speechResult.recognizedText || "无识别内容"}
                       </div>
                       <div className="diff-row">
                         {speechResult.words.map((word, index) => (
@@ -915,7 +928,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 <div className="turn-list">
                   {currentCard.turns.map((turn) => (
                     <div key={turn.id} className="turn">
-                      <div className="turn-role">{turn.role === "learner" ? "YOU SAY" : "PARTNER SAYS"}</div>
+                      <div className="turn-role">{turn.role === "learner" ? "你说" : "对方说"}</div>
                       <div className="turn-ja">
                         <RubyText tokens={turn.ruby} />
                       </div>
@@ -929,7 +942,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 ) : null}
                 <div className="split-actions">
                   <PixelButton variant="secondary" onClick={() => applyStepTransition(3, true)}>
-                    NEXT: WRITE
+                    下一步：书写
                   </PixelButton>
                 </div>
               </div>
@@ -939,7 +952,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
               <div className="page-stack" style={{ gap: 12 }}>
                 <div className="turn">
                   <div className="turn-role">
-                    {activeStep === 4 ? "STEP 4 / 写" : "STEP 5 / 验证"}
+                    {activeStep === 4 ? "第4步 / 写" : "第5步 / 验证"}
                   </div>
                   <div className="turn-zh">{currentCard.turns[0].zh}</div>
                   {activeStep === 4 && writeHint ? (
@@ -948,9 +961,9 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 </div>
                 <div className="input-lab">
                   <textarea
-                    aria-label={activeStep === 4 ? "Write answer" : "Verify answer"}
+                    aria-label={activeStep === 4 ? "书写输入框" : "验证输入框"}
                     className="pixel-textarea"
-                    placeholder="ここに日本語を入力してください"
+                    placeholder="在此输入日文"
                     {...input.bind}
                   />
                 </div>
@@ -968,7 +981,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 ) : null}
                 <div className="split-actions">
                   <PixelButton onClick={() => submitWrite(activeStep as 4 | 5)}>
-                    {activeStep === 4 ? "CHECK WRITE" : "VERIFY"}
+                    {activeStep === 4 ? "检查书写" : "验证答案"}
                   </PixelButton>
                 </div>
               </div>
@@ -980,9 +993,9 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
           <div className="page-stack" style={{ gap: 14 }}>
             <div className="meta-row">
               <span className="badge">
-                QUESTION {dailyIndex + 1} / {dailyQuestions.length}
+                题目 {dailyIndex + 1} / {dailyQuestions.length}
               </span>
-              <span className="badge">{currentQuestion.type}</span>
+              <span className="badge">{dailyQuestionTypeLabelMap[currentQuestion.type]}</span>
             </div>
 
             {currentQuestion.type === "listen-choice" ? (
@@ -993,7 +1006,7 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 </div>
                 <div className="split-actions">
                   <PixelButton onClick={() => playJapaneseSequence([currentQuestion.audioText])}>
-                    PLAY PROMPT
+                    播放题目
                   </PixelButton>
                 </div>
                 <div className="choice-grid">
@@ -1021,13 +1034,13 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                   ) : null}
                 </div>
                 <textarea
-                  aria-label="Daily check translate input"
+                  aria-label="每日检验翻译输入框"
                   className="pixel-textarea"
-                  placeholder="ここに日本語を入力してください"
+                  placeholder="在此输入日文"
                   {...input.bind}
                 />
                 <div className="split-actions">
-                  <PixelButton onClick={() => submitDailyQuestion()}>SUBMIT</PixelButton>
+                  <PixelButton onClick={() => submitDailyQuestion()}>提交</PixelButton>
                 </div>
               </div>
             ) : null}
@@ -1041,13 +1054,13 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                   <div className="turn-zh">{currentQuestion.promptZh}</div>
                 </div>
                 <textarea
-                  aria-label="Daily check reply input"
+                  aria-label="每日检验对话输入框"
                   className="pixel-textarea"
-                  placeholder="次の一文を入力してください"
+                  placeholder="在此输入日文"
                   {...input.bind}
                 />
                 <div className="split-actions">
-                  <PixelButton onClick={() => submitDailyQuestion()}>SUBMIT</PixelButton>
+                  <PixelButton onClick={() => submitDailyQuestion()}>提交</PixelButton>
                 </div>
               </div>
             ) : null}
@@ -1058,14 +1071,14 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="summary-box">
               <h2 className="section-title" style={{ marginTop: 0 }}>
-                Lesson Summary
+                课程总结
               </h2>
               <p className="muted" style={{ margin: 0 }}>
                 {latestDailyScore === null
-                  ? "本课五步已完成，等待 Daily Check。"
+                  ? "本课五步已完成，等待每日检验。"
                   : dailyPassed
-                    ? `Daily Check ${latestDailyScore}% 通过，已进入已掌握。`
-                    : `Daily Check ${latestDailyScore}% 未通过，当前为待复习状态。`}
+                    ? `每日检验 ${latestDailyScore}% 通过，已进入已掌握。`
+                    : `每日检验 ${latestDailyScore}% 未通过，当前为待复习状态。`}
               </p>
             </div>
             <div className="stat-grid">
@@ -1074,24 +1087,24 @@ export function LessonSession({ sceneId, lesson }: LessonSessionProps) {
                 <strong className="stat-value">{lesson.cards.length}</strong>
               </div>
               <div className="stat-box">
-                <span className="stat-label">Daily Check</span>
+                <span className="stat-label">每日检验</span>
                 <strong className="stat-value">
-                  {latestDailyScore === null ? "Pending" : `${latestDailyScore}%`}
+                  {latestDailyScore === null ? "待检验" : `${latestDailyScore}%`}
                 </strong>
               </div>
               <div className="stat-box">
                 <span className="stat-label">掌握状态</span>
                 <strong className="stat-value" style={{ fontSize: "1rem" }}>
-                  {dailyPassed ? "mastered" : "studied"}
+                  {dailyPassed ? "已掌握" : "待复习"}
                 </strong>
               </div>
             </div>
             <div className="split-actions">
               {!dailyPassed ? (
-                <PixelButton onClick={restartDailyCheck}>RETAKE DAILY CHECK</PixelButton>
+                <PixelButton onClick={restartDailyCheck}>重做每日检验</PixelButton>
               ) : null}
               <PixelButton href={`/scene/${sceneId}`} variant="secondary">
-                BACK TO SCENE
+                返回场景
               </PixelButton>
             </div>
           </div>

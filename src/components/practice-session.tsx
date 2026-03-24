@@ -34,6 +34,17 @@ interface ResolvedPrompt {
 }
 
 const quantityOptions = [5, 10, 20] as const;
+const sceneNameMap: Record<SceneId, string> = {
+  airport: "机场",
+  hotel: "酒店",
+  izakaya: "居酒屋",
+  shopping: "购物"
+};
+const promptLabelMap: Record<string, string> = {
+  "YOU SAY": "你说",
+  "PARTNER SAYS": "对方说",
+  "WORD BANK": "单词库"
+};
 
 export function PracticeSession({
   scenes,
@@ -52,7 +63,7 @@ export function PracticeSession({
   const [index, setIndex] = useState(0);
   const [resolvedPrompt, setResolvedPrompt] = useState<ResolvedPrompt | null>(null);
   const [feedback, setFeedback] = useState(
-    "Practice only pulls from verified items and never changes SRS intervals."
+    "仅练习已完成第五步的句子，严格匹配日文，答错自动进入重练轮，不影响SRS间隔。"
   );
   const [seedCount, setSeedCount] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
@@ -62,7 +73,7 @@ export function PracticeSession({
   const sceneLabelMap = useMemo(
     () =>
       Object.fromEntries(
-        scenes.map((scene) => [scene.id, `${scene.icon} ${scene.shortLabel}`])
+        scenes.map((scene) => [scene.id, `${scene.icon} ${sceneNameMap[scene.id]}`])
       ) as Record<SceneId, string>,
     [scenes]
   );
@@ -138,8 +149,8 @@ export function PracticeSession({
     if (nextQueue.length === 0) {
       setFeedback(
         practiceType === "word"
-          ? "No learned word cards are available yet. Finish word lessons first, or switch to sentence mode."
-          : "No verified items are available yet. Finish a lesson through STEP 5 first."
+          ? "暂无可练习的单词，请先完成相关课程，或切换到句子模式。"
+          : "暂无已验证的句子，请先完成课程第五步。"
       );
       return;
     }
@@ -159,7 +170,7 @@ export function PracticeSession({
     setSeedCount(nextQueue.length);
     setAttemptCount(0);
     setMistakeCount(0);
-    setFeedback("Chinese prompt only. Type the full Japanese answer exactly.");
+    setFeedback("仅中文提示，请完整输入日文答案。");
     input.reset();
   }
 
@@ -211,8 +222,8 @@ export function PracticeSession({
 
     setFeedback(
       passed
-        ? "Exact match. Move to the next prompt."
-        : "Not exact. This prompt has been added to the retry round."
+        ? "完全匹配，进入下一题。"
+        : "不完全匹配，已加入重练轮。"
     );
   }
 
@@ -228,7 +239,7 @@ export function PracticeSession({
 
     if (!isLastPrompt) {
       setIndex((current) => current + 1);
-      setFeedback("Next prompt ready. Keep the answer exact.");
+      setFeedback("下一题已准备好，请继续完整输入。");
       return;
     }
 
@@ -237,12 +248,12 @@ export function PracticeSession({
       setRoundMistakes([]);
       setRound((current) => current + 1);
       setIndex(0);
-      setFeedback("Retry round started. Only previous mistakes remain.");
+      setFeedback("重练轮开始，仅包含此前答错的题。");
       return;
     }
 
     setPhase("done");
-    setFeedback("Practice clear. Every queued prompt now matches exactly.");
+    setFeedback("练习完成，所有题目已全部答对。");
   }
 
   if (phase === "done") {
@@ -251,35 +262,35 @@ export function PracticeSession({
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
-              <span className="display">PRACTICE CLEAR</span>
-              <span className="badge success">ALL EXACT</span>
+              <span className="display">练习完成</span>
+              <span className="badge success">全部答对</span>
             </div>
             <p className="muted" style={{ margin: 0 }}>
-              Wrong answers looped until clean, and your SRS intervals were left untouched.
+              答错的句子循环重练直到全部正确，SRS间隔未受影响。
             </p>
           </div>
 
           <div className="stat-grid">
             <div className="stat-box">
-              <span className="stat-label">Initial Queue</span>
+              <span className="stat-label">初始题数</span>
               <strong className="stat-value">{seedCount}</strong>
             </div>
             <div className="stat-box">
-              <span className="stat-label">Total Attempts</span>
+              <span className="stat-label">总尝试次数</span>
               <strong className="stat-value">{attemptCount}</strong>
             </div>
             <div className="stat-box">
-              <span className="stat-label">Mistakes Cleared</span>
+              <span className="stat-label">已纠正错误</span>
               <strong className="stat-value">{mistakeCount}</strong>
             </div>
           </div>
 
           <div className="split-actions">
-            <PixelButton onClick={() => resetSession("Setup reset. You can launch another practice run.")}>
-              PRACTICE AGAIN
+            <PixelButton onClick={() => resetSession("已重置，可开始新一轮练习。")}>
+              再练一轮
             </PixelButton>
             <PixelButton href="/" variant="secondary">
-              BACK HOME
+              返回首页
             </PixelButton>
           </div>
         </div>
@@ -292,21 +303,21 @@ export function PracticeSession({
     const primaryActionLabel =
       index === queue.length - 1
         ? roundMistakes.length > 0
-          ? `START ROUND ${round + 1}`
-          : "FINISH PRACTICE"
-        : "NEXT PROMPT";
+          ? `开始第 ${round + 1} 轮`
+          : "结束练习"
+        : "下一题";
 
     return (
       <PixelCard>
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
-              <span className="display">PRACTICE MODE</span>
-              <span className="badge success">ROUND {round}</span>
+              <span className="display">练习模式</span>
+              <span className="badge success">第 {round} 轮</span>
             </div>
             <div className="meta-row" style={{ justifyContent: "space-between" }}>
               <span className="badge">
-                Prompt {index + 1} / {queue.length}
+                题目 {index + 1} / {queue.length}
               </span>
               <ProgressBlocks current={roundProgressCurrent} total={roundProgressTotal} />
             </div>
@@ -318,28 +329,28 @@ export function PracticeSession({
           <div className="meta-row">
             <span className="badge">{sceneLabel}</span>
             <span className="badge">
-              {currentPrompt.contentType === "phrase" ? "SENTENCE" : "WORD"}
+              {currentPrompt.contentType === "phrase" ? "句子" : "单词"}
             </span>
-            <span className="badge">{currentPrompt.label}</span>
-            <span className="badge">{currentPrompt.lessonId ?? "SCENE BANK"}</span>
+            <span className="badge">{promptLabelMap[currentPrompt.label] ?? currentPrompt.label}</span>
+            <span className="badge">{currentPrompt.lessonId ?? "场景词库"}</span>
           </div>
 
           <div className="turn">
-            <div className="turn-role">ZH PROMPT</div>
+            <div className="turn-role">中文提示</div>
             <div className="turn-zh">{currentPrompt.promptZh}</div>
           </div>
 
           <textarea
-            aria-label="Practice input"
+            aria-label="练习输入框"
             className="pixel-textarea"
-            placeholder="Type the full Japanese answer here"
+            placeholder="在此输入日文"
             {...input.bind}
           />
 
           {resolvedPrompt ? (
             <div className="page-stack" style={{ gap: 12 }}>
               <div className="turn">
-                <div className="turn-role">ANSWER</div>
+                <div className="turn-role">答案</div>
                 <div className="turn-ja">
                   <RubyText tokens={currentPrompt.ruby} />
                 </div>
@@ -348,7 +359,7 @@ export function PracticeSession({
 
               <div className="meta-row">
                 <span className={`badge ${resolvedPrompt.passed ? "success" : "danger"}`.trim()}>
-                  {resolvedPrompt.passed ? "EXACT MATCH" : "RETRY LATER"}
+                  {resolvedPrompt.passed ? "完全匹配" : "稍后重试"}
                 </span>
               </div>
 
@@ -370,9 +381,9 @@ export function PracticeSession({
             </div>
           ) : (
             <div className="split-actions">
-              <PixelButton onClick={resolvePrompt}>SUBMIT EXACT MATCH</PixelButton>
+              <PixelButton onClick={resolvePrompt}>提交答案</PixelButton>
               <PixelButton variant="ghost" onClick={input.reset}>
-                CLEAR INPUT
+                清空
               </PixelButton>
             </div>
           )}
@@ -386,25 +397,25 @@ export function PracticeSession({
       <div className="page-stack">
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
-            <span className="display">PRACTICE MODE</span>
-            <span className="badge success">READY</span>
+            <span className="display">练习模式</span>
+            <span className="badge success">待开始</span>
           </div>
           <p className="muted" style={{ margin: 0 }}>
-            Build output speed with Chinese prompts, strict exact-match checking, and automatic retry rounds.
+            用中文提示练习日文输出，严格匹配，答错自动重练。
           </p>
         </div>
 
         <div className="page-stack" style={{ gap: 16 }}>
           <div className="field-stack">
-            <h2 className="section-title">1. Scope</h2>
+            <h2 className="section-title">1. 范围</h2>
             <div className="choice-grid option-grid">
               <button
                 type="button"
                 className={`choice-button ${scope === "all" ? "active" : ""}`.trim()}
                 onClick={() => setScope("all")}
               >
-                <strong>ALL</strong>
-                <div className="muted">All learned scenes</div>
+                <strong>全部</strong>
+                <div className="muted">全部已学场景</div>
               </button>
               {scenes.map((scene) => (
                 <button
@@ -414,7 +425,7 @@ export function PracticeSession({
                   onClick={() => setScope(scene.id)}
                 >
                   <strong>
-                    {scene.icon} {scene.shortLabel}
+                    {scene.icon} {sceneNameMap[scene.id]}
                   </strong>
                   <div className="muted">{scene.code}</div>
                 </button>
@@ -423,37 +434,37 @@ export function PracticeSession({
           </div>
 
           <div className="field-stack">
-            <h2 className="section-title">2. Prompt Type</h2>
+            <h2 className="section-title">2. 题型</h2>
             <div className="choice-grid option-grid">
               <button
                 type="button"
                 className={`choice-button ${practiceType === "sentence" ? "active" : ""}`.trim()}
                 onClick={() => setPracticeType("sentence")}
               >
-                <strong>Sentence</strong>
-                <div className="muted">{sentencePool.length} available now</div>
+                <strong>句子</strong>
+                <div className="muted">{sentencePool.length} 题可用</div>
               </button>
               <button
                 type="button"
                 className={`choice-button ${practiceType === "word" ? "active" : ""}`.trim()}
                 onClick={() => setPracticeType("word")}
               >
-                <strong>Word</strong>
-                <div className="muted">{wordPool.length} available now</div>
+                <strong>单词</strong>
+                <div className="muted">{wordPool.length} 题可用</div>
               </button>
               <button
                 type="button"
                 className={`choice-button ${practiceType === "mixed" ? "active" : ""}`.trim()}
                 onClick={() => setPracticeType("mixed")}
               >
-                <strong>Mixed</strong>
-                <div className="muted">{mixedPool.length} available now</div>
+                <strong>混合</strong>
+                <div className="muted">{mixedPool.length} 题可用</div>
               </button>
             </div>
           </div>
 
           <div className="field-stack">
-            <h2 className="section-title">3. Queue Size</h2>
+            <h2 className="section-title">3. 题目数量</h2>
             <div className="choice-grid option-grid">
               {quantityOptions.map((value) => (
                 <button
@@ -463,7 +474,7 @@ export function PracticeSession({
                   onClick={() => setQuantityMode(value)}
                 >
                   <strong>{value}</strong>
-                  <div className="muted">Exact prompts</div>
+                  <div className="muted">固定数量</div>
                 </button>
               ))}
               <button
@@ -471,8 +482,8 @@ export function PracticeSession({
                 className={`choice-button ${quantityMode === "custom" ? "active" : ""}`.trim()}
                 onClick={() => setQuantityMode("custom")}
               >
-                <strong>Custom</strong>
-                <div className="muted">Choose any size</div>
+                <strong>自定义</strong>
+                <div className="muted">自选数量</div>
               </button>
             </div>
             {quantityMode === "custom" ? (
@@ -490,33 +501,33 @@ export function PracticeSession({
 
         <div className="summary-box">
           <div className="meta-row">
-            <span className="badge">Available now: {availableCount}</span>
-            <span className="badge">Requested: {requestedCount}</span>
+            <span className="badge">当前可用：{availableCount}</span>
+            <span className="badge">已选：{requestedCount}</span>
           </div>
           <p className="muted" style={{ marginBottom: 0 }}>
             {feedback}
           </p>
           {practiceType !== "sentence" && wordPool.length === 0 ? (
             <p className="muted" style={{ marginBottom: 0 }}>
-              Word prompts will appear automatically once learned word review items are seeded into storage.
+              单词题会在 word review item 接入后自动出现。
             </p>
           ) : null}
         </div>
 
         <div className="split-actions">
           <PixelButton onClick={startPractice} aria-disabled={availableCount === 0}>
-            START PRACTICE
+            开始练习
           </PixelButton>
           {nextLesson ? (
             <PixelButton
               href={`/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`}
               variant="secondary"
             >
-              CONTINUE LESSON
+              继续课程
             </PixelButton>
           ) : (
             <PixelButton href="/" variant="secondary">
-              BACK HOME
+              返回首页
             </PixelButton>
           )}
         </div>
