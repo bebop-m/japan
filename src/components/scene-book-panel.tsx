@@ -51,71 +51,69 @@ export function SceneBookPanel({ scene }: SceneBookPanelProps) {
           </div>
         </div>
 
-        <div className="summary-box">
-          <div className="page-stack" style={{ gap: 12 }}>
-            <div className="meta-row">
-              <span className="badge">当前句本：{scene.label}</span>
+        <div className="page-stack" style={{ gap: 12 }}>
+          <div className="stat-grid">
+            <div className="stat-box">
+              <span className="stat-label">待复习</span>
+              <strong className="stat-value">{dueCount}</strong>
             </div>
-            <div className="stat-grid">
-              <div className="stat-box">
-                <span className="stat-label">待复习</span>
-                <strong className="stat-value">{dueCount}</strong>
-              </div>
-              <div className="stat-box">
-                <span className="stat-label">可学</span>
-                <strong className="stat-value">{selectedAvailableCount}</strong>
-              </div>
-              <div className="stat-box">
-                <span className="stat-label">已学</span>
-                <strong className="stat-value">
-                  {sentenceProgress.current} / {sentenceProgress.total}
-                </strong>
-              </div>
+            <div className="stat-box">
+              <span className="stat-label">可学</span>
+              <strong className="stat-value">{selectedAvailableCount}</strong>
             </div>
-            <div className="field-stack">
-              <div className="choice-grid option-grid">
-                {(Object.keys(typeLabelMap) as BookStudyType[]).map((type) => {
-                  const availableCount =
-                    type === "sentence"
-                      ? sentenceAvailableCount
-                      : type === "word"
-                        ? wordAvailableCount
-                        : mixedAvailableCount;
-
-                  return (
-                    <button
-                      key={type}
-                      type="button"
-                      className={`choice-button ${bookType === type ? "active" : ""}`.trim()}
-                      onClick={() => setBookType(type)}
-                    >
-                      <strong>{typeLabelMap[type]}</strong>
-                      <div className="muted">{availableCount}</div>
-                    </button>
-                  );
-                })}
-              </div>
-              <div className="choice-grid option-grid">
-                {quantityOptions.map((value) => (
-                  <button
-                    key={value}
-                    type="button"
-                    className={`choice-button ${count === value ? "active" : ""}`.trim()}
-                    onClick={() => setCount(value)}
-                  >
-                    <strong>{value}</strong>
-                  </button>
-                ))}
-              </div>
+            <div className="stat-box">
+              <span className="stat-label">已学</span>
+              <strong className="stat-value">
+                {sentenceProgress.current} / {sentenceProgress.total}
+              </strong>
             </div>
-            <PixelButton
-              href={startHref}
-              aria-disabled={selectedAvailableCount === 0}
-              style={{ width: "100%" }}
-            >
-              开始本轮
-            </PixelButton>
           </div>
+
+          <div className="field-stack">
+            <div className="choice-grid option-grid">
+              {(Object.keys(typeLabelMap) as BookStudyType[]).map((type) => {
+                const availableCount =
+                  type === "sentence"
+                    ? sentenceAvailableCount
+                    : type === "word"
+                      ? wordAvailableCount
+                      : mixedAvailableCount;
+
+                return (
+                  <button
+                    key={type}
+                    type="button"
+                    className={`choice-button ${bookType === type ? "active" : ""}`.trim()}
+                    onClick={() => setBookType(type)}
+                  >
+                    <strong>{typeLabelMap[type]}</strong>
+                    <div className="muted">{availableCount}</div>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="choice-grid option-grid">
+              {quantityOptions.map((value) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={`choice-button ${count === value ? "active" : ""}`.trim()}
+                  onClick={() => setCount(value)}
+                >
+                  <strong>{value}</strong>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <PixelButton
+            href={startHref}
+            aria-disabled={selectedAvailableCount === 0}
+            style={{ width: "100%" }}
+          >
+            开始本轮
+          </PixelButton>
         </div>
 
         <div className="split-actions">

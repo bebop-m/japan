@@ -46,7 +46,6 @@ export default function LessonPage({ params }: LessonPageProps) {
       <PixelHeading
         kicker={`${sceneNameMap[sceneId]} / ${lesson.code}`}
         title={lesson.title}
-        description={lesson.overview}
       />
 
       <PixelCard soft>

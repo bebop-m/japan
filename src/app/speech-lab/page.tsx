@@ -9,7 +9,6 @@ export default function SpeechLabPage() {
       <PixelHeading
         kicker="iOS 发音测试台"
         title="语音路径测试"
-        description="验证麦克风权限、录音格式、Azure评分在生产前正常工作。"
       />
 
       <div className="two-column">

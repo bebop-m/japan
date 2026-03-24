@@ -7,7 +7,6 @@ export default function OfflinePage() {
       <PixelHeading
         kicker="Offline Fallback"
         title="Network lost, shell kept."
-        description="PWA 已配置离线兜底页。正式阶段会在缓存策略稳定后继续补全细节。"
       />
       <PixelCard>
         <p className="muted" style={{ margin: 0 }}>

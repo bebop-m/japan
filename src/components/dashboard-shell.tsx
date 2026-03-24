@@ -2,7 +2,6 @@
 
 import { useMemo } from "react";
 import { PixelButton } from "@/components/pixel-button";
-import { PixelCard } from "@/components/pixel-card";
 import { getScene } from "@/lib/content";
 import {
   getCurrentBookSceneId,
@@ -39,18 +38,6 @@ interface DashboardAction {
   href: string;
   label: string;
   variant: "secondary" | "ghost";
-}
-
-function getToneBadgeClass(tone: "neutral" | "success" | "danger") {
-  if (tone === "success") {
-    return "badge success";
-  }
-
-  if (tone === "danger") {
-    return "badge danger";
-  }
-
-  return "badge";
 }
 
 function getCountdownLabel(countdown: ReturnType<typeof resolveDepartureCountdown>) {
@@ -103,7 +90,6 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
     departureReadyCount
   });
   const countdownLabel = getCountdownLabel(countdown);
-  const countdownBadgeClass = getToneBadgeClass(countdown.tone);
   const primaryAction = resolvePrimaryAction({
     countdown,
     dueReviewCount,
@@ -133,116 +119,51 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
 
   if (completion.isCurriculumComplete) {
     return (
-      <div className="page-stack">
-        <PixelCard>
-          <div className="hero">
-            <div className="hero-title">
-              <span className="display">NIHONGO.GO</span>
-            </div>
-            <div className="summary-box">
-              <div className="page-stack" style={{ gap: 12 }}>
-                <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
-                  <span className="badge success">全部通关</span>
-                </div>
-                <div className="stat-grid">
-                  <div className="stat-box">
-                    <span className="stat-label">场景</span>
-                    <strong className="stat-value">
-                      {completion.completedSceneCount} / {completion.totalSceneCount}
-                    </strong>
-                  </div>
-                  <div className="stat-box">
-                    <span className="stat-label">句本</span>
-                    <strong className="stat-value">
-                      {completion.completedBookCount} / {completion.totalBookCount}
-                    </strong>
-                  </div>
-                  <div className="stat-box">
-                    <span className="stat-label">已学</span>
-                    <strong className="stat-value">
-                      {masteredSentenceCount} / {totalReviewItems}
-                    </strong>
-                  </div>
-                </div>
-                <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
-                  <span className={countdownBadgeClass}>{countdownLabel}</span>
-                  <PixelButton href="/settings" variant="ghost">
-                    设置
-                  </PixelButton>
-                </div>
-                <PixelButton href={primaryAction.href} style={{ width: "100%" }}>
-                  {primaryAction.label}
-                </PixelButton>
-              </div>
-            </div>
-            {spotlightCount > 0 ? (
-              <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
-                <span className="badge danger">重点巩固 {spotlightCount}</span>
-                <PixelButton href="/review?focus=1" variant="secondary">
-                  回炉
-                </PixelButton>
-              </div>
-            ) : null}
-            <div className="split-actions">
-              {actionButtons.map((action) => (
-                <PixelButton key={action.href} href={action.href} variant={action.variant}>
-                  {action.label}
-                </PixelButton>
-              ))}
-            </div>
-          </div>
-        </PixelCard>
-      </div>
-    );
-  }
-
-  return (
-    <div className="page-stack">
-      <PixelCard>
-        <div className="hero">
+      <div className="gameboy-layout">
+        <div className="gameboy-screen">
           <div className="hero-title">
             <span className="display">NIHONGO.GO</span>
           </div>
-          <div className="summary-box">
-            <div className="page-stack" style={{ gap: 12 }}>
-              <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
-                <span className="badge">当前句本：{currentBookLabel}</span>
-              </div>
-              <div className="stat-grid">
-                <div className="stat-box">
-                  <span className="stat-label">待复习</span>
-                  <strong className="stat-value">{dueReviewCount}</strong>
-                </div>
-                <div className="stat-box">
-                  <span className="stat-label">今日新句</span>
-                  <strong className="stat-value">{newSentenceCount}</strong>
-                </div>
-                <div className="stat-box">
-                  <span className="stat-label">已学</span>
-                  <strong className="stat-value">
-                    {masteredSentenceCount} / {totalReviewItems}
-                  </strong>
-                </div>
-              </div>
-              <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
-                <span className={countdownBadgeClass}>{countdownLabel}</span>
-                <PixelButton href="/settings" variant="ghost">
-                  设置
-                </PixelButton>
-              </div>
-              <PixelButton href={currentBookHref} style={{ width: "100%" }}>
-                {currentBookStarted ? "继续" : "开始"}
-              </PixelButton>
+
+          <div className="meta-row" style={{ alignItems: "center", gap: 12 }}>
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "0.95rem" }}>全部通关</span>
+            {spotlightCount > 0 ? (
+              <span className="badge danger">回炉 {spotlightCount}</span>
+            ) : null}
+          </div>
+
+          <div className="stat-grid">
+            <div className="stat-box">
+              <span className="stat-label">场景</span>
+              <strong className="stat-value">
+                {completion.completedSceneCount} / {completion.totalSceneCount}
+              </strong>
+            </div>
+            <div className="stat-box">
+              <span className="stat-label">句本</span>
+              <strong className="stat-value">
+                {completion.completedBookCount} / {completion.totalBookCount}
+              </strong>
+            </div>
+            <div className="stat-box">
+              <span className="stat-label">已学</span>
+              <strong className="stat-value">
+                {masteredSentenceCount} / {totalReviewItems}
+              </strong>
             </div>
           </div>
-          {spotlightCount > 0 ? (
-            <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
-              <span className="badge danger">重点巩固 {spotlightCount}</span>
-              <PixelButton href="/review?focus=1" variant="secondary">
-                回炉
-              </PixelButton>
-            </div>
-          ) : null}
+
+          <div>
+            <PixelButton href="/settings" variant="ghost">
+              {countdownLabel}
+            </PixelButton>
+          </div>
+        </div>
+
+        <div className="gameboy-controls">
+          <PixelButton href={primaryAction.href} style={{ width: "100%" }}>
+            {primaryAction.label}
+          </PixelButton>
           <div className="split-actions">
             {actionButtons.map((action) => (
               <PixelButton key={action.href} href={action.href} variant={action.variant}>
@@ -251,7 +172,62 @@ export function DashboardShell({ scenes }: DashboardShellProps) {
             ))}
           </div>
         </div>
-      </PixelCard>
+      </div>
+    );
+  }
+
+  return (
+    <div className="gameboy-layout">
+      <div className="gameboy-screen">
+        <div className="hero-title">
+          <span className="display">NIHONGO.GO</span>
+        </div>
+
+        <div className="meta-row" style={{ alignItems: "center", gap: 12 }}>
+          <span style={{ fontFamily: "var(--font-body)", fontSize: "0.95rem" }}>
+            {currentBookLabel}
+          </span>
+          {spotlightCount > 0 ? (
+            <span className="badge danger">回炉 {spotlightCount}</span>
+          ) : null}
+        </div>
+
+        <div className="stat-grid">
+          <div className="stat-box">
+            <span className="stat-label">待复习</span>
+            <strong className="stat-value">{dueReviewCount}</strong>
+          </div>
+          <div className="stat-box">
+            <span className="stat-label">今日新句</span>
+            <strong className="stat-value">{newSentenceCount}</strong>
+          </div>
+          <div className="stat-box">
+            <span className="stat-label">已学</span>
+            <strong className="stat-value">
+              {masteredSentenceCount} / {totalReviewItems}
+            </strong>
+          </div>
+        </div>
+
+        <div>
+          <PixelButton href="/settings" variant="ghost">
+            {countdownLabel}
+          </PixelButton>
+        </div>
+      </div>
+
+      <div className="gameboy-controls">
+        <PixelButton href={currentBookHref} style={{ width: "100%" }}>
+          {currentBookStarted ? "继续" : "开始"}
+        </PixelButton>
+        <div className="split-actions">
+          {actionButtons.map((action) => (
+            <PixelButton key={action.href} href={action.href} variant={action.variant}>
+              {action.label}
+            </PixelButton>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
