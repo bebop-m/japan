@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Pixel-perfect Japanese travel phrase PWA.",
     start_url: "/",
     display: "standalone",
-    background_color: "#e8e4d0",
-    theme_color: "#e8e4d0",
+    background_color: "#9bbc0f",
+    theme_color: "#9bbc0f",
     orientation: "portrait",
     icons: [
       {
