@@ -29,8 +29,8 @@ export interface DepartureCountdownState {
 
 export interface HomeCurriculumCompletion {
   isCurriculumComplete: boolean;
-  completedLessonCount: number;
-  totalLessonCount: number;
+  completedBookCount: number;
+  totalBookCount: number;
   completedSceneCount: number;
   totalSceneCount: number;
 }
@@ -212,26 +212,21 @@ export function resolvePrimaryAction(input: {
 }
 
 export function resolveCurriculumCompletion(input: {
-  lessonProgress: AppStorageState["lessonProgress"];
-  scenes: Pick<SceneSummary, "id" | "lessonCount">[];
+  bookProgressByScene: AppStorageState["bookProgressByScene"];
+  scenes: Pick<SceneSummary, "id" | "sentenceCount">[];
 }): HomeCurriculumCompletion {
-  const lessons = Object.values(input.lessonProgress);
-  const totalLessonCount = input.scenes.reduce((total, scene) => total + scene.lessonCount, 0);
-  const completedLessonCount = lessons.filter((lesson) => lesson.status === "completed").length;
   const completedSceneCount = input.scenes.filter((scene) => {
-    const sceneLessons = lessons.filter((lesson) => lesson.sceneId === scene.id);
+    const progress = input.bookProgressByScene[scene.id];
 
-    return (
-      scene.lessonCount > 0 &&
-      sceneLessons.length >= scene.lessonCount &&
-      sceneLessons.every((lesson) => lesson.status === "completed")
-    );
+    return Boolean(progress && progress.currentIndex >= scene.sentenceCount);
   }).length;
+  const totalBookCount = input.scenes.length;
+  const completedBookCount = completedSceneCount;
 
   return {
-    isCurriculumComplete: totalLessonCount > 0 && completedLessonCount >= totalLessonCount,
-    completedLessonCount,
-    totalLessonCount,
+    isCurriculumComplete: totalBookCount > 0 && completedBookCount >= totalBookCount,
+    completedBookCount,
+    totalBookCount,
     completedSceneCount,
     totalSceneCount: input.scenes.length
   };

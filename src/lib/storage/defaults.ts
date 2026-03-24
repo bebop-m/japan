@@ -1,6 +1,7 @@
 import type { LessonDefinition, PhraseCard, SceneId, WordCard } from "@/lib/types/content";
 import type {
   AppStorageState,
+  BookProgress,
   LessonSeed,
   LessonProgress,
   ReviewSeed,
@@ -100,12 +101,25 @@ export function createLessonProgressFromSeed(seed: LessonSeed): LessonProgress {
   };
 }
 
+export function createBookProgress(sceneId: SceneId): BookProgress {
+  return {
+    sceneId,
+    currentIndex: 0,
+    currentWordIndex: 0,
+    currentMixedIndex: 0,
+    lastBatchType: "sentence",
+    lastBatchSize: 0,
+    updatedAt: null
+  };
+}
+
 export function createDefaultStorageState(): AppStorageState {
   return {
     version: STORAGE_VERSION,
     lastMigratedAt: new Date().toISOString(),
     reviewItems: {},
     lessonProgress: {},
+    bookProgressByScene: {},
     userSettings: {
       audioMode: "tts",
       speechScoringMode: "manual",

@@ -1,11 +1,14 @@
 import storageCatalog from "@/content/storage-catalog.json";
+import { syncBookProgressWithReviewItems } from "@/lib/books";
 import {
+  createBookProgress,
   createDefaultStorageState,
   createLessonProgressFromSeed,
   createDefaultReviewItemFromSeed
 } from "@/lib/storage/defaults";
 import type {
   AppStorageState,
+  BookProgress,
   LessonProgress,
   LessonSeed,
   ReviewItem,
@@ -24,6 +27,12 @@ function cloneReviewItem(item: ReviewItem): ReviewItem {
 }
 
 function cloneLessonProgress(progress: LessonProgress): LessonProgress {
+  return {
+    ...progress
+  };
+}
+
+function cloneBookProgress(progress: BookProgress): BookProgress {
   return {
     ...progress
   };
@@ -55,6 +64,9 @@ export function mergeCatalogIntoStorageState(state: AppStorageState): AppStorage
     ),
     lessonProgress: Object.fromEntries(
       Object.entries(state.lessonProgress).map(([key, value]) => [key, cloneLessonProgress(value)])
+    ),
+    bookProgressByScene: Object.fromEntries(
+      Object.entries(state.bookProgressByScene).map(([key, value]) => [key, cloneBookProgress(value)])
     )
   };
 
@@ -100,7 +112,13 @@ export function mergeCatalogIntoStorageState(state: AppStorageState): AppStorage
     };
   }
 
-  return next;
+  for (const reviewSeed of catalog.reviewSeeds) {
+    if (!next.bookProgressByScene[reviewSeed.sceneId]) {
+      next.bookProgressByScene[reviewSeed.sceneId] = createBookProgress(reviewSeed.sceneId);
+    }
+  }
+
+  return syncBookProgressWithReviewItems(next);
 }
 
 export function normalizeLessonUnlocks(

@@ -1,3 +1,4 @@
+import { syncBookProgressWithReviewItems } from "@/lib/books";
 import {
   createCatalogSeededStorageState,
   mergeCatalogIntoStorageState
@@ -5,7 +6,7 @@ import {
 import type { AppStorageState } from "@/lib/types/storage";
 import { STORAGE_KEY, STORAGE_VERSION } from "@/lib/types/storage";
 
-const LEGACY_STORAGE_KEYS = ["nihongo-go/storage/v1"] as const;
+const LEGACY_STORAGE_KEYS = ["nihongo-go/storage/v2", "nihongo-go/storage/v1"] as const;
 type StorageMigrationInput = Partial<Omit<AppStorageState, "version">> & {
   version?: number;
 };
@@ -84,6 +85,7 @@ export function migrateStorage(raw: unknown): AppStorageState | null {
 
   switch (parsed.version) {
     case 1:
+    case 2:
       return normalizeStoredState({
         ...parsed,
         version: STORAGE_VERSION,
@@ -101,12 +103,13 @@ export function migrateStorage(raw: unknown): AppStorageState | null {
 
 function normalizeStoredState(parsed: Partial<AppStorageState>): AppStorageState {
   const fallback = createCatalogSeededStorageState();
-
-  return {
+  const normalized: AppStorageState = {
     ...fallback,
     ...parsed,
+    lastMigratedAt: parsed.lastMigratedAt ?? fallback.lastMigratedAt,
     reviewItems: parsed.reviewItems ?? fallback.reviewItems,
     lessonProgress: parsed.lessonProgress ?? fallback.lessonProgress,
+    bookProgressByScene: parsed.bookProgressByScene ?? fallback.bookProgressByScene,
     userSettings: {
       ...fallback.userSettings,
       ...parsed.userSettings
@@ -120,6 +123,8 @@ function normalizeStoredState(parsed: Partial<AppStorageState>): AppStorageState
       ...parsed.session
     }
   };
+
+  return syncBookProgressWithReviewItems(normalized);
 }
 
 export function writeStorageState(state: AppStorageState): void {

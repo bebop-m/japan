@@ -523,10 +523,10 @@ export function PracticeSession({
           </PixelButton>
           {nextLesson ? (
             <PixelButton
-              href={`/scene/${nextLesson.sceneId}/lesson/${nextLesson.lessonId}`}
+              href={`/scene/${nextLesson.sceneId}`}
               variant="secondary"
             >
-              继续课程
+              继续句本
             </PixelButton>
           ) : (
             <PixelButton href="/" variant="secondary">

@@ -1,7 +1,7 @@
 import type { ContentType, SceneId } from "@/lib/types/content";
 
-export const STORAGE_VERSION = 2;
-export const STORAGE_KEY = "nihongo-go/storage/v2";
+export const STORAGE_VERSION = 3;
+export const STORAGE_KEY = "nihongo-go/storage/v3";
 
 export type ReviewStatus =
   | "unseen"
@@ -19,6 +19,8 @@ export type ReviewMode =
   | "srs"
   | "practice"
   | "departure";
+
+export type BookStudyType = "sentence" | "word" | "mixed";
 
 export type LessonStatus = "locked" | "available" | "in_progress" | "completed";
 
@@ -76,6 +78,16 @@ export interface LessonProgress {
   lastVisitedAt: string | null;
 }
 
+export interface BookProgress {
+  sceneId: SceneId;
+  currentIndex: number;
+  currentWordIndex: number;
+  currentMixedIndex: number;
+  lastBatchType: BookStudyType;
+  lastBatchSize: number;
+  updatedAt: string | null;
+}
+
 export interface UserSettings {
   audioMode: "tts" | "recorded";
   speechScoringMode: "azure" | "manual";
@@ -126,6 +138,7 @@ export interface AppStorageState {
   lastMigratedAt: string;
   reviewItems: Record<string, ReviewItem>;
   lessonProgress: Record<string, LessonProgress>;
+  bookProgressByScene: Partial<Record<SceneId, BookProgress>>;
   userSettings: UserSettings;
   speechLab: SpeechLabSnapshot;
   session: SessionSnapshot;

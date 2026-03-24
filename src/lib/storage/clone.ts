@@ -22,6 +22,14 @@ export function cloneStorageState(current: AppStorageState): AppStorageState {
         }
       ])
     ),
+    bookProgressByScene: Object.fromEntries(
+      Object.entries(current.bookProgressByScene).map(([key, progress]) => [
+        key,
+        {
+          ...progress
+        }
+      ])
+    ),
     userSettings: {
       ...current.userSettings
     },
