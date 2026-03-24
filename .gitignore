@@ -1,0 +1,11 @@
+.next
+node_modules
+out
+coverage
+public/sw.js
+public/workbox-*.js
+public/sw.js.map
+.DS_Store
+*.log
+*.tsbuildinfo
+vercel-debug.log

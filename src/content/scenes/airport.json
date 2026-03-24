@@ -1,0 +1,2931 @@
+{
+  "id": "airport",
+  "code": "S1",
+  "label": "AIRPORT",
+  "shortLabel": "AIRPORT",
+  "icon": "✈️",
+  "description": "从值机、托运到登机与入境，覆盖独旅第一天最容易紧张的机场口语。",
+  "lessonCount": 6,
+  "sentenceCount": 80,
+  "lessons": [
+    {
+      "id": "S1-L01",
+      "code": "L01",
+      "title": "办理值机",
+      "order": 1,
+      "overview": "先把值机柜台这几轮最常见问答练顺，机场开场就会松很多。",
+      "cards": [
+        {
+          "id": "S1-L01-001",
+          "sceneId": "airport",
+          "lessonId": "S1-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "值机",
+            "开场"
+          ],
+          "turns": [
+            {
+              "id": "S1-L01-001-T1",
+              "role": "learner",
+              "ja": "チェックインをお願いします。",
+              "kana": "チェックインをおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "チェックインを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "お願い",
+                  "reading": "おねがい"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我想办理值机。",
+              "audioKey": "s1-l01-001-t1"
+            },
+            {
+              "id": "S1-L01-001-T2",
+              "role": "partner",
+              "ja": "パスポートを見せてください。",
+              "kana": "パスポートをみせてください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "パスポートを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "見",
+                  "reading": "み"
+                },
+                {
+                  "type": "text",
+                  "text": "せてください。"
+                }
+              ],
+              "zh": "请出示护照。",
+              "audioKey": "s1-l01-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L01-002",
+          "sceneId": "airport",
+          "lessonId": "S1-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "值机",
+            "行李"
+          ],
+          "turns": [
+            {
+              "id": "S1-L01-002-T1",
+              "role": "learner",
+              "ja": "荷物を預けたいです。",
+              "kana": "にもつをあずけたいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "預",
+                  "reading": "あず"
+                },
+                {
+                  "type": "text",
+                  "text": "けたいです。"
+                }
+              ],
+              "zh": "我想托运行李。",
+              "audioKey": "s1-l01-002-t1"
+            },
+            {
+              "id": "S1-L01-002-T2",
+              "role": "partner",
+              "ja": "何個ありますか。",
+              "kana": "なんこありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "何個",
+                  "reading": "なんこ"
+                },
+                {
+                  "type": "text",
+                  "text": "ありますか。"
+                }
+              ],
+              "zh": "一共有几件？",
+              "audioKey": "s1-l01-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L01-003",
+          "sceneId": "airport",
+          "lessonId": "S1-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "座位",
+            "偏好"
+          ],
+          "turns": [
+            {
+              "id": "S1-L01-003-T1",
+              "role": "learner",
+              "ja": "窓側の席はありますか。",
+              "kana": "まどがわのせきはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "窓側",
+                  "reading": "まどがわ"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "席",
+                  "reading": "せき"
+                },
+                {
+                  "type": "text",
+                  "text": "はありますか。"
+                }
+              ],
+              "zh": "有靠窗座位吗？",
+              "audioKey": "s1-l01-003-t1"
+            },
+            {
+              "id": "S1-L01-003-T2",
+              "role": "partner",
+              "ja": "はい、一席ございます。",
+              "kana": "はい、いっせきございます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一席",
+                  "reading": "いっせき"
+                },
+                {
+                  "type": "text",
+                  "text": "ございます。"
+                }
+              ],
+              "zh": "有，还有一个。",
+              "audioKey": "s1-l01-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L01-004",
+          "sceneId": "airport",
+          "lessonId": "S1-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "座位",
+            "备用"
+          ],
+          "turns": [
+            {
+              "id": "S1-L01-004-T1",
+              "role": "learner",
+              "ja": "通路側でも大丈夫です。",
+              "kana": "つうろがわでもだいじょうぶです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "通路側",
+                  "reading": "つうろがわ"
+                },
+                {
+                  "type": "text",
+                  "text": "でも"
+                },
+                {
+                  "type": "ruby",
+                  "base": "大丈夫",
+                  "reading": "だいじょうぶ"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "靠过道也可以。",
+              "audioKey": "s1-l01-004-t1"
+            },
+            {
+              "id": "S1-L01-004-T2",
+              "role": "partner",
+              "ja": "では、こちらの席をご用意します。",
+              "kana": "では、こちらのせきをごよういします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "では、こちらの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "席",
+                  "reading": "せき"
+                },
+                {
+                  "type": "text",
+                  "text": "をご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "用意",
+                  "reading": "ようい"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "那我给您安排这个座位。",
+              "audioKey": "s1-l01-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L01-005",
+          "sceneId": "airport",
+          "lessonId": "S1-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "线上值机",
+            "确认"
+          ],
+          "turns": [
+            {
+              "id": "S1-L01-005-T1",
+              "role": "learner",
+              "ja": "オンラインチェックイン済みです。",
+              "kana": "オンラインチェックインずみです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "オンラインチェックイン"
+                },
+                {
+                  "type": "ruby",
+                  "base": "済",
+                  "reading": "ず"
+                },
+                {
+                  "type": "text",
+                  "text": "みです。"
+                }
+              ],
+              "zh": "我已经在线值机了。",
+              "audioKey": "s1-l01-005-t1"
+            },
+            {
+              "id": "S1-L01-005-T2",
+              "role": "partner",
+              "ja": "搭乗券はこちらです。",
+              "kana": "とうじょうけんはこちらです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "搭乗券",
+                  "reading": "とうじょうけん"
+                },
+                {
+                  "type": "text",
+                  "text": "はこちらです。"
+                }
+              ],
+              "zh": "这是您的登机牌。",
+              "audioKey": "s1-l01-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L01-006",
+          "sceneId": "airport",
+          "lessonId": "S1-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "航班",
+            "时间"
+          ],
+          "turns": [
+            {
+              "id": "S1-L01-006-T1",
+              "role": "learner",
+              "ja": "この便は定刻ですか。",
+              "kana": "このびんはていこくですか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "この"
+                },
+                {
+                  "type": "ruby",
+                  "base": "便",
+                  "reading": "びん"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "定刻",
+                  "reading": "ていこく"
+                },
+                {
+                  "type": "text",
+                  "text": "ですか。"
+                }
+              ],
+              "zh": "这班飞机准点吗？",
+              "audioKey": "s1-l01-006-t1"
+            },
+            {
+              "id": "S1-L01-006-T2",
+              "role": "partner",
+              "ja": "はい、予定通りです。",
+              "kana": "はい、よていどおりです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "予定通",
+                  "reading": "よていどお"
+                },
+                {
+                  "type": "text",
+                  "text": "りです。"
+                }
+              ],
+              "zh": "对，按计划起飞。",
+              "audioKey": "s1-l01-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L01-007",
+          "sceneId": "airport",
+          "lessonId": "S1-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "转机",
+            "联程"
+          ],
+          "turns": [
+            {
+              "id": "S1-L01-007-T1",
+              "role": "learner",
+              "ja": "乗り継ぎがあります。",
+              "kana": "のりつぎがあります。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "乗り継",
+                  "reading": "のりつ"
+                },
+                {
+                  "type": "text",
+                  "text": "ぎがあります。"
+                }
+              ],
+              "zh": "我后面还要转机。",
+              "audioKey": "s1-l01-007-t1"
+            },
+            {
+              "id": "S1-L01-007-T2",
+              "role": "partner",
+              "ja": "最終目的地までお預かりします。",
+              "kana": "さいしゅうもくてきちまでおあずかりします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "最終目的地",
+                  "reading": "さいしゅうもくてきち"
+                },
+                {
+                  "type": "text",
+                  "text": "までお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "預",
+                  "reading": "あず"
+                },
+                {
+                  "type": "text",
+                  "text": "かりします。"
+                }
+              ],
+              "zh": "我们会直接托运到最终目的地。",
+              "audioKey": "s1-l01-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S1-L02",
+      "code": "L02",
+      "title": "行李托运",
+      "order": 2,
+      "overview": "托运环节容易因为重量、液体和尺寸被追问，这一课把这些问法拆开。",
+      "cards": [
+        {
+          "id": "S1-L02-001",
+          "sceneId": "airport",
+          "lessonId": "S1-L02",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "托运",
+            "说明"
+          ],
+          "turns": [
+            {
+              "id": "S1-L02-001-T1",
+              "role": "learner",
+              "ja": "このスーツケースも預けます。",
+              "kana": "このスーツケースもあずけます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "このスーツケースも"
+                },
+                {
+                  "type": "ruby",
+                  "base": "預",
+                  "reading": "あず"
+                },
+                {
+                  "type": "text",
+                  "text": "けます。"
+                }
+              ],
+              "zh": "这个行李箱也要托运。",
+              "audioKey": "s1-l02-001-t1"
+            },
+            {
+              "id": "S1-L02-001-T2",
+              "role": "partner",
+              "ja": "重さを測ります。",
+              "kana": "おもさをはかります。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "重",
+                  "reading": "おも"
+                },
+                {
+                  "type": "text",
+                  "text": "さを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "測",
+                  "reading": "はか"
+                },
+                {
+                  "type": "text",
+                  "text": "ります。"
+                }
+              ],
+              "zh": "我给您称一下重量。",
+              "audioKey": "s1-l02-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L02-002",
+          "sceneId": "airport",
+          "lessonId": "S1-L02",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "重量",
+            "限制"
+          ],
+          "turns": [
+            {
+              "id": "S1-L02-002-T1",
+              "role": "learner",
+              "ja": "重さは大丈夫ですか。",
+              "kana": "おもさはだいじょうぶですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "重",
+                  "reading": "おも"
+                },
+                {
+                  "type": "text",
+                  "text": "さは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "大丈夫",
+                  "reading": "だいじょうぶ"
+                },
+                {
+                  "type": "text",
+                  "text": "ですか。"
+                }
+              ],
+              "zh": "重量没问题吧？",
+              "audioKey": "s1-l02-002-t1"
+            },
+            {
+              "id": "S1-L02-002-T2",
+              "role": "partner",
+              "ja": "23キロ以内なら大丈夫です。",
+              "kana": "23キロいないならだいじょうぶです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "23キロ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "以内",
+                  "reading": "いない"
+                },
+                {
+                  "type": "text",
+                  "text": "なら"
+                },
+                {
+                  "type": "ruby",
+                  "base": "大丈夫",
+                  "reading": "だいじょうぶ"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "23 公斤以内就没问题。",
+              "audioKey": "s1-l02-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L02-003",
+          "sceneId": "airport",
+          "lessonId": "S1-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "易碎",
+            "提醒"
+          ],
+          "turns": [
+            {
+              "id": "S1-L02-003-T1",
+              "role": "learner",
+              "ja": "壊れやすい物が入っています。",
+              "kana": "こわれやすいものがはいっています。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "壊",
+                  "reading": "こわ"
+                },
+                {
+                  "type": "text",
+                  "text": "れやすい"
+                },
+                {
+                  "type": "ruby",
+                  "base": "物",
+                  "reading": "もの"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "はい"
+                },
+                {
+                  "type": "text",
+                  "text": "っています。"
+                }
+              ],
+              "zh": "里面有易碎物品。",
+              "audioKey": "s1-l02-003-t1"
+            },
+            {
+              "id": "S1-L02-003-T2",
+              "role": "partner",
+              "ja": "取扱注意のタグを付けます。",
+              "kana": "とりあつかいちゅういのタグをつけます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "取扱注意",
+                  "reading": "とりあつかいちゅうい"
+                },
+                {
+                  "type": "text",
+                  "text": "のタグを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "付",
+                  "reading": "つ"
+                },
+                {
+                  "type": "text",
+                  "text": "けます。"
+                }
+              ],
+              "zh": "我给您贴一个小心轻放标签。",
+              "audioKey": "s1-l02-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L02-004",
+          "sceneId": "airport",
+          "lessonId": "S1-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "随身",
+            "尺寸"
+          ],
+          "turns": [
+            {
+              "id": "S1-L02-004-T1",
+              "role": "learner",
+              "ja": "機内持ち込みにできますか。",
+              "kana": "きないもちこみにできますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "機内持",
+                  "reading": "きないも"
+                },
+                {
+                  "type": "text",
+                  "text": "ち"
+                },
+                {
+                  "type": "ruby",
+                  "base": "込",
+                  "reading": "こ"
+                },
+                {
+                  "type": "text",
+                  "text": "みにできますか。"
+                }
+              ],
+              "zh": "这个能随身带上飞机吗？",
+              "audioKey": "s1-l02-004-t1"
+            },
+            {
+              "id": "S1-L02-004-T2",
+              "role": "partner",
+              "ja": "サイズを確認してください。",
+              "kana": "サイズをかくにんしてください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "サイズを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "確認",
+                  "reading": "かくにん"
+                },
+                {
+                  "type": "text",
+                  "text": "してください。"
+                }
+              ],
+              "zh": "请确认一下尺寸。",
+              "audioKey": "s1-l02-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L02-005",
+          "sceneId": "airport",
+          "lessonId": "S1-L02",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "手提行李",
+            "数量"
+          ],
+          "turns": [
+            {
+              "id": "S1-L02-005-T1",
+              "role": "learner",
+              "ja": "手荷物は何個までですか。",
+              "kana": "てにもつはなんこまでですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "手荷物",
+                  "reading": "てにもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "何個",
+                  "reading": "なんこ"
+                },
+                {
+                  "type": "text",
+                  "text": "までですか。"
+                }
+              ],
+              "zh": "随身行李最多几件？",
+              "audioKey": "s1-l02-005-t1"
+            },
+            {
+              "id": "S1-L02-005-T2",
+              "role": "partner",
+              "ja": "お一人様一個までです。",
+              "kana": "おひとりさまいっこまでです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一人様",
+                  "reading": "ひとりさま"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一個",
+                  "reading": "いっこ"
+                },
+                {
+                  "type": "text",
+                  "text": "までです。"
+                }
+              ],
+              "zh": "每位旅客限一件。",
+              "audioKey": "s1-l02-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L02-006",
+          "sceneId": "airport",
+          "lessonId": "S1-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "液体",
+            "安检"
+          ],
+          "turns": [
+            {
+              "id": "S1-L02-006-T1",
+              "role": "learner",
+              "ja": "液体は入っています。",
+              "kana": "えきたいははいっています。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "液体",
+                  "reading": "えきたい"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "はい"
+                },
+                {
+                  "type": "text",
+                  "text": "っています。"
+                }
+              ],
+              "zh": "里面有液体。",
+              "audioKey": "s1-l02-006-t1"
+            },
+            {
+              "id": "S1-L02-006-T2",
+              "role": "partner",
+              "ja": "預け荷物なら問題ありません。",
+              "kana": "あずけにもつならもんだいありません。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "預",
+                  "reading": "あず"
+                },
+                {
+                  "type": "text",
+                  "text": "け"
+                },
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "なら"
+                },
+                {
+                  "type": "ruby",
+                  "base": "問題",
+                  "reading": "もんだい"
+                },
+                {
+                  "type": "text",
+                  "text": "ありません。"
+                }
+              ],
+              "zh": "如果是托运行李就没问题。",
+              "audioKey": "s1-l02-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L02-007",
+          "sceneId": "airport",
+          "lessonId": "S1-L02",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "提取行李",
+            "到达"
+          ],
+          "turns": [
+            {
+              "id": "S1-L02-007-T1",
+              "role": "learner",
+              "ja": "この荷物はどこで受け取りますか。",
+              "kana": "このにもつはどこでうけとりますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "この"
+                },
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "はどこで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "受",
+                  "reading": "う"
+                },
+                {
+                  "type": "text",
+                  "text": "け"
+                },
+                {
+                  "type": "ruby",
+                  "base": "取",
+                  "reading": "と"
+                },
+                {
+                  "type": "text",
+                  "text": "りますか。"
+                }
+              ],
+              "zh": "这件行李到哪里领取？",
+              "audioKey": "s1-l02-007-t1"
+            },
+            {
+              "id": "S1-L02-007-T2",
+              "role": "partner",
+              "ja": "到着後にターンテーブルで受け取れます。",
+              "kana": "とうちゃくごにターンテーブルでうけとれます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "到着後",
+                  "reading": "とうちゃくご"
+                },
+                {
+                  "type": "text",
+                  "text": "にターンテーブルで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "受",
+                  "reading": "う"
+                },
+                {
+                  "type": "text",
+                  "text": "け"
+                },
+                {
+                  "type": "ruby",
+                  "base": "取",
+                  "reading": "と"
+                },
+                {
+                  "type": "text",
+                  "text": "れます。"
+                }
+              ],
+              "zh": "到达后在行李转盘领取。",
+              "audioKey": "s1-l02-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S1-L03",
+      "code": "L03",
+      "title": "安检过关",
+      "order": 3,
+      "overview": "安检需要快速理解指令，这一课全部都是高频命令句和确认句。",
+      "cards": [
+        {
+          "id": "S1-L03-001",
+          "sceneId": "airport",
+          "lessonId": "S1-L03",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "安检",
+            "电子设备"
+          ],
+          "turns": [
+            {
+              "id": "S1-L03-001-T1",
+              "role": "learner",
+              "ja": "パソコンは出した方がいいですか。",
+              "kana": "パソコンはだしたほうがいいですか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "パソコンは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "出",
+                  "reading": "だ"
+                },
+                {
+                  "type": "text",
+                  "text": "した"
+                },
+                {
+                  "type": "ruby",
+                  "base": "方",
+                  "reading": "ほう"
+                },
+                {
+                  "type": "text",
+                  "text": "がいいですか。"
+                }
+              ],
+              "zh": "笔记本电脑要拿出来吗？",
+              "audioKey": "s1-l03-001-t1"
+            },
+            {
+              "id": "S1-L03-001-T2",
+              "role": "partner",
+              "ja": "はい、別のトレーに入れてください。",
+              "kana": "はい、べつのトレーにいれてください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "別",
+                  "reading": "べつ"
+                },
+                {
+                  "type": "text",
+                  "text": "のトレーに"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "い"
+                },
+                {
+                  "type": "text",
+                  "text": "れてください。"
+                }
+              ],
+              "zh": "要，请单独放到托盘里。",
+              "audioKey": "s1-l03-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L03-002",
+          "sceneId": "airport",
+          "lessonId": "S1-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "安检",
+            "衣物"
+          ],
+          "turns": [
+            {
+              "id": "S1-L03-002-T1",
+              "role": "learner",
+              "ja": "上着を脱いだ方がいいですか。",
+              "kana": "うわぎをぬいだほうがいいですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "上着",
+                  "reading": "うわぎ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "脱",
+                  "reading": "ぬ"
+                },
+                {
+                  "type": "text",
+                  "text": "いだ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "方",
+                  "reading": "ほう"
+                },
+                {
+                  "type": "text",
+                  "text": "がいいですか。"
+                }
+              ],
+              "zh": "外套要脱下来吗？",
+              "audioKey": "s1-l03-002-t1"
+            },
+            {
+              "id": "S1-L03-002-T2",
+              "role": "partner",
+              "ja": "はい、靴と一緒にお願いします。",
+              "kana": "はい、くつといっしょにおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "靴",
+                  "reading": "くつ"
+                },
+                {
+                  "type": "text",
+                  "text": "と"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一緒",
+                  "reading": "いっしょ"
+                },
+                {
+                  "type": "text",
+                  "text": "にお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "要，请和鞋子一起放。",
+              "audioKey": "s1-l03-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L03-003",
+          "sceneId": "airport",
+          "lessonId": "S1-L03",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "安检",
+            "液体"
+          ],
+          "turns": [
+            {
+              "id": "S1-L03-003-T1",
+              "role": "learner",
+              "ja": "水筒に水が入っています。",
+              "kana": "すいとうにみずがはいっています。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "水筒",
+                  "reading": "すいとう"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "水",
+                  "reading": "みず"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "はい"
+                },
+                {
+                  "type": "text",
+                  "text": "っています。"
+                }
+              ],
+              "zh": "我的水瓶里还有水。",
+              "audioKey": "s1-l03-003-t1"
+            },
+            {
+              "id": "S1-L03-003-T2",
+              "role": "partner",
+              "ja": "ここで捨ててください。",
+              "kana": "ここですててください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ここで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "捨",
+                  "reading": "す"
+                },
+                {
+                  "type": "text",
+                  "text": "ててください。"
+                }
+              ],
+              "zh": "请在这里倒掉。",
+              "audioKey": "s1-l03-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L03-004",
+          "sceneId": "airport",
+          "lessonId": "S1-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "安检",
+            "随身物品"
+          ],
+          "turns": [
+            {
+              "id": "S1-L03-004-T1",
+              "role": "partner",
+              "ja": "ポケットの中を空にしてください。",
+              "kana": "ポケットのなかをからにしてください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ポケットの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "中",
+                  "reading": "なか"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "空",
+                  "reading": "から"
+                },
+                {
+                  "type": "text",
+                  "text": "にしてください。"
+                }
+              ],
+              "zh": "请把口袋里的东西清空。",
+              "audioKey": "s1-l03-004-t1"
+            },
+            {
+              "id": "S1-L03-004-T2",
+              "role": "learner",
+              "ja": "はい、わかりました。",
+              "kana": "はい、わかりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、わかりました。"
+                }
+              ],
+              "zh": "好的，明白。",
+              "audioKey": "s1-l03-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L03-005",
+          "sceneId": "airport",
+          "lessonId": "S1-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "安检",
+            "复检"
+          ],
+          "turns": [
+            {
+              "id": "S1-L03-005-T1",
+              "role": "learner",
+              "ja": "金属探知機が鳴りました。",
+              "kana": "きんぞくたんちきがなりました。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "金属探知機",
+                  "reading": "きんぞくたんちき"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "鳴",
+                  "reading": "な"
+                },
+                {
+                  "type": "text",
+                  "text": "りました。"
+                }
+              ],
+              "zh": "金属探测门响了。",
+              "audioKey": "s1-l03-005-t1"
+            },
+            {
+              "id": "S1-L03-005-T2",
+              "role": "partner",
+              "ja": "もう一度通ってください。",
+              "kana": "もういちどとおってください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "もう"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一度",
+                  "reading": "いちど"
+                },
+                {
+                  "type": "ruby",
+                  "base": "通",
+                  "reading": "とお"
+                },
+                {
+                  "type": "text",
+                  "text": "ってください。"
+                }
+              ],
+              "zh": "请再过一次。",
+              "audioKey": "s1-l03-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L03-006",
+          "sceneId": "airport",
+          "lessonId": "S1-L03",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "安检",
+            "时间"
+          ],
+          "turns": [
+            {
+              "id": "S1-L03-006-T1",
+              "role": "learner",
+              "ja": "少し時間がかかりますか。",
+              "kana": "すこしじかんがかかりますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "type": "text",
+                  "text": "し"
+                },
+                {
+                  "type": "ruby",
+                  "base": "時間",
+                  "reading": "じかん"
+                },
+                {
+                  "type": "text",
+                  "text": "がかかりますか。"
+                }
+              ],
+              "zh": "会花一点时间吗？",
+              "audioKey": "s1-l03-006-t1"
+            },
+            {
+              "id": "S1-L03-006-T2",
+              "role": "partner",
+              "ja": "いいえ、すぐ終わります。",
+              "kana": "いいえ、すぐおわります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "いいえ、すぐ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "終",
+                  "reading": "お"
+                },
+                {
+                  "type": "text",
+                  "text": "わります。"
+                }
+              ],
+              "zh": "不会，很快就结束。",
+              "audioKey": "s1-l03-006-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S1-L04",
+      "code": "L04",
+      "title": "问路与找登机口",
+      "order": 4,
+      "overview": "机场里问路最怕听不懂方向词，这一课把左、右、楼层和转乘问法一起练。",
+      "cards": [
+        {
+          "id": "S1-L04-001",
+          "sceneId": "airport",
+          "lessonId": "S1-L04",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "问路",
+            "登机口"
+          ],
+          "turns": [
+            {
+              "id": "S1-L04-001-T1",
+              "role": "learner",
+              "ja": "搭乗口はどこですか。",
+              "kana": "とうじょうぐちはどこですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "搭乗口",
+                  "reading": "とうじょうぐち"
+                },
+                {
+                  "type": "text",
+                  "text": "はどこですか。"
+                }
+              ],
+              "zh": "登机口在哪里？",
+              "audioKey": "s1-l04-001-t1"
+            },
+            {
+              "id": "S1-L04-001-T2",
+              "role": "partner",
+              "ja": "右へまっすぐです。",
+              "kana": "みぎへまっすぐです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "右",
+                  "reading": "みぎ"
+                },
+                {
+                  "type": "text",
+                  "text": "へまっすぐです。"
+                }
+              ],
+              "zh": "一直往右走。",
+              "audioKey": "s1-l04-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L04-002",
+          "sceneId": "airport",
+          "lessonId": "S1-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "问路",
+            "转机柜台"
+          ],
+          "turns": [
+            {
+              "id": "S1-L04-002-T1",
+              "role": "learner",
+              "ja": "乗り継ぎカウンターはどこですか。",
+              "kana": "のりつぎカウンターはどこですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "乗り継",
+                  "reading": "のりつ"
+                },
+                {
+                  "type": "text",
+                  "text": "ぎカウンターはどこですか。"
+                }
+              ],
+              "zh": "转机柜台在哪里？",
+              "audioKey": "s1-l04-002-t1"
+            },
+            {
+              "id": "S1-L04-002-T2",
+              "role": "partner",
+              "ja": "2階にあります。",
+              "kana": "2かいにあります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "2"
+                },
+                {
+                  "type": "ruby",
+                  "base": "階",
+                  "reading": "かい"
+                },
+                {
+                  "type": "text",
+                  "text": "にあります。"
+                }
+              ],
+              "zh": "在二楼。",
+              "audioKey": "s1-l04-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L04-003",
+          "sceneId": "airport",
+          "lessonId": "S1-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "问路",
+            "航站楼"
+          ],
+          "turns": [
+            {
+              "id": "S1-L04-003-T1",
+              "role": "learner",
+              "ja": "このバスはターミナル2へ行きますか。",
+              "kana": "このバスはターミナル2へいきますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "このバスはターミナル2へ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "行",
+                  "reading": "い"
+                },
+                {
+                  "type": "text",
+                  "text": "きますか。"
+                }
+              ],
+              "zh": "这辆车去 2 号航站楼吗？",
+              "audioKey": "s1-l04-003-t1"
+            },
+            {
+              "id": "S1-L04-003-T2",
+              "role": "partner",
+              "ja": "はい、そのまま乗ってください。",
+              "kana": "はい、そのままのってください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、そのまま"
+                },
+                {
+                  "type": "ruby",
+                  "base": "乗",
+                  "reading": "の"
+                },
+                {
+                  "type": "text",
+                  "text": "ってください。"
+                }
+              ],
+              "zh": "去的，直接上车就行。",
+              "audioKey": "s1-l04-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L04-004",
+          "sceneId": "airport",
+          "lessonId": "S1-L04",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "设施",
+            "厕所"
+          ],
+          "turns": [
+            {
+              "id": "S1-L04-004-T1",
+              "role": "learner",
+              "ja": "トイレは近くにありますか。",
+              "kana": "トイレはちかくにありますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "トイレは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "近",
+                  "reading": "ちか"
+                },
+                {
+                  "type": "text",
+                  "text": "くにありますか。"
+                }
+              ],
+              "zh": "附近有洗手间吗？",
+              "audioKey": "s1-l04-004-t1"
+            },
+            {
+              "id": "S1-L04-004-T2",
+              "role": "partner",
+              "ja": "あの角を曲がるとあります。",
+              "kana": "あのかどをまがるとあります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "あの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "角",
+                  "reading": "かど"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "曲",
+                  "reading": "ま"
+                },
+                {
+                  "type": "text",
+                  "text": "がるとあります。"
+                }
+              ],
+              "zh": "拐过那个角就有。",
+              "audioKey": "s1-l04-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L04-005",
+          "sceneId": "airport",
+          "lessonId": "S1-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "休息室",
+            "使用"
+          ],
+          "turns": [
+            {
+              "id": "S1-L04-005-T1",
+              "role": "learner",
+              "ja": "ラウンジは使えますか。",
+              "kana": "ラウンジはつかえますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ラウンジは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "使",
+                  "reading": "つか"
+                },
+                {
+                  "type": "text",
+                  "text": "えますか。"
+                }
+              ],
+              "zh": "我可以用休息室吗？",
+              "audioKey": "s1-l04-005-t1"
+            },
+            {
+              "id": "S1-L04-005-T2",
+              "role": "partner",
+              "ja": "搭乗券を確認します。",
+              "kana": "とうじょうけんをかくにんします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "搭乗券",
+                  "reading": "とうじょうけん"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "確認",
+                  "reading": "かくにん"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我先确认一下登机牌。",
+              "audioKey": "s1-l04-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L04-006",
+          "sceneId": "airport",
+          "lessonId": "S1-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "航班",
+            "延误"
+          ],
+          "turns": [
+            {
+              "id": "S1-L04-006-T1",
+              "role": "learner",
+              "ja": "遅れている便はどれですか。",
+              "kana": "おくれているびんはどれですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "遅",
+                  "reading": "おく"
+                },
+                {
+                  "type": "text",
+                  "text": "れている"
+                },
+                {
+                  "type": "ruby",
+                  "base": "便",
+                  "reading": "びん"
+                },
+                {
+                  "type": "text",
+                  "text": "はどれですか。"
+                }
+              ],
+              "zh": "哪一班延误了？",
+              "audioKey": "s1-l04-006-t1"
+            },
+            {
+              "id": "S1-L04-006-T2",
+              "role": "partner",
+              "ja": "画面で確認してください。",
+              "kana": "がめんでかくにんしてください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "画面",
+                  "reading": "がめん"
+                },
+                {
+                  "type": "text",
+                  "text": "で"
+                },
+                {
+                  "type": "ruby",
+                  "base": "確認",
+                  "reading": "かくにん"
+                },
+                {
+                  "type": "text",
+                  "text": "してください。"
+                }
+              ],
+              "zh": "请看屏幕确认。",
+              "audioKey": "s1-l04-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L04-007",
+          "sceneId": "airport",
+          "lessonId": "S1-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "信息板",
+            "语言"
+          ],
+          "turns": [
+            {
+              "id": "S1-L04-007-T1",
+              "role": "learner",
+              "ja": "この案内板は英語にできますか。",
+              "kana": "このあんないばんはえいごにできますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "この"
+                },
+                {
+                  "type": "ruby",
+                  "base": "案内板",
+                  "reading": "あんないばん"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "英語",
+                  "reading": "えいご"
+                },
+                {
+                  "type": "text",
+                  "text": "にできますか。"
+                }
+              ],
+              "zh": "这个信息板能切换成英文吗？",
+              "audioKey": "s1-l04-007-t1"
+            },
+            {
+              "id": "S1-L04-007-T2",
+              "role": "partner",
+              "ja": "はい、右上で切り替えられます。",
+              "kana": "はい、みぎうえできりかえられます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "右上",
+                  "reading": "みぎうえ"
+                },
+                {
+                  "type": "text",
+                  "text": "で"
+                },
+                {
+                  "type": "ruby",
+                  "base": "切り替",
+                  "reading": "きりか"
+                },
+                {
+                  "type": "text",
+                  "text": "えられます。"
+                }
+              ],
+              "zh": "可以，右上角可以切换。",
+              "audioKey": "s1-l04-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S1-L05",
+      "code": "L05",
+      "title": "登机与机上",
+      "order": 5,
+      "overview": "登机口和机舱里多是短句确认，练到脱口而出会很省脑力。",
+      "cards": [
+        {
+          "id": "S1-L05-001",
+          "sceneId": "airport",
+          "lessonId": "S1-L05",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "登机",
+            "时间"
+          ],
+          "turns": [
+            {
+              "id": "S1-L05-001-T1",
+              "role": "learner",
+              "ja": "もう搭乗できますか。",
+              "kana": "もうとうじょうできますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "もう"
+                },
+                {
+                  "type": "ruby",
+                  "base": "搭乗",
+                  "reading": "とうじょう"
+                },
+                {
+                  "type": "text",
+                  "text": "できますか。"
+                }
+              ],
+              "zh": "现在可以登机了吗？",
+              "audioKey": "s1-l05-001-t1"
+            },
+            {
+              "id": "S1-L05-001-T2",
+              "role": "partner",
+              "ja": "ただいまご案内します。",
+              "kana": "ただいまごあんないします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ただいまご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "案内",
+                  "reading": "あんない"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "马上开始登机。",
+              "audioKey": "s1-l05-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L05-002",
+          "sceneId": "airport",
+          "lessonId": "S1-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "登机",
+            "顺序"
+          ],
+          "turns": [
+            {
+              "id": "S1-L05-002-T1",
+              "role": "learner",
+              "ja": "どの列から乗りますか。",
+              "kana": "どのれつからのりますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "どの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "列",
+                  "reading": "れつ"
+                },
+                {
+                  "type": "text",
+                  "text": "から"
+                },
+                {
+                  "type": "ruby",
+                  "base": "乗",
+                  "reading": "の"
+                },
+                {
+                  "type": "text",
+                  "text": "りますか。"
+                }
+              ],
+              "zh": "从哪一排开始登机？",
+              "audioKey": "s1-l05-002-t1"
+            },
+            {
+              "id": "S1-L05-002-T2",
+              "role": "partner",
+              "ja": "後ろの列からです。",
+              "kana": "うしろのれつからです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "後",
+                  "reading": "うし"
+                },
+                {
+                  "type": "text",
+                  "text": "ろの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "列",
+                  "reading": "れつ"
+                },
+                {
+                  "type": "text",
+                  "text": "からです。"
+                }
+              ],
+              "zh": "从后排开始。",
+              "audioKey": "s1-l05-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L05-003",
+          "sceneId": "airport",
+          "lessonId": "S1-L05",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "机舱",
+            "行李"
+          ],
+          "turns": [
+            {
+              "id": "S1-L05-003-T1",
+              "role": "learner",
+              "ja": "荷物は上に入れてもいいですか。",
+              "kana": "にもつはうえにいれてもいいですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "上",
+                  "reading": "うえ"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "い"
+                },
+                {
+                  "type": "text",
+                  "text": "れてもいいですか。"
+                }
+              ],
+              "zh": "行李可以放上面的柜子吗？",
+              "audioKey": "s1-l05-003-t1"
+            },
+            {
+              "id": "S1-L05-003-T2",
+              "role": "partner",
+              "ja": "はい、大丈夫です。",
+              "kana": "はい、だいじょうぶです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "大丈夫",
+                  "reading": "だいじょうぶ"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "可以，没问题。",
+              "audioKey": "s1-l05-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L05-004",
+          "sceneId": "airport",
+          "lessonId": "S1-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "机舱",
+            "座位"
+          ],
+          "turns": [
+            {
+              "id": "S1-L05-004-T1",
+              "role": "learner",
+              "ja": "この席で合っていますか。",
+              "kana": "このせきであっていますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "この"
+                },
+                {
+                  "type": "ruby",
+                  "base": "席",
+                  "reading": "せき"
+                },
+                {
+                  "type": "text",
+                  "text": "で"
+                },
+                {
+                  "type": "ruby",
+                  "base": "合",
+                  "reading": "あ"
+                },
+                {
+                  "type": "text",
+                  "text": "っていますか。"
+                }
+              ],
+              "zh": "是这个座位吗？",
+              "audioKey": "s1-l05-004-t1"
+            },
+            {
+              "id": "S1-L05-004-T2",
+              "role": "partner",
+              "ja": "はい、14Aで合っています。",
+              "kana": "はい、14Aであっています。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、14Aで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "合",
+                  "reading": "あ"
+                },
+                {
+                  "type": "text",
+                  "text": "っています。"
+                }
+              ],
+              "zh": "对，就是 14A。",
+              "audioKey": "s1-l05-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L05-005",
+          "sceneId": "airport",
+          "lessonId": "S1-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "机舱",
+            "服务"
+          ],
+          "turns": [
+            {
+              "id": "S1-L05-005-T1",
+              "role": "learner",
+              "ja": "毛布をもらえますか。",
+              "kana": "もうふをもらえますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "毛布",
+                  "reading": "もうふ"
+                },
+                {
+                  "type": "text",
+                  "text": "をもらえますか。"
+                }
+              ],
+              "zh": "可以给我一条毛毯吗？",
+              "audioKey": "s1-l05-005-t1"
+            },
+            {
+              "id": "S1-L05-005-T2",
+              "role": "partner",
+              "ja": "かしこまりました。",
+              "kana": "かしこまりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "かしこまりました。"
+                }
+              ],
+              "zh": "好的。",
+              "audioKey": "s1-l05-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L05-006",
+          "sceneId": "airport",
+          "lessonId": "S1-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "入境卡",
+            "机上"
+          ],
+          "turns": [
+            {
+              "id": "S1-L05-006-T1",
+              "role": "learner",
+              "ja": "入国カードは機内でもらえますか。",
+              "kana": "にゅうこくカードはきないでもらえますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "入国",
+                  "reading": "にゅうこく"
+                },
+                {
+                  "type": "text",
+                  "text": "カードは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "機内",
+                  "reading": "きない"
+                },
+                {
+                  "type": "text",
+                  "text": "でもらえますか。"
+                }
+              ],
+              "zh": "入境卡会在飞机上发吗？",
+              "audioKey": "s1-l05-006-t1"
+            },
+            {
+              "id": "S1-L05-006-T2",
+              "role": "partner",
+              "ja": "後でお配りします。",
+              "kana": "あとでおくばりします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "後",
+                  "reading": "あと"
+                },
+                {
+                  "type": "text",
+                  "text": "でお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "配",
+                  "reading": "くば"
+                },
+                {
+                  "type": "text",
+                  "text": "りします。"
+                }
+              ],
+              "zh": "稍后会发给大家。",
+              "audioKey": "s1-l05-006-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S1-L06",
+      "code": "L06",
+      "title": "入境与海关",
+      "order": 6,
+      "overview": "最后一段是入境与海关，问题短但节奏快，提前背熟会很安心。",
+      "cards": [
+        {
+          "id": "S1-L06-001",
+          "sceneId": "airport",
+          "lessonId": "S1-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "入境",
+            "问路"
+          ],
+          "turns": [
+            {
+              "id": "S1-L06-001-T1",
+              "role": "learner",
+              "ja": "入国審査はどこですか。",
+              "kana": "にゅうこくしんさはどこですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "入国審査",
+                  "reading": "にゅうこくしんさ"
+                },
+                {
+                  "type": "text",
+                  "text": "はどこですか。"
+                }
+              ],
+              "zh": "入境审查在哪里？",
+              "audioKey": "s1-l06-001-t1"
+            },
+            {
+              "id": "S1-L06-001-T2",
+              "role": "partner",
+              "ja": "この先をまっすぐです。",
+              "kana": "このさきをまっすぐです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "この"
+                },
+                {
+                  "type": "ruby",
+                  "base": "先",
+                  "reading": "さき"
+                },
+                {
+                  "type": "text",
+                  "text": "をまっすぐです。"
+                }
+              ],
+              "zh": "一直往前走。",
+              "audioKey": "s1-l06-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L06-002",
+          "sceneId": "airport",
+          "lessonId": "S1-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "入境",
+            "目的"
+          ],
+          "turns": [
+            {
+              "id": "S1-L06-002-T1",
+              "role": "learner",
+              "ja": "観光で来ました。",
+              "kana": "かんこうできました。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "観光",
+                  "reading": "かんこう"
+                },
+                {
+                  "type": "text",
+                  "text": "で"
+                },
+                {
+                  "type": "ruby",
+                  "base": "来",
+                  "reading": "き"
+                },
+                {
+                  "type": "text",
+                  "text": "ました。"
+                }
+              ],
+              "zh": "我是来旅游的。",
+              "audioKey": "s1-l06-002-t1"
+            },
+            {
+              "id": "S1-L06-002-T2",
+              "role": "partner",
+              "ja": "滞在予定は何日ですか。",
+              "kana": "たいざいよていはなんにちですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "滞在予定",
+                  "reading": "たいざいよてい"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "何日",
+                  "reading": "なんにち"
+                },
+                {
+                  "type": "text",
+                  "text": "ですか。"
+                }
+              ],
+              "zh": "预计停留几天？",
+              "audioKey": "s1-l06-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L06-003",
+          "sceneId": "airport",
+          "lessonId": "S1-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "入境",
+            "住宿"
+          ],
+          "turns": [
+            {
+              "id": "S1-L06-003-T1",
+              "role": "learner",
+              "ja": "ホテルの予約があります。",
+              "kana": "ホテルのよやくがあります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ホテルの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "予約",
+                  "reading": "よやく"
+                },
+                {
+                  "type": "text",
+                  "text": "があります。"
+                }
+              ],
+              "zh": "我已经订好酒店了。",
+              "audioKey": "s1-l06-003-t1"
+            },
+            {
+              "id": "S1-L06-003-T2",
+              "role": "partner",
+              "ja": "予約確認書を見せてください。",
+              "kana": "よやくかくにんしょをみせてください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "予約確認書",
+                  "reading": "よやくかくにんしょ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "見",
+                  "reading": "み"
+                },
+                {
+                  "type": "text",
+                  "text": "せてください。"
+                }
+              ],
+              "zh": "请出示预订单。",
+              "audioKey": "s1-l06-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L06-004",
+          "sceneId": "airport",
+          "lessonId": "S1-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "海关",
+            "申报"
+          ],
+          "turns": [
+            {
+              "id": "S1-L06-004-T1",
+              "role": "learner",
+              "ja": "申告する物はありません。",
+              "kana": "しんこくするものはありません。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "申告",
+                  "reading": "しんこく"
+                },
+                {
+                  "type": "text",
+                  "text": "する"
+                },
+                {
+                  "type": "ruby",
+                  "base": "物",
+                  "reading": "もの"
+                },
+                {
+                  "type": "text",
+                  "text": "はありません。"
+                }
+              ],
+              "zh": "我没有需要申报的东西。",
+              "audioKey": "s1-l06-004-t1"
+            },
+            {
+              "id": "S1-L06-004-T2",
+              "role": "partner",
+              "ja": "では、こちらへ進んでください。",
+              "kana": "では、こちらへすすんでください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "では、こちらへ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "進",
+                  "reading": "すす"
+                },
+                {
+                  "type": "text",
+                  "text": "んでください。"
+                }
+              ],
+              "zh": "那请往这边走。",
+              "audioKey": "s1-l06-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L06-005",
+          "sceneId": "airport",
+          "lessonId": "S1-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "海关",
+            "礼物"
+          ],
+          "turns": [
+            {
+              "id": "S1-L06-005-T1",
+              "role": "learner",
+              "ja": "これはお土産です。",
+              "kana": "これはおみやげです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "これはお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "土産",
+                  "reading": "みやげ"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "这是伴手礼。",
+              "audioKey": "s1-l06-005-t1"
+            },
+            {
+              "id": "S1-L06-005-T2",
+              "role": "partner",
+              "ja": "中身を見せてください。",
+              "kana": "なかみをみせてください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "中身",
+                  "reading": "なかみ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "見",
+                  "reading": "み"
+                },
+                {
+                  "type": "text",
+                  "text": "せてください。"
+                }
+              ],
+              "zh": "请让我看一下内容物。",
+              "audioKey": "s1-l06-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L06-006",
+          "sceneId": "airport",
+          "lessonId": "S1-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "海关",
+            "现金"
+          ],
+          "turns": [
+            {
+              "id": "S1-L06-006-T1",
+              "role": "learner",
+              "ja": "現金はいくら持っていますか。",
+              "kana": "げんきんはいくらもっていますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "現金",
+                  "reading": "げんきん"
+                },
+                {
+                  "type": "text",
+                  "text": "はいくら"
+                },
+                {
+                  "type": "ruby",
+                  "base": "持",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "っていますか。"
+                }
+              ],
+              "zh": "您带了多少现金？",
+              "audioKey": "s1-l06-006-t1"
+            },
+            {
+              "id": "S1-L06-006-T2",
+              "role": "partner",
+              "ja": "十万円くらいです。",
+              "kana": "じゅうまんえんくらいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "十万円",
+                  "reading": "じゅうまんえん"
+                },
+                {
+                  "type": "text",
+                  "text": "くらいです。"
+                }
+              ],
+              "zh": "大概十万日元。",
+              "audioKey": "s1-l06-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S1-L06-007",
+          "sceneId": "airport",
+          "lessonId": "S1-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "行李",
+            "异常"
+          ],
+          "turns": [
+            {
+              "id": "S1-L06-007-T1",
+              "role": "learner",
+              "ja": "荷物が出てきません。",
+              "kana": "にもつがでてきません。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "出",
+                  "reading": "で"
+                },
+                {
+                  "type": "text",
+                  "text": "てきません。"
+                }
+              ],
+              "zh": "我的行李没有出来。",
+              "audioKey": "s1-l06-007-t1"
+            },
+            {
+              "id": "S1-L06-007-T2",
+              "role": "partner",
+              "ja": "係員にお声がけください。",
+              "kana": "かかりいんにおこえがけください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "係員",
+                  "reading": "かかりいん"
+                },
+                {
+                  "type": "text",
+                  "text": "にお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "声",
+                  "reading": "こえ"
+                },
+                {
+                  "type": "text",
+                  "text": "がけください。"
+                }
+              ],
+              "zh": "请去找工作人员。",
+              "audioKey": "s1-l06-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    }
+  ],
+  "wordBank": [
+    {
+      "id": "S1-W-001",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "搭乗口",
+      "kana": "とうじょうぐち",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "搭乗口",
+          "reading": "とうじょうぐち"
+        }
+      ],
+      "zh": "登机口",
+      "tags": [
+        "机场"
+      ]
+    },
+    {
+      "id": "S1-W-002",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "搭乗券",
+      "kana": "とうじょうけん",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "搭乗券",
+          "reading": "とうじょうけん"
+        }
+      ],
+      "zh": "登机牌",
+      "tags": [
+        "机场"
+      ]
+    },
+    {
+      "id": "S1-W-003",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "保安検査",
+      "kana": "ほあんけんさ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "保安検査",
+          "reading": "ほあんけんさ"
+        }
+      ],
+      "zh": "安检",
+      "tags": [
+        "机场"
+      ]
+    },
+    {
+      "id": "S1-W-004",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "手荷物",
+      "kana": "てにもつ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "手荷物",
+          "reading": "てにもつ"
+        }
+      ],
+      "zh": "随身行李",
+      "tags": [
+        "机场"
+      ]
+    },
+    {
+      "id": "S1-W-005",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "乗り継ぎ",
+      "kana": "のりつぎ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "乗り継ぎ",
+          "reading": "のりつぎ"
+        }
+      ],
+      "zh": "转机",
+      "tags": [
+        "机场"
+      ]
+    },
+    {
+      "id": "S1-W-006",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "入国審査",
+      "kana": "にゅうこくしんさ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "入国審査",
+          "reading": "にゅうこくしんさ"
+        }
+      ],
+      "zh": "入境审查",
+      "tags": [
+        "机场"
+      ]
+    },
+    {
+      "id": "S1-W-007",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "税関",
+      "kana": "ぜいかん",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "税関",
+          "reading": "ぜいかん"
+        }
+      ],
+      "zh": "海关",
+      "tags": [
+        "机场"
+      ]
+    },
+    {
+      "id": "S1-W-008",
+      "sceneId": "airport",
+      "lessonId": null,
+      "type": "word",
+      "ja": "到着口",
+      "kana": "とうちゃくぐち",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "到着口",
+          "reading": "とうちゃくぐち"
+        }
+      ],
+      "zh": "到达口",
+      "tags": [
+        "机场"
+      ]
+    }
+  ]
+}

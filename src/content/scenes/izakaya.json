@@ -1,0 +1,2717 @@
+{
+  "id": "izakaya",
+  "code": "S3",
+  "label": "IZAKAYA",
+  "shortLabel": "IZAKAYA",
+  "icon": "🍶",
+  "description": "从入店、点酒点菜到加单结账，把居酒屋里最常用的口语一整套练顺。",
+  "lessonCount": 6,
+  "sentenceCount": 80,
+  "lessons": [
+    {
+      "id": "S3-L01",
+      "code": "L01",
+      "title": "入店与人数",
+      "order": 1,
+      "overview": "先把进门时的基本问答练顺，入店就不会卡在人数、预约和座位上。",
+      "cards": [
+        {
+          "id": "S3-L01-001",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "入店",
+            "人数"
+          ],
+          "turns": [
+            {
+              "id": "S3-L01-001-T1",
+              "role": "learner",
+              "ja": "二人です。",
+              "kana": "ふたりです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "二人",
+                  "reading": "ふたり"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "两个人。",
+              "audioKey": "s3-l01-001-t1"
+            },
+            {
+              "id": "S3-L01-001-T2",
+              "role": "partner",
+              "ja": "こちらへどうぞ。",
+              "kana": "こちらへどうぞ。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "こちらへどうぞ。"
+                }
+              ],
+              "zh": "这边请。",
+              "audioKey": "s3-l01-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L01-002",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "入店",
+            "预约"
+          ],
+          "turns": [
+            {
+              "id": "S3-L01-002-T1",
+              "role": "learner",
+              "ja": "予約しています。",
+              "kana": "よやくしています。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "予約",
+                  "reading": "よやく"
+                },
+                {
+                  "type": "text",
+                  "text": "しています。"
+                }
+              ],
+              "zh": "我有预约。",
+              "audioKey": "s3-l01-002-t1"
+            },
+            {
+              "id": "S3-L01-002-T2",
+              "role": "partner",
+              "ja": "お名前をお願いします。",
+              "kana": "おなまえをおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "名前",
+                  "reading": "なまえ"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "请告诉我姓名。",
+              "audioKey": "s3-l01-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L01-003",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "座位",
+            "吧台"
+          ],
+          "turns": [
+            {
+              "id": "S3-L01-003-T1",
+              "role": "learner",
+              "ja": "カウンター席は空いていますか。",
+              "kana": "カウンターせきはあいていますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "カウンター"
+                },
+                {
+                  "type": "ruby",
+                  "base": "席",
+                  "reading": "せき"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "空",
+                  "reading": "あ"
+                },
+                {
+                  "type": "text",
+                  "text": "いていますか。"
+                }
+              ],
+              "zh": "吧台有位子吗？",
+              "audioKey": "s3-l01-003-t1"
+            },
+            {
+              "id": "S3-L01-003-T2",
+              "role": "partner",
+              "ja": "少々お待ちください。",
+              "kana": "しょうしょうおまちください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "少々",
+                  "reading": "しょうしょう"
+                },
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "待",
+                  "reading": "ま"
+                },
+                {
+                  "type": "text",
+                  "text": "ちください。"
+                }
+              ],
+              "zh": "请稍等。",
+              "audioKey": "s3-l01-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L01-004",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "座位",
+            "吸烟"
+          ],
+          "turns": [
+            {
+              "id": "S3-L01-004-T1",
+              "role": "learner",
+              "ja": "禁煙席はありますか。",
+              "kana": "きんえんせきはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "禁煙席",
+                  "reading": "きんえんせき"
+                },
+                {
+                  "type": "text",
+                  "text": "はありますか。"
+                }
+              ],
+              "zh": "有无烟位吗？",
+              "audioKey": "s3-l01-004-t1"
+            },
+            {
+              "id": "S3-L01-004-T2",
+              "role": "partner",
+              "ja": "奥の席をご案内します。",
+              "kana": "おくのせきをごあんないします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "奥",
+                  "reading": "おく"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "席",
+                  "reading": "せき"
+                },
+                {
+                  "type": "text",
+                  "text": "をご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "案内",
+                  "reading": "あんない"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "给您安排里面的位置。",
+              "audioKey": "s3-l01-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L01-005",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "沟通",
+            "说明"
+          ],
+          "turns": [
+            {
+              "id": "S3-L01-005-T1",
+              "role": "learner",
+              "ja": "日本語があまり上手じゃありません。",
+              "kana": "にほんごがあまりじょうずじゃありません。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "日本語",
+                  "reading": "にほんご"
+                },
+                {
+                  "type": "text",
+                  "text": "があまり"
+                },
+                {
+                  "type": "ruby",
+                  "base": "上手",
+                  "reading": "じょうず"
+                },
+                {
+                  "type": "text",
+                  "text": "じゃありません。"
+                }
+              ],
+              "zh": "我的日语不太好。",
+              "audioKey": "s3-l01-005-t1"
+            },
+            {
+              "id": "S3-L01-005-T2",
+              "role": "partner",
+              "ja": "ゆっくりで大丈夫ですよ。",
+              "kana": "ゆっくりでだいじょうぶですよ。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ゆっくりで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "大丈夫",
+                  "reading": "だいじょうぶ"
+                },
+                {
+                  "type": "text",
+                  "text": "ですよ。"
+                }
+              ],
+              "zh": "慢慢说就可以。",
+              "audioKey": "s3-l01-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L01-006",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "推荐",
+            "开场"
+          ],
+          "turns": [
+            {
+              "id": "S3-L01-006-T1",
+              "role": "learner",
+              "ja": "おすすめはありますか。",
+              "kana": "おすすめはありますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "おすすめはありますか。"
+                }
+              ],
+              "zh": "有什么推荐吗？",
+              "audioKey": "s3-l01-006-t1"
+            },
+            {
+              "id": "S3-L01-006-T2",
+              "role": "partner",
+              "ja": "今日の刺身が人気です。",
+              "kana": "きょうのさしみがにんきです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "今日",
+                  "reading": "きょう"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "刺身",
+                  "reading": "さしみ"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "人気",
+                  "reading": "にんき"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "今天的刺身很受欢迎。",
+              "audioKey": "s3-l01-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L01-007",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "入店",
+            "鞋子"
+          ],
+          "turns": [
+            {
+              "id": "S3-L01-007-T1",
+              "role": "learner",
+              "ja": "靴は脱ぎますか。",
+              "kana": "くつはぬぎますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "靴",
+                  "reading": "くつ"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "脱",
+                  "reading": "ぬ"
+                },
+                {
+                  "type": "text",
+                  "text": "ぎますか。"
+                }
+              ],
+              "zh": "要脱鞋吗？",
+              "audioKey": "s3-l01-007-t1"
+            },
+            {
+              "id": "S3-L01-007-T2",
+              "role": "partner",
+              "ja": "はい、こちらでお願いします。",
+              "kana": "はい、こちらでおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、こちらでお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "对，请在这里脱。",
+              "audioKey": "s3-l01-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S3-L02",
+      "code": "L02",
+      "title": "点饮料",
+      "order": 2,
+      "overview": "先把第一轮饮料点单练顺，后面整顿饭的节奏就轻松很多。",
+      "cards": [
+        {
+          "id": "S3-L02-001",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L02",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "点单",
+            "啤酒"
+          ],
+          "turns": [
+            {
+              "id": "S3-L02-001-T1",
+              "role": "learner",
+              "ja": "とりあえず生ビール二つお願いします。",
+              "kana": "とりあえずなまビールふたつおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "とりあえず"
+                },
+                {
+                  "type": "ruby",
+                  "base": "生",
+                  "reading": "なま"
+                },
+                {
+                  "type": "text",
+                  "text": "ビール"
+                },
+                {
+                  "type": "ruby",
+                  "base": "二",
+                  "reading": "ふた"
+                },
+                {
+                  "type": "text",
+                  "text": "つお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "先来两杯生啤。",
+              "audioKey": "s3-l02-001-t1"
+            },
+            {
+              "id": "S3-L02-001-T2",
+              "role": "partner",
+              "ja": "かしこまりました。",
+              "kana": "かしこまりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "かしこまりました。"
+                }
+              ],
+              "zh": "好的。",
+              "audioKey": "s3-l02-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L02-002",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点单",
+            "水"
+          ],
+          "turns": [
+            {
+              "id": "S3-L02-002-T1",
+              "role": "learner",
+              "ja": "お水ももらえますか。",
+              "kana": "おみずももらえますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "水",
+                  "reading": "みず"
+                },
+                {
+                  "type": "text",
+                  "text": "ももらえますか。"
+                }
+              ],
+              "zh": "也可以给我水吗？",
+              "audioKey": "s3-l02-002-t1"
+            },
+            {
+              "id": "S3-L02-002-T2",
+              "role": "partner",
+              "ja": "はい、お持ちします。",
+              "kana": "はい、おもちします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "持",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "ちします。"
+                }
+              ],
+              "zh": "可以，我拿来。",
+              "audioKey": "s3-l02-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L02-003",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点单",
+            "沙瓦"
+          ],
+          "turns": [
+            {
+              "id": "S3-L02-003-T1",
+              "role": "learner",
+              "ja": "レモンサワーはありますか。",
+              "kana": "レモンサワーはありますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "レモンサワーはありますか。"
+                }
+              ],
+              "zh": "有柠檬沙瓦吗？",
+              "audioKey": "s3-l02-003-t1"
+            },
+            {
+              "id": "S3-L02-003-T2",
+              "role": "partner",
+              "ja": "はい、ございます。",
+              "kana": "はい、ございます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、ございます。"
+                }
+              ],
+              "zh": "有。",
+              "audioKey": "s3-l02-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L02-004",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点单",
+            "无酒精"
+          ],
+          "turns": [
+            {
+              "id": "S3-L02-004-T1",
+              "role": "learner",
+              "ja": "ノンアルコールはありますか。",
+              "kana": "ノンアルコールはありますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ノンアルコールはありますか。"
+                }
+              ],
+              "zh": "有无酒精饮料吗？",
+              "audioKey": "s3-l02-004-t1"
+            },
+            {
+              "id": "S3-L02-004-T2",
+              "role": "partner",
+              "ja": "何種類かあります。",
+              "kana": "なんしゅるいかあります。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "何種類",
+                  "reading": "なんしゅるい"
+                },
+                {
+                  "type": "text",
+                  "text": "かあります。"
+                }
+              ],
+              "zh": "有几种。",
+              "audioKey": "s3-l02-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L02-005",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点单",
+            "定制"
+          ],
+          "turns": [
+            {
+              "id": "S3-L02-005-T1",
+              "role": "learner",
+              "ja": "氷なしでお願いします。",
+              "kana": "こおりなしでおねがいします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "氷",
+                  "reading": "こおり"
+                },
+                {
+                  "type": "text",
+                  "text": "なしでお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "请不要冰。",
+              "audioKey": "s3-l02-005-t1"
+            },
+            {
+              "id": "S3-L02-005-T2",
+              "role": "partner",
+              "ja": "かしこまりました。",
+              "kana": "かしこまりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "かしこまりました。"
+                }
+              ],
+              "zh": "好的。",
+              "audioKey": "s3-l02-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L02-006",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点单",
+            "数量"
+          ],
+          "turns": [
+            {
+              "id": "S3-L02-006-T1",
+              "role": "learner",
+              "ja": "一杯だけにします。",
+              "kana": "いっぱいだけにします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "一杯",
+                  "reading": "いっぱい"
+                },
+                {
+                  "type": "text",
+                  "text": "だけにします。"
+                }
+              ],
+              "zh": "我先只要一杯。",
+              "audioKey": "s3-l02-006-t1"
+            },
+            {
+              "id": "S3-L02-006-T2",
+              "role": "partner",
+              "ja": "いつでも追加できます。",
+              "kana": "いつでもついかできます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "いつでも"
+                },
+                {
+                  "type": "ruby",
+                  "base": "追加",
+                  "reading": "ついか"
+                },
+                {
+                  "type": "text",
+                  "text": "できます。"
+                }
+              ],
+              "zh": "之后随时都能加点。",
+              "audioKey": "s3-l02-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L02-007",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "社交",
+            "干杯"
+          ],
+          "turns": [
+            {
+              "id": "S3-L02-007-T1",
+              "role": "learner",
+              "ja": "乾杯しましょう。",
+              "kana": "かんぱいしましょう。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "乾杯",
+                  "reading": "かんぱい"
+                },
+                {
+                  "type": "text",
+                  "text": "しましょう。"
+                }
+              ],
+              "zh": "我们干杯吧。",
+              "audioKey": "s3-l02-007-t1"
+            },
+            {
+              "id": "S3-L02-007-T2",
+              "role": "partner",
+              "ja": "乾杯。",
+              "kana": "かんぱい。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "乾杯",
+                  "reading": "かんぱい"
+                },
+                {
+                  "type": "text",
+                  "text": "。"
+                }
+              ],
+              "zh": "干杯。",
+              "audioKey": "s3-l02-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S3-L03",
+      "code": "L03",
+      "title": "点菜与推荐",
+      "order": 3,
+      "overview": "这课把推荐、份量和主食类问法拆出来，方便你快速下单。",
+      "cards": [
+        {
+          "id": "S3-L03-001",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L03",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "点菜",
+            "推荐"
+          ],
+          "turns": [
+            {
+              "id": "S3-L03-001-T1",
+              "role": "learner",
+              "ja": "おすすめを三つ教えてください。",
+              "kana": "おすすめをみっつおしえてください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "おすすめを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "三",
+                  "reading": "みっ"
+                },
+                {
+                  "type": "text",
+                  "text": "つ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "教",
+                  "reading": "おし"
+                },
+                {
+                  "type": "text",
+                  "text": "えてください。"
+                }
+              ],
+              "zh": "请推荐三个菜。",
+              "audioKey": "s3-l03-001-t1"
+            },
+            {
+              "id": "S3-L03-001-T2",
+              "role": "partner",
+              "ja": "今日は焼き鳥と枝豆と唐揚げです。",
+              "kana": "きょうはやきとりとえだまめとからあげです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "今日",
+                  "reading": "きょう"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "焼き鳥",
+                  "reading": "やきとり"
+                },
+                {
+                  "type": "text",
+                  "text": "と"
+                },
+                {
+                  "type": "ruby",
+                  "base": "枝豆",
+                  "reading": "えだまめ"
+                },
+                {
+                  "type": "text",
+                  "text": "と"
+                },
+                {
+                  "type": "ruby",
+                  "base": "唐揚げ",
+                  "reading": "からあげ"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "今天推荐烤鸡串、毛豆和炸鸡。",
+              "audioKey": "s3-l03-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L03-002",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点菜",
+            "刺身"
+          ],
+          "turns": [
+            {
+              "id": "S3-L03-002-T1",
+              "role": "learner",
+              "ja": "刺身の盛り合わせはありますか。",
+              "kana": "さしみのもりあわせはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "刺身",
+                  "reading": "さしみ"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "盛",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "り"
+                },
+                {
+                  "type": "ruby",
+                  "base": "合",
+                  "reading": "あ"
+                },
+                {
+                  "type": "text",
+                  "text": "わせはありますか。"
+                }
+              ],
+              "zh": "有刺身拼盘吗？",
+              "audioKey": "s3-l03-002-t1"
+            },
+            {
+              "id": "S3-L03-002-T2",
+              "role": "partner",
+              "ja": "二人前からです。",
+              "kana": "ふたりまえからです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "二人前",
+                  "reading": "ふたりまえ"
+                },
+                {
+                  "type": "text",
+                  "text": "からです。"
+                }
+              ],
+              "zh": "两人份起。",
+              "audioKey": "s3-l03-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L03-003",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点菜",
+            "份量"
+          ],
+          "turns": [
+            {
+              "id": "S3-L03-003-T1",
+              "role": "learner",
+              "ja": "小さいサイズはありますか。",
+              "kana": "ちいさいサイズはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "小",
+                  "reading": "ちい"
+                },
+                {
+                  "type": "text",
+                  "text": "さいサイズはありますか。"
+                }
+              ],
+              "zh": "有小份的吗？",
+              "audioKey": "s3-l03-003-t1"
+            },
+            {
+              "id": "S3-L03-003-T2",
+              "role": "partner",
+              "ja": "ハーフにできます。",
+              "kana": "ハーフにできます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ハーフにできます。"
+                }
+              ],
+              "zh": "可以做半份。",
+              "audioKey": "s3-l03-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L03-004",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点菜",
+            "主食"
+          ],
+          "turns": [
+            {
+              "id": "S3-L03-004-T1",
+              "role": "learner",
+              "ja": "ご飯ものはありますか。",
+              "kana": "ごはんものはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "ご飯",
+                  "reading": "ごはん"
+                },
+                {
+                  "type": "text",
+                  "text": "ものはありますか。"
+                }
+              ],
+              "zh": "有主食吗？",
+              "audioKey": "s3-l03-004-t1"
+            },
+            {
+              "id": "S3-L03-004-T2",
+              "role": "partner",
+              "ja": "おにぎりがあります。",
+              "kana": "おにぎりがあります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "おにぎりがあります。"
+                }
+              ],
+              "zh": "有饭团。",
+              "audioKey": "s3-l03-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L03-005",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点菜",
+            "图片"
+          ],
+          "turns": [
+            {
+              "id": "S3-L03-005-T1",
+              "role": "learner",
+              "ja": "写真と同じ量ですか。",
+              "kana": "しゃしんとおなじりょうですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "写真",
+                  "reading": "しゃしん"
+                },
+                {
+                  "type": "text",
+                  "text": "と"
+                },
+                {
+                  "type": "ruby",
+                  "base": "同",
+                  "reading": "おな"
+                },
+                {
+                  "type": "text",
+                  "text": "じ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "量",
+                  "reading": "りょう"
+                },
+                {
+                  "type": "text",
+                  "text": "ですか。"
+                }
+              ],
+              "zh": "分量跟照片里一样吗？",
+              "audioKey": "s3-l03-005-t1"
+            },
+            {
+              "id": "S3-L03-005-T2",
+              "role": "partner",
+              "ja": "はい、だいたい同じです。",
+              "kana": "はい、だいたいおなじです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、だいたい"
+                },
+                {
+                  "type": "ruby",
+                  "base": "同",
+                  "reading": "おな"
+                },
+                {
+                  "type": "text",
+                  "text": "じです。"
+                }
+              ],
+              "zh": "对，差不多一样。",
+              "audioKey": "s3-l03-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L03-006",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "点菜",
+            "先上"
+          ],
+          "turns": [
+            {
+              "id": "S3-L03-006-T1",
+              "role": "learner",
+              "ja": "先にこれだけお願いします。",
+              "kana": "さきにこれだけおねがいします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "先",
+                  "reading": "さき"
+                },
+                {
+                  "type": "text",
+                  "text": "にこれだけお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "先上这些就好。",
+              "audioKey": "s3-l03-006-t1"
+            },
+            {
+              "id": "S3-L03-006-T2",
+              "role": "partner",
+              "ja": "かしこまりました。",
+              "kana": "かしこまりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "かしこまりました。"
+                }
+              ],
+              "zh": "好的。",
+              "audioKey": "s3-l03-006-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S3-L04",
+      "code": "L04",
+      "title": "过敏与口味",
+      "order": 4,
+      "overview": "饮食限制一定要说清楚，这课专门练过敏、口味调整和去配料。",
+      "cards": [
+        {
+          "id": "S3-L04-001",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L04",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "饮食限制",
+            "过敏"
+          ],
+          "turns": [
+            {
+              "id": "S3-L04-001-T1",
+              "role": "learner",
+              "ja": "私はえびが食べられません。",
+              "kana": "わたしはえびがたべられません。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "type": "text",
+                  "text": "はえびが"
+                },
+                {
+                  "type": "ruby",
+                  "base": "食",
+                  "reading": "た"
+                },
+                {
+                  "type": "text",
+                  "text": "べられません。"
+                }
+              ],
+              "zh": "我不能吃虾。",
+              "audioKey": "s3-l04-001-t1"
+            },
+            {
+              "id": "S3-L04-001-T2",
+              "role": "partner",
+              "ja": "では、別の料理をご案内します。",
+              "kana": "では、べつのりょうりをごあんないします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "では、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "別",
+                  "reading": "べつ"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "type": "text",
+                  "text": "をご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "案内",
+                  "reading": "あんない"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "那我给您推荐别的菜。",
+              "audioKey": "s3-l04-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L04-002",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "饮食限制",
+            "鸡蛋"
+          ],
+          "turns": [
+            {
+              "id": "S3-L04-002-T1",
+              "role": "learner",
+              "ja": "卵は入っていますか。",
+              "kana": "たまごははいっていますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "卵",
+                  "reading": "たまご"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "はい"
+                },
+                {
+                  "type": "text",
+                  "text": "っていますか。"
+                }
+              ],
+              "zh": "里面有鸡蛋吗？",
+              "audioKey": "s3-l04-002-t1"
+            },
+            {
+              "id": "S3-L04-002-T2",
+              "role": "partner",
+              "ja": "少し入っています。",
+              "kana": "すこしはいっています。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "type": "text",
+                  "text": "し"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "はい"
+                },
+                {
+                  "type": "text",
+                  "text": "っています。"
+                }
+              ],
+              "zh": "有一点。",
+              "audioKey": "s3-l04-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L04-003",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L04",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "口味",
+            "辣度"
+          ],
+          "turns": [
+            {
+              "id": "S3-L04-003-T1",
+              "role": "learner",
+              "ja": "辛くしないでください。",
+              "kana": "からくしないでください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "辛",
+                  "reading": "から"
+                },
+                {
+                  "type": "text",
+                  "text": "くしないでください。"
+                }
+              ],
+              "zh": "请不要做辣。",
+              "audioKey": "s3-l04-003-t1"
+            },
+            {
+              "id": "S3-L04-003-T2",
+              "role": "partner",
+              "ja": "わかりました。",
+              "kana": "わかりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "わかりました。"
+                }
+              ],
+              "zh": "明白。",
+              "audioKey": "s3-l04-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L04-004",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "饮食限制",
+            "生食"
+          ],
+          "turns": [
+            {
+              "id": "S3-L04-004-T1",
+              "role": "learner",
+              "ja": "生ものは少なめにしたいです。",
+              "kana": "なまものはすくなめにしたいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "生",
+                  "reading": "なま"
+                },
+                {
+                  "type": "text",
+                  "text": "ものは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "少",
+                  "reading": "すく"
+                },
+                {
+                  "type": "text",
+                  "text": "なめにしたいです。"
+                }
+              ],
+              "zh": "我想少吃生食。",
+              "audioKey": "s3-l04-004-t1"
+            },
+            {
+              "id": "S3-L04-004-T2",
+              "role": "partner",
+              "ja": "火を通した料理もあります。",
+              "kana": "ひをとおしたりょうりもあります。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "火",
+                  "reading": "ひ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "通",
+                  "reading": "とお"
+                },
+                {
+                  "type": "text",
+                  "text": "した"
+                },
+                {
+                  "type": "ruby",
+                  "base": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "type": "text",
+                  "text": "もあります。"
+                }
+              ],
+              "zh": "也有熟食料理。",
+              "audioKey": "s3-l04-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L04-005",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "饮食限制",
+            "素食"
+          ],
+          "turns": [
+            {
+              "id": "S3-L04-005-T1",
+              "role": "learner",
+              "ja": "ベジタリアン向けの料理はありますか。",
+              "kana": "ベジタリアンむけのりょうりはありますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ベジタリアン"
+                },
+                {
+                  "type": "ruby",
+                  "base": "向",
+                  "reading": "む"
+                },
+                {
+                  "type": "text",
+                  "text": "けの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "type": "text",
+                  "text": "はありますか。"
+                }
+              ],
+              "zh": "有适合素食者的菜吗？",
+              "audioKey": "s3-l04-005-t1"
+            },
+            {
+              "id": "S3-L04-005-T2",
+              "role": "partner",
+              "ja": "豆腐と野菜の料理があります。",
+              "kana": "とうふとやさいのりょうりがあります。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "豆腐",
+                  "reading": "とうふ"
+                },
+                {
+                  "type": "text",
+                  "text": "と"
+                },
+                {
+                  "type": "ruby",
+                  "base": "野菜",
+                  "reading": "やさい"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "type": "text",
+                  "text": "があります。"
+                }
+              ],
+              "zh": "有豆腐和蔬菜料理。",
+              "audioKey": "s3-l04-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L04-006",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "口味",
+            "去配料"
+          ],
+          "turns": [
+            {
+              "id": "S3-L04-006-T1",
+              "role": "learner",
+              "ja": "ねぎ抜きにできますか。",
+              "kana": "ねぎぬきにできますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ねぎ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "抜",
+                  "reading": "ぬ"
+                },
+                {
+                  "type": "text",
+                  "text": "きにできますか。"
+                }
+              ],
+              "zh": "可以不要葱吗？",
+              "audioKey": "s3-l04-006-t1"
+            },
+            {
+              "id": "S3-L04-006-T2",
+              "role": "partner",
+              "ja": "はい、できます。",
+              "kana": "はい、できます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、できます。"
+                }
+              ],
+              "zh": "可以。",
+              "audioKey": "s3-l04-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L04-007",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "口味",
+            "酱料"
+          ],
+          "turns": [
+            {
+              "id": "S3-L04-007-T1",
+              "role": "learner",
+              "ja": "ソースは別にしてください。",
+              "kana": "ソースはべつにしてください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ソースは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "別",
+                  "reading": "べつ"
+                },
+                {
+                  "type": "text",
+                  "text": "にしてください。"
+                }
+              ],
+              "zh": "酱汁请另外放。",
+              "audioKey": "s3-l04-007-t1"
+            },
+            {
+              "id": "S3-L04-007-T2",
+              "role": "partner",
+              "ja": "承知しました。",
+              "kana": "しょうちしました。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "承知",
+                  "reading": "しょうち"
+                },
+                {
+                  "type": "text",
+                  "text": "しました。"
+                }
+              ],
+              "zh": "明白了。",
+              "audioKey": "s3-l04-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S3-L05",
+      "code": "L05",
+      "title": "加单与服务",
+      "order": 5,
+      "overview": "吃到一半最容易出现追加和催单，这一课把中途服务需求全练掉。",
+      "cards": [
+        {
+          "id": "S3-L05-001",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L05",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "加单",
+            "呼叫"
+          ],
+          "turns": [
+            {
+              "id": "S3-L05-001-T1",
+              "role": "learner",
+              "ja": "すみません、注文いいですか。",
+              "kana": "すみません、ちゅうもんいいですか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "すみません、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "注文",
+                  "reading": "ちゅうもん"
+                },
+                {
+                  "type": "text",
+                  "text": "いいですか。"
+                }
+              ],
+              "zh": "不好意思，可以点单吗？",
+              "audioKey": "s3-l05-001-t1"
+            },
+            {
+              "id": "S3-L05-001-T2",
+              "role": "partner",
+              "ja": "はい、どうぞ。",
+              "kana": "はい、どうぞ。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、どうぞ。"
+                }
+              ],
+              "zh": "可以，请说。",
+              "audioKey": "s3-l05-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L05-002",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "服务",
+            "餐盘"
+          ],
+          "turns": [
+            {
+              "id": "S3-L05-002-T1",
+              "role": "learner",
+              "ja": "取り皿をください。",
+              "kana": "とりざらをください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "取り皿",
+                  "reading": "とりざら"
+                },
+                {
+                  "type": "text",
+                  "text": "をください。"
+                }
+              ],
+              "zh": "请给我分餐盘。",
+              "audioKey": "s3-l05-002-t1"
+            },
+            {
+              "id": "S3-L05-002-T2",
+              "role": "partner",
+              "ja": "かしこまりました。",
+              "kana": "かしこまりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "かしこまりました。"
+                }
+              ],
+              "zh": "好的。",
+              "audioKey": "s3-l05-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L05-003",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "服务",
+            "湿巾"
+          ],
+          "turns": [
+            {
+              "id": "S3-L05-003-T1",
+              "role": "learner",
+              "ja": "おしぼりをもう一つお願いします。",
+              "kana": "おしぼりをもうひとつおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "おしぼりをもう"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一",
+                  "reading": "ひと"
+                },
+                {
+                  "type": "text",
+                  "text": "つお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "请再给我一条湿巾。",
+              "audioKey": "s3-l05-003-t1"
+            },
+            {
+              "id": "S3-L05-003-T2",
+              "role": "partner",
+              "ja": "今お持ちします。",
+              "kana": "いまおもちします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "今",
+                  "reading": "いま"
+                },
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "持",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "ちします。"
+                }
+              ],
+              "zh": "马上给您拿来。",
+              "audioKey": "s3-l05-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L05-004",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L05",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "加单",
+            "饮料"
+          ],
+          "turns": [
+            {
+              "id": "S3-L05-004-T1",
+              "role": "learner",
+              "ja": "飲み物を追加したいです。",
+              "kana": "のみものをついかしたいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "飲",
+                  "reading": "の"
+                },
+                {
+                  "type": "text",
+                  "text": "み"
+                },
+                {
+                  "type": "ruby",
+                  "base": "物",
+                  "reading": "もの"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "追加",
+                  "reading": "ついか"
+                },
+                {
+                  "type": "text",
+                  "text": "したいです。"
+                }
+              ],
+              "zh": "我想再加一杯饮料。",
+              "audioKey": "s3-l05-004-t1"
+            },
+            {
+              "id": "S3-L05-004-T2",
+              "role": "partner",
+              "ja": "何になさいますか。",
+              "kana": "なにになさいますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "何",
+                  "reading": "なに"
+                },
+                {
+                  "type": "text",
+                  "text": "になさいますか。"
+                }
+              ],
+              "zh": "您想要什么？",
+              "audioKey": "s3-l05-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L05-005",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "催单",
+            "确认"
+          ],
+          "turns": [
+            {
+              "id": "S3-L05-005-T1",
+              "role": "learner",
+              "ja": "これはまだ来ていません。",
+              "kana": "これはまだきていません。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "これはまだ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "来",
+                  "reading": "き"
+                },
+                {
+                  "type": "text",
+                  "text": "ていません。"
+                }
+              ],
+              "zh": "这个还没上。",
+              "audioKey": "s3-l05-005-t1"
+            },
+            {
+              "id": "S3-L05-005-T2",
+              "role": "partner",
+              "ja": "確認します。",
+              "kana": "かくにんします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "確認",
+                  "reading": "かくにん"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我帮您确认。",
+              "audioKey": "s3-l05-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L05-006",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "节奏",
+            "赶时间"
+          ],
+          "turns": [
+            {
+              "id": "S3-L05-006-T1",
+              "role": "learner",
+              "ja": "急いでいます。",
+              "kana": "いそいでいます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "急",
+                  "reading": "いそ"
+                },
+                {
+                  "type": "text",
+                  "text": "いでいます。"
+                }
+              ],
+              "zh": "我们有点赶时间。",
+              "audioKey": "s3-l05-006-t1"
+            },
+            {
+              "id": "S3-L05-006-T2",
+              "role": "partner",
+              "ja": "先に出せる料理をお持ちします。",
+              "kana": "さきにだせるりょうりをおもちします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "先",
+                  "reading": "さき"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "出",
+                  "reading": "だ"
+                },
+                {
+                  "type": "text",
+                  "text": "せる"
+                },
+                {
+                  "type": "ruby",
+                  "base": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "持",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "ちします。"
+                }
+              ],
+              "zh": "我先把能快上的菜给您送来。",
+              "audioKey": "s3-l05-006-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S3-L06",
+      "code": "L06",
+      "title": "结账与离店",
+      "order": 6,
+      "overview": "最后把结账句练熟，吃完就能顺畅收尾，不会卡在付款方式上。",
+      "cards": [
+        {
+          "id": "S3-L06-001",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "结账",
+            "呼叫"
+          ],
+          "turns": [
+            {
+              "id": "S3-L06-001-T1",
+              "role": "learner",
+              "ja": "お会計をお願いします。",
+              "kana": "おかいけいをおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "会計",
+                  "reading": "かいけい"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "请结账。",
+              "audioKey": "s3-l06-001-t1"
+            },
+            {
+              "id": "S3-L06-001-T2",
+              "role": "partner",
+              "ja": "はい、少々お待ちください。",
+              "kana": "はい、しょうしょうおまちください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、"
+                },
+                {
+                  "type": "ruby",
+                  "base": "少々",
+                  "reading": "しょうしょう"
+                },
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "待",
+                  "reading": "ま"
+                },
+                {
+                  "type": "text",
+                  "text": "ちください。"
+                }
+              ],
+              "zh": "好的，请稍等。",
+              "audioKey": "s3-l06-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L06-002",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "结账",
+            "分开付"
+          ],
+          "turns": [
+            {
+              "id": "S3-L06-002-T1",
+              "role": "learner",
+              "ja": "別々に払えますか。",
+              "kana": "べつべつにはらえますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "別々",
+                  "reading": "べつべつ"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "払",
+                  "reading": "はら"
+                },
+                {
+                  "type": "text",
+                  "text": "えますか。"
+                }
+              ],
+              "zh": "可以分开付吗？",
+              "audioKey": "s3-l06-002-t1"
+            },
+            {
+              "id": "S3-L06-002-T2",
+              "role": "partner",
+              "ja": "まとめてのお会計をお願いしています。",
+              "kana": "まとめてのおかいけいをおねがいしています。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "まとめてのお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "会計",
+                  "reading": "かいけい"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いしています。"
+                }
+              ],
+              "zh": "我们这边需要一起结账。",
+              "audioKey": "s3-l06-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L06-003",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "结账",
+            "刷卡"
+          ],
+          "turns": [
+            {
+              "id": "S3-L06-003-T1",
+              "role": "learner",
+              "ja": "カードは使えますか。",
+              "kana": "カードはつかえますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "カードは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "使",
+                  "reading": "つか"
+                },
+                {
+                  "type": "text",
+                  "text": "えますか。"
+                }
+              ],
+              "zh": "可以刷卡吗？",
+              "audioKey": "s3-l06-003-t1"
+            },
+            {
+              "id": "S3-L06-003-T2",
+              "role": "partner",
+              "ja": "はい、ご利用いただけます。",
+              "kana": "はい、ごりよういただけます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、ご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "利用",
+                  "reading": "りよう"
+                },
+                {
+                  "type": "text",
+                  "text": "いただけます。"
+                }
+              ],
+              "zh": "可以。",
+              "audioKey": "s3-l06-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L06-004",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "结账",
+            "电子支付"
+          ],
+          "turns": [
+            {
+              "id": "S3-L06-004-T1",
+              "role": "learner",
+              "ja": "電子マネーは使えますか。",
+              "kana": "でんしマネーはつかえますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "電子",
+                  "reading": "でんし"
+                },
+                {
+                  "type": "text",
+                  "text": "マネーは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "使",
+                  "reading": "つか"
+                },
+                {
+                  "type": "text",
+                  "text": "えますか。"
+                }
+              ],
+              "zh": "可以电子支付吗？",
+              "audioKey": "s3-l06-004-t1"
+            },
+            {
+              "id": "S3-L06-004-T2",
+              "role": "partner",
+              "ja": "一部使えます。",
+              "kana": "いちぶつかえます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "一部",
+                  "reading": "いちぶ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "使",
+                  "reading": "つか"
+                },
+                {
+                  "type": "text",
+                  "text": "えます。"
+                }
+              ],
+              "zh": "部分方式可以。",
+              "audioKey": "s3-l06-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L06-005",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "结账",
+            "收据"
+          ],
+          "turns": [
+            {
+              "id": "S3-L06-005-T1",
+              "role": "learner",
+              "ja": "レシートをください。",
+              "kana": "レシートをください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "レシートをください。"
+                }
+              ],
+              "zh": "请给我小票。",
+              "audioKey": "s3-l06-005-t1"
+            },
+            {
+              "id": "S3-L06-005-T2",
+              "role": "partner",
+              "ja": "はい、こちらです。",
+              "kana": "はい、こちらです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、こちらです。"
+                }
+              ],
+              "zh": "好的，在这里。",
+              "audioKey": "s3-l06-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L06-006",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "反馈",
+            "夸赞"
+          ],
+          "turns": [
+            {
+              "id": "S3-L06-006-T1",
+              "role": "learner",
+              "ja": "美味しかったです。",
+              "kana": "おいしかったです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "美味",
+                  "reading": "おい"
+                },
+                {
+                  "type": "text",
+                  "text": "しかったです。"
+                }
+              ],
+              "zh": "很好吃。",
+              "audioKey": "s3-l06-006-t1"
+            },
+            {
+              "id": "S3-L06-006-T2",
+              "role": "partner",
+              "ja": "ありがとうございます。",
+              "kana": "ありがとうございます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ありがとうございます。"
+                }
+              ],
+              "zh": "谢谢。",
+              "audioKey": "s3-l06-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S3-L06-007",
+          "sceneId": "izakaya",
+          "lessonId": "S3-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "道别",
+            "结束"
+          ],
+          "turns": [
+            {
+              "id": "S3-L06-007-T1",
+              "role": "learner",
+              "ja": "また来ます。",
+              "kana": "またきます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "また"
+                },
+                {
+                  "type": "ruby",
+                  "base": "来",
+                  "reading": "き"
+                },
+                {
+                  "type": "text",
+                  "text": "ます。"
+                }
+              ],
+              "zh": "下次还来。",
+              "audioKey": "s3-l06-007-t1"
+            },
+            {
+              "id": "S3-L06-007-T2",
+              "role": "partner",
+              "ja": "お待ちしています。",
+              "kana": "おまちしています。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "待",
+                  "reading": "ま"
+                },
+                {
+                  "type": "text",
+                  "text": "ちしています。"
+                }
+              ],
+              "zh": "欢迎再来。",
+              "audioKey": "s3-l06-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    }
+  ],
+  "wordBank": [
+    {
+      "id": "S3-W-001",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "焼き鳥",
+      "kana": "やきとり",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "焼き鳥",
+          "reading": "やきとり"
+        }
+      ],
+      "zh": "烤鸡串",
+      "tags": [
+        "居酒屋"
+      ]
+    },
+    {
+      "id": "S3-W-002",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "刺身",
+      "kana": "さしみ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "刺身",
+          "reading": "さしみ"
+        }
+      ],
+      "zh": "刺身",
+      "tags": [
+        "居酒屋"
+      ]
+    },
+    {
+      "id": "S3-W-003",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "枝豆",
+      "kana": "えだまめ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "枝豆",
+          "reading": "えだまめ"
+        }
+      ],
+      "zh": "毛豆",
+      "tags": [
+        "居酒屋"
+      ]
+    },
+    {
+      "id": "S3-W-004",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "唐揚げ",
+      "kana": "からあげ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "唐揚げ",
+          "reading": "からあげ"
+        }
+      ],
+      "zh": "炸鸡",
+      "tags": [
+        "居酒屋"
+      ]
+    },
+    {
+      "id": "S3-W-005",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "取り皿",
+      "kana": "とりざら",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "取り皿",
+          "reading": "とりざら"
+        }
+      ],
+      "zh": "分餐盘",
+      "tags": [
+        "居酒屋"
+      ]
+    },
+    {
+      "id": "S3-W-006",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "会計",
+      "kana": "かいけい",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "会計",
+          "reading": "かいけい"
+        }
+      ],
+      "zh": "结账",
+      "tags": [
+        "居酒屋"
+      ]
+    },
+    {
+      "id": "S3-W-007",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "生ビール",
+      "kana": "なまビール",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "生ビール",
+          "reading": "なまビール"
+        }
+      ],
+      "zh": "生啤",
+      "tags": [
+        "居酒屋"
+      ]
+    },
+    {
+      "id": "S3-W-008",
+      "sceneId": "izakaya",
+      "lessonId": null,
+      "type": "word",
+      "ja": "おすすめ",
+      "kana": "おすすめ",
+      "ruby": [
+        {
+          "type": "text",
+          "text": "おすすめ"
+        }
+      ],
+      "zh": "推荐",
+      "tags": [
+        "居酒屋"
+      ]
+    }
+  ]
+}

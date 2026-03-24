@@ -1,0 +1,2885 @@
+{
+  "id": "hotel",
+  "code": "S2",
+  "label": "HOTEL",
+  "shortLabel": "HOTEL",
+  "icon": "🏨",
+  "description": "从入住登记到退房结算，把独旅住店时最常用的确认句和求助句练熟。",
+  "lessonCount": 6,
+  "sentenceCount": 80,
+  "lessons": [
+    {
+      "id": "S2-L01",
+      "code": "L01",
+      "title": "入住登记",
+      "order": 1,
+      "overview": "先把 check-in 柜台最常见的问答练顺，酒店第一印象就稳了。",
+      "cards": [
+        {
+          "id": "S2-L01-001",
+          "sceneId": "hotel",
+          "lessonId": "S2-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "入住",
+            "预约"
+          ],
+          "turns": [
+            {
+              "id": "S2-L01-001-T1",
+              "role": "learner",
+              "ja": "予約しています。",
+              "kana": "よやくしています。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "予約",
+                  "reading": "よやく"
+                },
+                {
+                  "type": "text",
+                  "text": "しています。"
+                }
+              ],
+              "zh": "我有预订。",
+              "audioKey": "s2-l01-001-t1"
+            },
+            {
+              "id": "S2-L01-001-T2",
+              "role": "partner",
+              "ja": "お名前をお願いします。",
+              "kana": "おなまえをおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "名前",
+                  "reading": "なまえ"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "请告诉我姓名。",
+              "audioKey": "s2-l01-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L01-002",
+          "sceneId": "hotel",
+          "lessonId": "S2-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "入住",
+            "护照"
+          ],
+          "turns": [
+            {
+              "id": "S2-L01-002-T1",
+              "role": "learner",
+              "ja": "今日は一泊です。",
+              "kana": "きょうはいっぱくです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "今日",
+                  "reading": "きょう"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一泊",
+                  "reading": "いっぱく"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "我今晚住一晚。",
+              "audioKey": "s2-l01-002-t1"
+            },
+            {
+              "id": "S2-L01-002-T2",
+              "role": "partner",
+              "ja": "パスポートを見せてください。",
+              "kana": "パスポートをみせてください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "パスポートを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "見",
+                  "reading": "み"
+                },
+                {
+                  "type": "text",
+                  "text": "せてください。"
+                }
+              ],
+              "zh": "请出示护照。",
+              "audioKey": "s2-l01-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L01-003",
+          "sceneId": "hotel",
+          "lessonId": "S2-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "入住",
+            "时间"
+          ],
+          "turns": [
+            {
+              "id": "S2-L01-003-T1",
+              "role": "learner",
+              "ja": "チェックインは何時までですか。",
+              "kana": "チェックインはなんじまでですか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "チェックインは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "何時",
+                  "reading": "なんじ"
+                },
+                {
+                  "type": "text",
+                  "text": "までですか。"
+                }
+              ],
+              "zh": "最晚几点能入住？",
+              "audioKey": "s2-l01-003-t1"
+            },
+            {
+              "id": "S2-L01-003-T2",
+              "role": "partner",
+              "ja": "24時までです。",
+              "kana": "24じまでです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "24"
+                },
+                {
+                  "type": "ruby",
+                  "base": "時",
+                  "reading": "じ"
+                },
+                {
+                  "type": "text",
+                  "text": "までです。"
+                }
+              ],
+              "zh": "到 24 点。",
+              "audioKey": "s2-l01-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L01-004",
+          "sceneId": "hotel",
+          "lessonId": "S2-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "入住",
+            "早餐"
+          ],
+          "turns": [
+            {
+              "id": "S2-L01-004-T1",
+              "role": "learner",
+              "ja": "朝食は付いていますか。",
+              "kana": "ちょうしょくはついていますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "朝食",
+                  "reading": "ちょうしょく"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "付",
+                  "reading": "つ"
+                },
+                {
+                  "type": "text",
+                  "text": "いていますか。"
+                }
+              ],
+              "zh": "含早餐吗？",
+              "audioKey": "s2-l01-004-t1"
+            },
+            {
+              "id": "S2-L01-004-T2",
+              "role": "partner",
+              "ja": "はい、2階でお召し上がりいただけます。",
+              "kana": "はい、2かいでおめしあがりいただけます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、2"
+                },
+                {
+                  "type": "ruby",
+                  "base": "階",
+                  "reading": "かい"
+                },
+                {
+                  "type": "text",
+                  "text": "でお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "召",
+                  "reading": "め"
+                },
+                {
+                  "type": "text",
+                  "text": "し"
+                },
+                {
+                  "type": "ruby",
+                  "base": "上",
+                  "reading": "あ"
+                },
+                {
+                  "type": "text",
+                  "text": "がりいただけます。"
+                }
+              ],
+              "zh": "包含，在二楼用餐。",
+              "audioKey": "s2-l01-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L01-005",
+          "sceneId": "hotel",
+          "lessonId": "S2-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "房型",
+            "偏好"
+          ],
+          "turns": [
+            {
+              "id": "S2-L01-005-T1",
+              "role": "learner",
+              "ja": "禁煙室をお願いします。",
+              "kana": "きんえんしつをおねがいします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "禁煙室",
+                  "reading": "きんえんしつ"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "我想要无烟房。",
+              "audioKey": "s2-l01-005-t1"
+            },
+            {
+              "id": "S2-L01-005-T2",
+              "role": "partner",
+              "ja": "はい、ご用意できます。",
+              "kana": "はい、ごよういできます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、ご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "用意",
+                  "reading": "ようい"
+                },
+                {
+                  "type": "text",
+                  "text": "できます。"
+                }
+              ],
+              "zh": "可以，能为您安排。",
+              "audioKey": "s2-l01-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L01-006",
+          "sceneId": "hotel",
+          "lessonId": "S2-L01",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "房型",
+            "楼层"
+          ],
+          "turns": [
+            {
+              "id": "S2-L01-006-T1",
+              "role": "learner",
+              "ja": "高い階の部屋がいいです。",
+              "kana": "たかいかいのへやがいいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "高",
+                  "reading": "たか"
+                },
+                {
+                  "type": "text",
+                  "text": "い"
+                },
+                {
+                  "type": "ruby",
+                  "base": "階",
+                  "reading": "かい"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "type": "text",
+                  "text": "がいいです。"
+                }
+              ],
+              "zh": "我想要高楼层的房间。",
+              "audioKey": "s2-l01-006-t1"
+            },
+            {
+              "id": "S2-L01-006-T2",
+              "role": "partner",
+              "ja": "10階の部屋をご案内します。",
+              "kana": "10かいのへやをごあんないします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "10"
+                },
+                {
+                  "type": "ruby",
+                  "base": "階",
+                  "reading": "かい"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "type": "text",
+                  "text": "をご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "案内",
+                  "reading": "あんない"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "给您安排十楼的房间。",
+              "audioKey": "s2-l01-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L01-007",
+          "sceneId": "hotel",
+          "lessonId": "S2-L01",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "行李",
+            "寄存"
+          ],
+          "turns": [
+            {
+              "id": "S2-L01-007-T1",
+              "role": "learner",
+              "ja": "荷物を先に預けられますか。",
+              "kana": "にもつをさきにあずけられますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "先",
+                  "reading": "さき"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "預",
+                  "reading": "あず"
+                },
+                {
+                  "type": "text",
+                  "text": "けられますか。"
+                }
+              ],
+              "zh": "我可以先寄存行李吗？",
+              "audioKey": "s2-l01-007-t1"
+            },
+            {
+              "id": "S2-L01-007-T2",
+              "role": "partner",
+              "ja": "はい、フロントでお預かりします。",
+              "kana": "はい、フロントでおあずかりします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、フロントでお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "預",
+                  "reading": "あず"
+                },
+                {
+                  "type": "text",
+                  "text": "かりします。"
+                }
+              ],
+              "zh": "可以，前台可以帮您保管。",
+              "audioKey": "s2-l01-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S2-L02",
+      "code": "L02",
+      "title": "房间需求",
+      "order": 2,
+      "overview": "进房之后的细碎需求很多，这一课专门练开门、加物品和设备确认。",
+      "cards": [
+        {
+          "id": "S2-L02-001",
+          "sceneId": "hotel",
+          "lessonId": "S2-L02",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "房卡",
+            "开门"
+          ],
+          "turns": [
+            {
+              "id": "S2-L02-001-T1",
+              "role": "learner",
+              "ja": "部屋の鍵が開きません。",
+              "kana": "へやのかぎがあきません。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "鍵",
+                  "reading": "かぎ"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "開",
+                  "reading": "あ"
+                },
+                {
+                  "type": "text",
+                  "text": "きません。"
+                }
+              ],
+              "zh": "房门打不开。",
+              "audioKey": "s2-l02-001-t1"
+            },
+            {
+              "id": "S2-L02-001-T2",
+              "role": "partner",
+              "ja": "すぐ確認します。",
+              "kana": "すぐかくにんします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "すぐ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "確認",
+                  "reading": "かくにん"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我马上确认。",
+              "audioKey": "s2-l02-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L02-002",
+          "sceneId": "hotel",
+          "lessonId": "S2-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "房间",
+            "毛巾"
+          ],
+          "turns": [
+            {
+              "id": "S2-L02-002-T1",
+              "role": "learner",
+              "ja": "タオルをもう一枚ください。",
+              "kana": "タオルをもういちまいください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "タオルをもう"
+                },
+                {
+                  "type": "ruby",
+                  "base": "一枚",
+                  "reading": "いちまい"
+                },
+                {
+                  "type": "text",
+                  "text": "ください。"
+                }
+              ],
+              "zh": "请再给我一条毛巾。",
+              "audioKey": "s2-l02-002-t1"
+            },
+            {
+              "id": "S2-L02-002-T2",
+              "role": "partner",
+              "ja": "かしこまりました。",
+              "kana": "かしこまりました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "かしこまりました。"
+                }
+              ],
+              "zh": "好的。",
+              "audioKey": "s2-l02-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L02-003",
+          "sceneId": "hotel",
+          "lessonId": "S2-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "房间",
+            "枕头"
+          ],
+          "turns": [
+            {
+              "id": "S2-L02-003-T1",
+              "role": "learner",
+              "ja": "枕を追加できますか。",
+              "kana": "まくらをついかできますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "枕",
+                  "reading": "まくら"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "追加",
+                  "reading": "ついか"
+                },
+                {
+                  "type": "text",
+                  "text": "できますか。"
+                }
+              ],
+              "zh": "可以再给我一个枕头吗？",
+              "audioKey": "s2-l02-003-t1"
+            },
+            {
+              "id": "S2-L02-003-T2",
+              "role": "partner",
+              "ja": "今お持ちします。",
+              "kana": "いまおもちします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "今",
+                  "reading": "いま"
+                },
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "持",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "ちします。"
+                }
+              ],
+              "zh": "我现在给您送过去。",
+              "audioKey": "s2-l02-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L02-004",
+          "sceneId": "hotel",
+          "lessonId": "S2-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "空调",
+            "设备"
+          ],
+          "turns": [
+            {
+              "id": "S2-L02-004-T1",
+              "role": "learner",
+              "ja": "エアコンの温度を下げたいです。",
+              "kana": "エアコンのおんどをさげたいです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "エアコンの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "温度",
+                  "reading": "おんど"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "下",
+                  "reading": "さ"
+                },
+                {
+                  "type": "text",
+                  "text": "げたいです。"
+                }
+              ],
+              "zh": "我想把空调温度调低一点。",
+              "audioKey": "s2-l02-004-t1"
+            },
+            {
+              "id": "S2-L02-004-T2",
+              "role": "partner",
+              "ja": "壁のパネルで調整できます。",
+              "kana": "かべのパネルでちょうせいできます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "壁",
+                  "reading": "かべ"
+                },
+                {
+                  "type": "text",
+                  "text": "のパネルで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "調整",
+                  "reading": "ちょうせい"
+                },
+                {
+                  "type": "text",
+                  "text": "できます。"
+                }
+              ],
+              "zh": "可以在墙上的面板调节。",
+              "audioKey": "s2-l02-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L02-005",
+          "sceneId": "hotel",
+          "lessonId": "S2-L02",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "网络",
+            "Wi-Fi"
+          ],
+          "turns": [
+            {
+              "id": "S2-L02-005-T1",
+              "role": "learner",
+              "ja": "Wi-Fiのパスワードは何ですか。",
+              "kana": "Wi-Fiのパスワードはなんですか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "Wi-Fiのパスワードは"
+                },
+                {
+                  "type": "ruby",
+                  "base": "何",
+                  "reading": "なん"
+                },
+                {
+                  "type": "text",
+                  "text": "ですか。"
+                }
+              ],
+              "zh": "Wi-Fi 密码是什么？",
+              "audioKey": "s2-l02-005-t1"
+            },
+            {
+              "id": "S2-L02-005-T2",
+              "role": "partner",
+              "ja": "こちらに書いてあります。",
+              "kana": "こちらにかいてあります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "こちらに"
+                },
+                {
+                  "type": "ruby",
+                  "base": "書",
+                  "reading": "か"
+                },
+                {
+                  "type": "text",
+                  "text": "いてあります。"
+                }
+              ],
+              "zh": "写在这里了。",
+              "audioKey": "s2-l02-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L02-006",
+          "sceneId": "hotel",
+          "lessonId": "S2-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "房型",
+            "安静"
+          ],
+          "turns": [
+            {
+              "id": "S2-L02-006-T1",
+              "role": "learner",
+              "ja": "静かな部屋はありますか。",
+              "kana": "しずかなへやはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "静",
+                  "reading": "しず"
+                },
+                {
+                  "type": "text",
+                  "text": "かな"
+                },
+                {
+                  "type": "ruby",
+                  "base": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "type": "text",
+                  "text": "はありますか。"
+                }
+              ],
+              "zh": "有更安静一点的房间吗？",
+              "audioKey": "s2-l02-006-t1"
+            },
+            {
+              "id": "S2-L02-006-T2",
+              "role": "partner",
+              "ja": "中庭側に変更できます。",
+              "kana": "なかにわがわにへんこうできます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "中庭側",
+                  "reading": "なかにわがわ"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "変更",
+                  "reading": "へんこう"
+                },
+                {
+                  "type": "text",
+                  "text": "できます。"
+                }
+              ],
+              "zh": "可以换到朝中庭那边。",
+              "audioKey": "s2-l02-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L02-007",
+          "sceneId": "hotel",
+          "lessonId": "S2-L02",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "床型",
+            "整理"
+          ],
+          "turns": [
+            {
+              "id": "S2-L02-007-T1",
+              "role": "learner",
+              "ja": "ベッドを離してもらえますか。",
+              "kana": "ベッドをはなしてもらえますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ベッドを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "離",
+                  "reading": "はな"
+                },
+                {
+                  "type": "text",
+                  "text": "してもらえますか。"
+                }
+              ],
+              "zh": "可以把两张床分开吗？",
+              "audioKey": "s2-l02-007-t1"
+            },
+            {
+              "id": "S2-L02-007-T2",
+              "role": "partner",
+              "ja": "清掃後に対応します。",
+              "kana": "せいそうごにたいおうします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "清掃後",
+                  "reading": "せいそうご"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "対応",
+                  "reading": "たいおう"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "打扫后可以帮您处理。",
+              "audioKey": "s2-l02-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S2-L03",
+      "code": "L03",
+      "title": "设施与早餐",
+      "order": 3,
+      "overview": "洗衣房、大浴场、早餐时间这些信息，最好一进酒店就问清楚。",
+      "cards": [
+        {
+          "id": "S2-L03-001",
+          "sceneId": "hotel",
+          "lessonId": "S2-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "设施",
+            "洗衣"
+          ],
+          "turns": [
+            {
+              "id": "S2-L03-001-T1",
+              "role": "learner",
+              "ja": "洗濯機はありますか。",
+              "kana": "せんたくきはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "洗濯機",
+                  "reading": "せんたくき"
+                },
+                {
+                  "type": "text",
+                  "text": "はありますか。"
+                }
+              ],
+              "zh": "有洗衣机吗？",
+              "audioKey": "s2-l03-001-t1"
+            },
+            {
+              "id": "S2-L03-001-T2",
+              "role": "partner",
+              "ja": "3階にあります。",
+              "kana": "3かいにあります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "3"
+                },
+                {
+                  "type": "ruby",
+                  "base": "階",
+                  "reading": "かい"
+                },
+                {
+                  "type": "text",
+                  "text": "にあります。"
+                }
+              ],
+              "zh": "三楼有。",
+              "audioKey": "s2-l03-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L03-002",
+          "sceneId": "hotel",
+          "lessonId": "S2-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "设施",
+            "浴场"
+          ],
+          "turns": [
+            {
+              "id": "S2-L03-002-T1",
+              "role": "learner",
+              "ja": "大浴場は何時までですか。",
+              "kana": "だいよくじょうはなんじまでですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "大浴場",
+                  "reading": "だいよくじょう"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "何時",
+                  "reading": "なんじ"
+                },
+                {
+                  "type": "text",
+                  "text": "までですか。"
+                }
+              ],
+              "zh": "大浴场开到几点？",
+              "audioKey": "s2-l03-002-t1"
+            },
+            {
+              "id": "S2-L03-002-T2",
+              "role": "partner",
+              "ja": "夜11時までです。",
+              "kana": "よる11じまでです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "夜",
+                  "reading": "よる"
+                },
+                {
+                  "type": "text",
+                  "text": "11"
+                },
+                {
+                  "type": "ruby",
+                  "base": "時",
+                  "reading": "じ"
+                },
+                {
+                  "type": "text",
+                  "text": "までです。"
+                }
+              ],
+              "zh": "晚上 11 点。",
+              "audioKey": "s2-l03-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L03-003",
+          "sceneId": "hotel",
+          "lessonId": "S2-L03",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "早餐",
+            "时间"
+          ],
+          "turns": [
+            {
+              "id": "S2-L03-003-T1",
+              "role": "learner",
+              "ja": "朝食は何時からですか。",
+              "kana": "ちょうしょくはなんじからですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "朝食",
+                  "reading": "ちょうしょく"
+                },
+                {
+                  "type": "text",
+                  "text": "は"
+                },
+                {
+                  "type": "ruby",
+                  "base": "何時",
+                  "reading": "なんじ"
+                },
+                {
+                  "type": "text",
+                  "text": "からですか。"
+                }
+              ],
+              "zh": "早餐几点开始？",
+              "audioKey": "s2-l03-003-t1"
+            },
+            {
+              "id": "S2-L03-003-T2",
+              "role": "partner",
+              "ja": "6時半からです。",
+              "kana": "6じはんからです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "6"
+                },
+                {
+                  "type": "ruby",
+                  "base": "時半",
+                  "reading": "じはん"
+                },
+                {
+                  "type": "text",
+                  "text": "からです。"
+                }
+              ],
+              "zh": "六点半开始。",
+              "audioKey": "s2-l03-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L03-004",
+          "sceneId": "hotel",
+          "lessonId": "S2-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "早餐",
+            "饮食限制"
+          ],
+          "turns": [
+            {
+              "id": "S2-L03-004-T1",
+              "role": "learner",
+              "ja": "ベジタリアンメニューはありますか。",
+              "kana": "ベジタリアンメニューはありますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ベジタリアンメニューはありますか。"
+                }
+              ],
+              "zh": "有素食吗？",
+              "audioKey": "s2-l03-004-t1"
+            },
+            {
+              "id": "S2-L03-004-T2",
+              "role": "partner",
+              "ja": "少しだけございます。",
+              "kana": "すこしだけございます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "type": "text",
+                  "text": "しだけございます。"
+                }
+              ],
+              "zh": "有一点。",
+              "audioKey": "s2-l03-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L03-005",
+          "sceneId": "hotel",
+          "lessonId": "S2-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "行李",
+            "称重"
+          ],
+          "turns": [
+            {
+              "id": "S2-L03-005-T1",
+              "role": "learner",
+              "ja": "荷物を量る秤はありますか。",
+              "kana": "にもつをはかるはかりはありますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "量",
+                  "reading": "はか"
+                },
+                {
+                  "type": "text",
+                  "text": "る"
+                },
+                {
+                  "type": "ruby",
+                  "base": "秤",
+                  "reading": "はかり"
+                },
+                {
+                  "type": "text",
+                  "text": "はありますか。"
+                }
+              ],
+              "zh": "有可以称行李的秤吗？",
+              "audioKey": "s2-l03-005-t1"
+            },
+            {
+              "id": "S2-L03-005-T2",
+              "role": "partner",
+              "ja": "フロントでお貸しします。",
+              "kana": "フロントでおかしします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "フロントでお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "貸",
+                  "reading": "か"
+                },
+                {
+                  "type": "text",
+                  "text": "しします。"
+                }
+              ],
+              "zh": "前台可以借给您。",
+              "audioKey": "s2-l03-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L03-006",
+          "sceneId": "hotel",
+          "lessonId": "S2-L03",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "设施",
+            "自动贩卖机"
+          ],
+          "turns": [
+            {
+              "id": "S2-L03-006-T1",
+              "role": "learner",
+              "ja": "自動販売機はどこですか。",
+              "kana": "じどうはんばいきはどこですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "自動販売機",
+                  "reading": "じどうはんばいき"
+                },
+                {
+                  "type": "text",
+                  "text": "はどこですか。"
+                }
+              ],
+              "zh": "自动贩卖机在哪里？",
+              "audioKey": "s2-l03-006-t1"
+            },
+            {
+              "id": "S2-L03-006-T2",
+              "role": "partner",
+              "ja": "エレベーターの隣です。",
+              "kana": "エレベーターのとなりです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "エレベーターの"
+                },
+                {
+                  "type": "ruby",
+                  "base": "隣",
+                  "reading": "となり"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "在电梯旁边。",
+              "audioKey": "s2-l03-006-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S2-L04",
+      "code": "L04",
+      "title": "投诉与问题",
+      "order": 4,
+      "overview": "房间出问题时要尽量说得直接又礼貌，这课专练最常见的故障和投诉。",
+      "cards": [
+        {
+          "id": "S2-L04-001",
+          "sceneId": "hotel",
+          "lessonId": "S2-L04",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "投诉",
+            "热水"
+          ],
+          "turns": [
+            {
+              "id": "S2-L04-001-T1",
+              "role": "learner",
+              "ja": "シャワーのお湯が出ません。",
+              "kana": "シャワーのおゆがでません。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "シャワーのお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "湯",
+                  "reading": "ゆ"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "出",
+                  "reading": "で"
+                },
+                {
+                  "type": "text",
+                  "text": "ません。"
+                }
+              ],
+              "zh": "淋浴没有热水。",
+              "audioKey": "s2-l04-001-t1"
+            },
+            {
+              "id": "S2-L04-001-T2",
+              "role": "partner",
+              "ja": "すぐにスタッフを向かわせます。",
+              "kana": "すぐにスタッフをむかわせます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "すぐにスタッフを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "向",
+                  "reading": "む"
+                },
+                {
+                  "type": "text",
+                  "text": "かわせます。"
+                }
+              ],
+              "zh": "我马上让工作人员过去。",
+              "audioKey": "s2-l04-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L04-002",
+          "sceneId": "hotel",
+          "lessonId": "S2-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "投诉",
+            "温度"
+          ],
+          "turns": [
+            {
+              "id": "S2-L04-002-T1",
+              "role": "learner",
+              "ja": "部屋が少し寒いです。",
+              "kana": "へやがすこしさむいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "type": "text",
+                  "text": "し"
+                },
+                {
+                  "type": "ruby",
+                  "base": "寒",
+                  "reading": "さむ"
+                },
+                {
+                  "type": "text",
+                  "text": "いです。"
+                }
+              ],
+              "zh": "房间有点冷。",
+              "audioKey": "s2-l04-002-t1"
+            },
+            {
+              "id": "S2-L04-002-T2",
+              "role": "partner",
+              "ja": "毛布をお持ちしましょうか。",
+              "kana": "もうふをおもちしましょうか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "毛布",
+                  "reading": "もうふ"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "持",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "ちしましょうか。"
+                }
+              ],
+              "zh": "要不要给您送一条毛毯？",
+              "audioKey": "s2-l04-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L04-003",
+          "sceneId": "hotel",
+          "lessonId": "S2-L04",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "投诉",
+            "噪音"
+          ],
+          "turns": [
+            {
+              "id": "S2-L04-003-T1",
+              "role": "learner",
+              "ja": "隣の部屋がうるさいです。",
+              "kana": "となりのへやがうるさいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "隣",
+                  "reading": "となり"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "type": "text",
+                  "text": "がうるさいです。"
+                }
+              ],
+              "zh": "隔壁房间有点吵。",
+              "audioKey": "s2-l04-003-t1"
+            },
+            {
+              "id": "S2-L04-003-T2",
+              "role": "partner",
+              "ja": "すぐ確認します。",
+              "kana": "すぐかくにんします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "すぐ"
+                },
+                {
+                  "type": "ruby",
+                  "base": "確認",
+                  "reading": "かくにん"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我马上去确认。",
+              "audioKey": "s2-l04-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L04-004",
+          "sceneId": "hotel",
+          "lessonId": "S2-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "清洁",
+            "等待"
+          ],
+          "turns": [
+            {
+              "id": "S2-L04-004-T1",
+              "role": "learner",
+              "ja": "掃除はまだですか。",
+              "kana": "そうじはまだですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "掃除",
+                  "reading": "そうじ"
+                },
+                {
+                  "type": "text",
+                  "text": "はまだですか。"
+                }
+              ],
+              "zh": "打扫还没好吗？",
+              "audioKey": "s2-l04-004-t1"
+            },
+            {
+              "id": "S2-L04-004-T2",
+              "role": "partner",
+              "ja": "30分以内に入ります。",
+              "kana": "30ぷんいないにはいります。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "30"
+                },
+                {
+                  "type": "ruby",
+                  "base": "分以内",
+                  "reading": "ぷんいない"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "入",
+                  "reading": "はい"
+                },
+                {
+                  "type": "text",
+                  "text": "ります。"
+                }
+              ],
+              "zh": "三十分钟内会过去。",
+              "audioKey": "s2-l04-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L04-005",
+          "sceneId": "hotel",
+          "lessonId": "S2-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "设备",
+            "吹风机"
+          ],
+          "turns": [
+            {
+              "id": "S2-L04-005-T1",
+              "role": "learner",
+              "ja": "ドライヤーが動きません。",
+              "kana": "ドライヤーがうごきません。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ドライヤーが"
+                },
+                {
+                  "type": "ruby",
+                  "base": "動",
+                  "reading": "うご"
+                },
+                {
+                  "type": "text",
+                  "text": "きません。"
+                }
+              ],
+              "zh": "吹风机坏了。",
+              "audioKey": "s2-l04-005-t1"
+            },
+            {
+              "id": "S2-L04-005-T2",
+              "role": "partner",
+              "ja": "新しいものをお持ちします。",
+              "kana": "あたらしいものをおもちします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "新",
+                  "reading": "あたら"
+                },
+                {
+                  "type": "text",
+                  "text": "しいものをお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "持",
+                  "reading": "も"
+                },
+                {
+                  "type": "text",
+                  "text": "ちします。"
+                }
+              ],
+              "zh": "我给您送一个新的。",
+              "audioKey": "s2-l04-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L04-006",
+          "sceneId": "hotel",
+          "lessonId": "S2-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "房卡",
+            "遗失"
+          ],
+          "turns": [
+            {
+              "id": "S2-L04-006-T1",
+              "role": "learner",
+              "ja": "カードキーをなくしました。",
+              "kana": "カードキーをなくしました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "カードキーをなくしました。"
+                }
+              ],
+              "zh": "我的房卡丢了。",
+              "audioKey": "s2-l04-006-t1"
+            },
+            {
+              "id": "S2-L04-006-T2",
+              "role": "partner",
+              "ja": "再発行します。",
+              "kana": "さいはっこうします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "再発行",
+                  "reading": "さいはっこう"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我给您补一张。",
+              "audioKey": "s2-l04-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L04-007",
+          "sceneId": "hotel",
+          "lessonId": "S2-L04",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "预约",
+            "核对"
+          ],
+          "turns": [
+            {
+              "id": "S2-L04-007-T1",
+              "role": "learner",
+              "ja": "予約内容が違う気がします。",
+              "kana": "よやくないようがちがうきがします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "予約内容",
+                  "reading": "よやくないよう"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "違",
+                  "reading": "ちが"
+                },
+                {
+                  "type": "text",
+                  "text": "う"
+                },
+                {
+                  "type": "ruby",
+                  "base": "気",
+                  "reading": "き"
+                },
+                {
+                  "type": "text",
+                  "text": "がします。"
+                }
+              ],
+              "zh": "我感觉预订内容有点不对。",
+              "audioKey": "s2-l04-007-t1"
+            },
+            {
+              "id": "S2-L04-007-T2",
+              "role": "partner",
+              "ja": "一緒に確認しましょう。",
+              "kana": "いっしょにかくにんしましょう。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "一緒",
+                  "reading": "いっしょ"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "確認",
+                  "reading": "かくにん"
+                },
+                {
+                  "type": "text",
+                  "text": "しましょう。"
+                }
+              ],
+              "zh": "我们一起确认一下。",
+              "audioKey": "s2-l04-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S2-L05",
+      "code": "L05",
+      "title": "叫车与出行",
+      "order": 5,
+      "overview": "从酒店出门时常常要临时问路、叫车、借伞，这一课把出行口语定住。",
+      "cards": [
+        {
+          "id": "S2-L05-001",
+          "sceneId": "hotel",
+          "lessonId": "S2-L05",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "出行",
+            "叫车"
+          ],
+          "turns": [
+            {
+              "id": "S2-L05-001-T1",
+              "role": "learner",
+              "ja": "空港までタクシーを呼べますか。",
+              "kana": "くうこうまでタクシーをよべますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "空港",
+                  "reading": "くうこう"
+                },
+                {
+                  "type": "text",
+                  "text": "までタクシーを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "呼",
+                  "reading": "よ"
+                },
+                {
+                  "type": "text",
+                  "text": "べますか。"
+                }
+              ],
+              "zh": "可以帮我叫辆去机场的出租车吗？",
+              "audioKey": "s2-l05-001-t1"
+            },
+            {
+              "id": "S2-L05-001-T2",
+              "role": "partner",
+              "ja": "何時に必要ですか。",
+              "kana": "なんじにひつようですか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "何時",
+                  "reading": "なんじ"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "必要",
+                  "reading": "ひつよう"
+                },
+                {
+                  "type": "text",
+                  "text": "ですか。"
+                }
+              ],
+              "zh": "您几点需要？",
+              "audioKey": "s2-l05-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L05-002",
+          "sceneId": "hotel",
+          "lessonId": "S2-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "出行",
+            "步行"
+          ],
+          "turns": [
+            {
+              "id": "S2-L05-002-T1",
+              "role": "learner",
+              "ja": "駅まで歩けますか。",
+              "kana": "えきまであるけますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "駅",
+                  "reading": "えき"
+                },
+                {
+                  "type": "text",
+                  "text": "まで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "歩",
+                  "reading": "ある"
+                },
+                {
+                  "type": "text",
+                  "text": "けますか。"
+                }
+              ],
+              "zh": "可以走路去车站吗？",
+              "audioKey": "s2-l05-002-t1"
+            },
+            {
+              "id": "S2-L05-002-T2",
+              "role": "partner",
+              "ja": "5分くらいです。",
+              "kana": "5ふんくらいです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "5"
+                },
+                {
+                  "type": "ruby",
+                  "base": "分",
+                  "reading": "ふん"
+                },
+                {
+                  "type": "text",
+                  "text": "くらいです。"
+                }
+              ],
+              "zh": "大概五分钟。",
+              "audioKey": "s2-l05-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L05-003",
+          "sceneId": "hotel",
+          "lessonId": "S2-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "出行",
+            "便利店"
+          ],
+          "turns": [
+            {
+              "id": "S2-L05-003-T1",
+              "role": "learner",
+              "ja": "この近くにコンビニはありますか。",
+              "kana": "このちかくにコンビニはありますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "この"
+                },
+                {
+                  "type": "ruby",
+                  "base": "近",
+                  "reading": "ちか"
+                },
+                {
+                  "type": "text",
+                  "text": "くにコンビニはありますか。"
+                }
+              ],
+              "zh": "这附近有便利店吗？",
+              "audioKey": "s2-l05-003-t1"
+            },
+            {
+              "id": "S2-L05-003-T2",
+              "role": "partner",
+              "ja": "角を右に曲がるとあります。",
+              "kana": "かどをみぎにまがるとあります。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "角",
+                  "reading": "かど"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "右",
+                  "reading": "みぎ"
+                },
+                {
+                  "type": "text",
+                  "text": "に"
+                },
+                {
+                  "type": "ruby",
+                  "base": "曲",
+                  "reading": "ま"
+                },
+                {
+                  "type": "text",
+                  "text": "がるとあります。"
+                }
+              ],
+              "zh": "右转过街角就有。",
+              "audioKey": "s2-l05-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L05-004",
+          "sceneId": "hotel",
+          "lessonId": "S2-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "出行",
+            "巴士"
+          ],
+          "turns": [
+            {
+              "id": "S2-L05-004-T1",
+              "role": "learner",
+              "ja": "観光地へのバスはどこから出ますか。",
+              "kana": "かんこうちへのバスはどこからでますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "観光地",
+                  "reading": "かんこうち"
+                },
+                {
+                  "type": "text",
+                  "text": "へのバスはどこから"
+                },
+                {
+                  "type": "ruby",
+                  "base": "出",
+                  "reading": "で"
+                },
+                {
+                  "type": "text",
+                  "text": "ますか。"
+                }
+              ],
+              "zh": "去景点的巴士从哪里坐？",
+              "audioKey": "s2-l05-004-t1"
+            },
+            {
+              "id": "S2-L05-004-T2",
+              "role": "partner",
+              "ja": "正面入口の前です。",
+              "kana": "しょうめんいりぐちのまえです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "正面入口",
+                  "reading": "しょうめんいりぐち"
+                },
+                {
+                  "type": "text",
+                  "text": "の"
+                },
+                {
+                  "type": "ruby",
+                  "base": "前",
+                  "reading": "まえ"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "就在正门前面。",
+              "audioKey": "s2-l05-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L05-005",
+          "sceneId": "hotel",
+          "lessonId": "S2-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "天气",
+            "借伞"
+          ],
+          "turns": [
+            {
+              "id": "S2-L05-005-T1",
+              "role": "learner",
+              "ja": "雨が降りそうです。",
+              "kana": "あめがふりそうです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "雨",
+                  "reading": "あめ"
+                },
+                {
+                  "type": "text",
+                  "text": "が"
+                },
+                {
+                  "type": "ruby",
+                  "base": "降",
+                  "reading": "ふ"
+                },
+                {
+                  "type": "text",
+                  "text": "りそうです。"
+                }
+              ],
+              "zh": "看起来要下雨了。",
+              "audioKey": "s2-l05-005-t1"
+            },
+            {
+              "id": "S2-L05-005-T2",
+              "role": "partner",
+              "ja": "傘をお貸しできます。",
+              "kana": "かさをおかしできます。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "傘",
+                  "reading": "かさ"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "貸",
+                  "reading": "か"
+                },
+                {
+                  "type": "text",
+                  "text": "しできます。"
+                }
+              ],
+              "zh": "可以借您一把伞。",
+              "audioKey": "s2-l05-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L05-006",
+          "sceneId": "hotel",
+          "lessonId": "S2-L05",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "行李",
+            "配送"
+          ],
+          "turns": [
+            {
+              "id": "S2-L05-006-T1",
+              "role": "learner",
+              "ja": "荷物を駅まで送りたいです。",
+              "kana": "にもつをえきまでおくりたいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "駅",
+                  "reading": "えき"
+                },
+                {
+                  "type": "text",
+                  "text": "まで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "送",
+                  "reading": "おく"
+                },
+                {
+                  "type": "text",
+                  "text": "りたいです。"
+                }
+              ],
+              "zh": "我想把行李寄到车站。",
+              "audioKey": "s2-l05-006-t1"
+            },
+            {
+              "id": "S2-L05-006-T2",
+              "role": "partner",
+              "ja": "宅配サービスをご案内します。",
+              "kana": "たくはいサービスをごあんないします。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "宅配",
+                  "reading": "たくはい"
+                },
+                {
+                  "type": "text",
+                  "text": "サービスをご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "案内",
+                  "reading": "あんない"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我给您介绍宅配服务。",
+              "audioKey": "s2-l05-006-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    },
+    {
+      "id": "S2-L06",
+      "code": "L06",
+      "title": "退房结算",
+      "order": 6,
+      "overview": "退房阶段节奏很快，账单、延住、寄存都要能简短确认。",
+      "cards": [
+        {
+          "id": "S2-L06-001",
+          "sceneId": "hotel",
+          "lessonId": "S2-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "退房",
+            "结算"
+          ],
+          "turns": [
+            {
+              "id": "S2-L06-001-T1",
+              "role": "learner",
+              "ja": "チェックアウトをお願いします。",
+              "kana": "チェックアウトをおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "チェックアウトを"
+                },
+                {
+                  "type": "ruby",
+                  "base": "お願い",
+                  "reading": "おねがい"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "我要退房。",
+              "audioKey": "s2-l06-001-t1"
+            },
+            {
+              "id": "S2-L06-001-T2",
+              "role": "partner",
+              "ja": "お部屋番号をお願いします。",
+              "kana": "おへやばんごうをおねがいします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "お"
+                },
+                {
+                  "type": "ruby",
+                  "base": "部屋番号",
+                  "reading": "へやばんごう"
+                },
+                {
+                  "type": "text",
+                  "text": "をお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "type": "text",
+                  "text": "いします。"
+                }
+              ],
+              "zh": "请告诉我房间号。",
+              "audioKey": "s2-l06-001-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L06-002",
+          "sceneId": "hotel",
+          "lessonId": "S2-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "退房",
+            "延住"
+          ],
+          "turns": [
+            {
+              "id": "S2-L06-002-T1",
+              "role": "learner",
+              "ja": "延長できますか。",
+              "kana": "えんちょうできますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "延長",
+                  "reading": "えんちょう"
+                },
+                {
+                  "type": "text",
+                  "text": "できますか。"
+                }
+              ],
+              "zh": "可以延迟退房吗？",
+              "audioKey": "s2-l06-002-t1"
+            },
+            {
+              "id": "S2-L06-002-T2",
+              "role": "partner",
+              "ja": "1時間千円です。",
+              "kana": "1じかんせんえんです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "1"
+                },
+                {
+                  "type": "ruby",
+                  "base": "時間",
+                  "reading": "じかん"
+                },
+                {
+                  "type": "ruby",
+                  "base": "千円",
+                  "reading": "せんえん"
+                },
+                {
+                  "type": "text",
+                  "text": "です。"
+                }
+              ],
+              "zh": "每延一小时一千日元。",
+              "audioKey": "s2-l06-002-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L06-003",
+          "sceneId": "hotel",
+          "lessonId": "S2-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "结算",
+            "刷卡"
+          ],
+          "turns": [
+            {
+              "id": "S2-L06-003-T1",
+              "role": "learner",
+              "ja": "支払いはカードでできますか。",
+              "kana": "しはらいはカードでできますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "支払",
+                  "reading": "しはら"
+                },
+                {
+                  "type": "text",
+                  "text": "いはカードでできますか。"
+                }
+              ],
+              "zh": "可以刷卡吗？",
+              "audioKey": "s2-l06-003-t1"
+            },
+            {
+              "id": "S2-L06-003-T2",
+              "role": "partner",
+              "ja": "はい、ご利用いただけます。",
+              "kana": "はい、ごりよういただけます。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "はい、ご"
+                },
+                {
+                  "type": "ruby",
+                  "base": "利用",
+                  "reading": "りよう"
+                },
+                {
+                  "type": "text",
+                  "text": "いただけます。"
+                }
+              ],
+              "zh": "可以。",
+              "audioKey": "s2-l06-003-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L06-004",
+          "sceneId": "hotel",
+          "lessonId": "S2-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "结算",
+            "收据"
+          ],
+          "turns": [
+            {
+              "id": "S2-L06-004-T1",
+              "role": "learner",
+              "ja": "領収書をください。",
+              "kana": "りょうしゅうしょをください。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "領収書",
+                  "reading": "りょうしゅうしょ"
+                },
+                {
+                  "type": "text",
+                  "text": "をください。"
+                }
+              ],
+              "zh": "请给我收据。",
+              "audioKey": "s2-l06-004-t1"
+            },
+            {
+              "id": "S2-L06-004-T2",
+              "role": "partner",
+              "ja": "宛名はどうしますか。",
+              "kana": "あてなはどうしますか。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "宛名",
+                  "reading": "あてな"
+                },
+                {
+                  "type": "text",
+                  "text": "はどうしますか。"
+                }
+              ],
+              "zh": "抬头怎么写？",
+              "audioKey": "s2-l06-004-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L06-005",
+          "sceneId": "hotel",
+          "lessonId": "S2-L06",
+          "type": "dialogue",
+          "isCore": true,
+          "coachNote": null,
+          "tags": [
+            "行李",
+            "寄存"
+          ],
+          "turns": [
+            {
+              "id": "S2-L06-005-T1",
+              "role": "learner",
+              "ja": "荷物を夕方まで預けたいです。",
+              "kana": "にもつをゆうがたまであずけたいです。",
+              "ruby": [
+                {
+                  "type": "ruby",
+                  "base": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "type": "text",
+                  "text": "を"
+                },
+                {
+                  "type": "ruby",
+                  "base": "夕方",
+                  "reading": "ゆうがた"
+                },
+                {
+                  "type": "text",
+                  "text": "まで"
+                },
+                {
+                  "type": "ruby",
+                  "base": "預",
+                  "reading": "あず"
+                },
+                {
+                  "type": "text",
+                  "text": "けたいです。"
+                }
+              ],
+              "zh": "我想把行李寄存到傍晚。",
+              "audioKey": "s2-l06-005-t1"
+            },
+            {
+              "id": "S2-L06-005-T2",
+              "role": "partner",
+              "ja": "もちろんです。",
+              "kana": "もちろんです。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "もちろんです。"
+                }
+              ],
+              "zh": "当然可以。",
+              "audioKey": "s2-l06-005-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L06-006",
+          "sceneId": "hotel",
+          "lessonId": "S2-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "叫车",
+            "确认"
+          ],
+          "turns": [
+            {
+              "id": "S2-L06-006-T1",
+              "role": "learner",
+              "ja": "タクシーはもう来ていますか。",
+              "kana": "タクシーはもうきていますか。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "タクシーはもう"
+                },
+                {
+                  "type": "ruby",
+                  "base": "来",
+                  "reading": "き"
+                },
+                {
+                  "type": "text",
+                  "text": "ていますか。"
+                }
+              ],
+              "zh": "出租车已经到了吗？",
+              "audioKey": "s2-l06-006-t1"
+            },
+            {
+              "id": "S2-L06-006-T2",
+              "role": "partner",
+              "ja": "あと5分で到着します。",
+              "kana": "あと5ふんでとうちゃくします。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "あと5"
+                },
+                {
+                  "type": "ruby",
+                  "base": "分",
+                  "reading": "ふん"
+                },
+                {
+                  "type": "text",
+                  "text": "で"
+                },
+                {
+                  "type": "ruby",
+                  "base": "到着",
+                  "reading": "とうちゃく"
+                },
+                {
+                  "type": "text",
+                  "text": "します。"
+                }
+              ],
+              "zh": "再过五分钟到。",
+              "audioKey": "s2-l06-006-t2"
+            }
+          ]
+        },
+        {
+          "id": "S2-L06-007",
+          "sceneId": "hotel",
+          "lessonId": "S2-L06",
+          "type": "dialogue",
+          "isCore": false,
+          "coachNote": null,
+          "tags": [
+            "结束",
+            "道别"
+          ],
+          "turns": [
+            {
+              "id": "S2-L06-007-T1",
+              "role": "learner",
+              "ja": "ありがとうございました。",
+              "kana": "ありがとうございました。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "ありがとうございました。"
+                }
+              ],
+              "zh": "谢谢你们。",
+              "audioKey": "s2-l06-007-t1"
+            },
+            {
+              "id": "S2-L06-007-T2",
+              "role": "partner",
+              "ja": "またお越しください。",
+              "kana": "またおこしください。",
+              "ruby": [
+                {
+                  "type": "text",
+                  "text": "またお"
+                },
+                {
+                  "type": "ruby",
+                  "base": "越",
+                  "reading": "こ"
+                },
+                {
+                  "type": "text",
+                  "text": "しください。"
+                }
+              ],
+              "zh": "欢迎下次再来。",
+              "audioKey": "s2-l06-007-t2"
+            }
+          ]
+        }
+      ],
+      "wordBank": []
+    }
+  ],
+  "wordBank": [
+    {
+      "id": "S2-W-001",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "禁煙室",
+      "kana": "きんえんしつ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "禁煙室",
+          "reading": "きんえんしつ"
+        }
+      ],
+      "zh": "无烟房",
+      "tags": [
+        "酒店"
+      ]
+    },
+    {
+      "id": "S2-W-002",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "朝食",
+      "kana": "ちょうしょく",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "朝食",
+          "reading": "ちょうしょく"
+        }
+      ],
+      "zh": "早餐",
+      "tags": [
+        "酒店"
+      ]
+    },
+    {
+      "id": "S2-W-003",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "部屋番号",
+      "kana": "へやばんごう",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "部屋番号",
+          "reading": "へやばんごう"
+        }
+      ],
+      "zh": "房间号",
+      "tags": [
+        "酒店"
+      ]
+    },
+    {
+      "id": "S2-W-004",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "領収書",
+      "kana": "りょうしゅうしょ",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "領収書",
+          "reading": "りょうしゅうしょ"
+        }
+      ],
+      "zh": "收据",
+      "tags": [
+        "酒店"
+      ]
+    },
+    {
+      "id": "S2-W-005",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "大浴場",
+      "kana": "だいよくじょう",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "大浴場",
+          "reading": "だいよくじょう"
+        }
+      ],
+      "zh": "大浴场",
+      "tags": [
+        "酒店"
+      ]
+    },
+    {
+      "id": "S2-W-006",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "宅配サービス",
+      "kana": "たくはいサービス",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "宅配",
+          "reading": "たくはい"
+        },
+        {
+          "type": "text",
+          "text": "サービス"
+        }
+      ],
+      "zh": "快递服务",
+      "tags": [
+        "酒店"
+      ]
+    },
+    {
+      "id": "S2-W-007",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "延長",
+      "kana": "えんちょう",
+      "ruby": [
+        {
+          "type": "ruby",
+          "base": "延長",
+          "reading": "えんちょう"
+        }
+      ],
+      "zh": "延住",
+      "tags": [
+        "酒店"
+      ]
+    },
+    {
+      "id": "S2-W-008",
+      "sceneId": "hotel",
+      "lessonId": null,
+      "type": "word",
+      "ja": "フロント",
+      "kana": "フロント",
+      "ruby": [
+        {
+          "type": "text",
+          "text": "フロント"
+        }
+      ],
+      "zh": "前台",
+      "tags": [
+        "酒店"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1271 @@
+{
+  "version": 1,
+  "reviewSeeds": [
+    {
+      "contentId": "S1-L01-001",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L01-002",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L01-003",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L01-004",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L01-005",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L01-006",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L01-007",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L02-001",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L02-002",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L02-003",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L02-004",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L02-005",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L02-006",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L02-007",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L03-001",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L03",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L03-002",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L03-003",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L03",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L03-004",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L03-005",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L03-006",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L03",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L04-001",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L04-002",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L04-003",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L04-004",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L04-005",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L04-006",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L04-007",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L05-001",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L05-002",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L05-003",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L05-004",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L05-005",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L05-006",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L06-001",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L06-002",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L06-003",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L06-004",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S1-L06-005",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L06-006",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S1-L06-007",
+      "contentType": "phrase",
+      "sceneId": "airport",
+      "lessonId": "S1-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L01-001",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L01-002",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L01-003",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L01-004",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L01-005",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L01-006",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L01-007",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L02-001",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L02-002",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L02-003",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L02-004",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L02-005",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L02-006",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L02-007",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L03-001",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L03-002",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L03-003",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L03",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L03-004",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L03-005",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L03-006",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L04-001",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L04-002",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L04-003",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L04-004",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L04-005",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L04-006",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L04-007",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L05-001",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L05-002",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L05-003",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L05-004",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L05-005",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L05-006",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L06-001",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L06-002",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L06-003",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L06-004",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L06-005",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S2-L06-006",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S2-L06-007",
+      "contentType": "phrase",
+      "sceneId": "hotel",
+      "lessonId": "S2-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L01-001",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L01-002",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L01-003",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L01-004",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L01-005",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L01-006",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L01-007",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L02-001",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L02-002",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L02-003",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L02-004",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L02-005",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L02-006",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L02-007",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L03-001",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L03",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L03-002",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L03-003",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L03-004",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L03-005",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L03-006",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L04-001",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L04-002",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L04-003",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L04-004",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L04-005",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L04-006",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L04-007",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L05-001",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L05-002",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L05-003",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L05-004",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L05-005",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L05-006",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L06-001",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L06-002",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L06-003",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S3-L06-004",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L06-005",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L06-006",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S3-L06-007",
+      "contentType": "phrase",
+      "sceneId": "izakaya",
+      "lessonId": "S3-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L01-001",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L01-002",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L01-003",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L01-004",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L01-005",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L01-006",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L01",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L01-007",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L01",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L02-001",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L02-002",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L02-003",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L02-004",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L02-005",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L02",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L02-006",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L02-007",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L02",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L03-001",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L03-002",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L03-003",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L03",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L03-004",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L03-005",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L03-006",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L03",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L04-001",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L04-002",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L04-003",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L04-004",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L04-005",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L04-006",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L04",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L04-007",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L04",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L05-001",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L05-002",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L05-003",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L05",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L05-004",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L05-005",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L05-006",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L05",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L06-001",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L06-002",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L06-003",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L06-004",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L06",
+      "isCore": true
+    },
+    {
+      "contentId": "S4-L06-005",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L06-006",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L06",
+      "isCore": false
+    },
+    {
+      "contentId": "S4-L06-007",
+      "contentType": "phrase",
+      "sceneId": "shopping",
+      "lessonId": "S4-L06",
+      "isCore": false
+    }
+  ],
+  "lessonSeeds": [
+    {
+      "lessonId": "S1-L01",
+      "sceneId": "airport",
+      "order": 1,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S1-L02",
+      "sceneId": "airport",
+      "order": 2,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S1-L03",
+      "sceneId": "airport",
+      "order": 3,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S1-L04",
+      "sceneId": "airport",
+      "order": 4,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S1-L05",
+      "sceneId": "airport",
+      "order": 5,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S1-L06",
+      "sceneId": "airport",
+      "order": 6,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S2-L01",
+      "sceneId": "hotel",
+      "order": 1,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S2-L02",
+      "sceneId": "hotel",
+      "order": 2,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S2-L03",
+      "sceneId": "hotel",
+      "order": 3,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S2-L04",
+      "sceneId": "hotel",
+      "order": 4,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S2-L05",
+      "sceneId": "hotel",
+      "order": 5,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S2-L06",
+      "sceneId": "hotel",
+      "order": 6,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S3-L01",
+      "sceneId": "izakaya",
+      "order": 1,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S3-L02",
+      "sceneId": "izakaya",
+      "order": 2,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S3-L03",
+      "sceneId": "izakaya",
+      "order": 3,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S3-L04",
+      "sceneId": "izakaya",
+      "order": 4,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S3-L05",
+      "sceneId": "izakaya",
+      "order": 5,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S3-L06",
+      "sceneId": "izakaya",
+      "order": 6,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S4-L01",
+      "sceneId": "shopping",
+      "order": 1,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S4-L02",
+      "sceneId": "shopping",
+      "order": 2,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S4-L03",
+      "sceneId": "shopping",
+      "order": 3,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S4-L04",
+      "sceneId": "shopping",
+      "order": 4,
+      "cardCount": 7
+    },
+    {
+      "lessonId": "S4-L05",
+      "sceneId": "shopping",
+      "order": 5,
+      "cardCount": 6
+    },
+    {
+      "lessonId": "S4-L06",
+      "sceneId": "shopping",
+      "order": 6,
+      "cardCount": 7
+    }
+  ]
+}
