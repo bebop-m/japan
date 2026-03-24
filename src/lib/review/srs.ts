@@ -4,6 +4,8 @@ import type { AppStorageState, ReviewItem, ReviewStatus } from "@/lib/types/stor
 export type SrsRating = "again" | "hard" | "good";
 
 export type ReviewDirection = "zh-to-ja" | "ja-to-zh";
+const SPOTLIGHT_WINDOW_DAYS = 3;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 export interface ReviewQueueEntry {
   contentId: string;
@@ -22,6 +24,52 @@ export function isDueReviewItem(item: ReviewItem, now = new Date()): boolean {
   return new Date(item.nextReviewAt).getTime() <= now.getTime();
 }
 
+function getRecentActivityAt(item: ReviewItem): number {
+  const activityAt = item.lastReviewedAt ?? item.lastStudiedAt ?? item.completedAt;
+
+  return activityAt ? new Date(activityAt).getTime() : 0;
+}
+
+export function isSpotlightReviewItem(item: ReviewItem, now = new Date()): boolean {
+  if (item.contentType !== "phrase" || !item.stepState.verifyCompletedAt) {
+    return false;
+  }
+
+  if (item.mistakeCount < 2 || item.lastResult !== "again") {
+    return false;
+  }
+
+  const activityAt = getRecentActivityAt(item);
+
+  if (!activityAt) {
+    return false;
+  }
+
+  return now.getTime() - activityAt <= SPOTLIGHT_WINDOW_DAYS * MS_PER_DAY;
+}
+
+export function getSpotlightReviewItems(
+  storage: AppStorageState,
+  now = new Date()
+): ReviewItem[] {
+  return Object.values(storage.reviewItems)
+    .filter((item) => isSpotlightReviewItem(item, now))
+    .sort((left, right) => {
+      if (left.mistakeCount !== right.mistakeCount) {
+        return right.mistakeCount - left.mistakeCount;
+      }
+
+      const leftTime = getRecentActivityAt(left);
+      const rightTime = getRecentActivityAt(right);
+
+      if (leftTime !== rightTime) {
+        return rightTime - leftTime;
+      }
+
+      return left.contentId.localeCompare(right.contentId);
+    });
+}
+
 export function getDueReviewItems(
   storage: AppStorageState,
   now = new Date()
@@ -29,6 +77,13 @@ export function getDueReviewItems(
   return Object.values(storage.reviewItems)
     .filter((item) => item.contentType === "phrase" && isDueReviewItem(item, now))
     .sort((left, right) => {
+      const leftSpotlight = isSpotlightReviewItem(left, now);
+      const rightSpotlight = isSpotlightReviewItem(right, now);
+
+      if (leftSpotlight !== rightSpotlight) {
+        return leftSpotlight ? -1 : 1;
+      }
+
       const leftTime = left.nextReviewAt ? new Date(left.nextReviewAt).getTime() : 0;
       const rightTime = right.nextReviewAt ? new Date(right.nextReviewAt).getTime() : 0;
 

@@ -7,8 +7,8 @@ export default function DeparturePage() {
     <div className="page-stack">
       <PixelHeading
         kicker="出发模式"
-        title="出发前冲刺演练最需要的句子。"
-        description="仅使用收藏句和核心句，中文提示日文回答，答错循环重练直到全部正确。"
+        title="出发前只冲刺最需要带走的句子。"
+        description="这里不是全库随机练习，而是收藏句、核心句和近期高错句的临行冲刺。"
       />
       <DepartureSession
         scenes={getSceneSummaries()}

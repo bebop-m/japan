@@ -63,7 +63,7 @@ export function PracticeSession({
   const [index, setIndex] = useState(0);
   const [resolvedPrompt, setResolvedPrompt] = useState<ResolvedPrompt | null>(null);
   const [feedback, setFeedback] = useState(
-    "仅练习已完成第五步的句子，严格匹配日文，答错自动进入重练轮，不影响SRS间隔。"
+    "随机抽取已学句子，训练日文输出速度，答错自动重练，不影响SRS间隔。"
   );
   const [seedCount, setSeedCount] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
@@ -170,7 +170,7 @@ export function PracticeSession({
     setSeedCount(nextQueue.length);
     setAttemptCount(0);
     setMistakeCount(0);
-    setFeedback("仅中文提示，请完整输入日文答案。");
+    setFeedback("这是速度训练：仅看中文提示，尽快完整输出日文。");
     input.reset();
   }
 
@@ -253,7 +253,7 @@ export function PracticeSession({
     }
 
     setPhase("done");
-    setFeedback("练习完成，所有题目已全部答对。");
+    setFeedback("速度训练完成，所有题目已全部答对。");
   }
 
   if (phase === "done") {
@@ -266,7 +266,7 @@ export function PracticeSession({
               <span className="badge success">全部答对</span>
             </div>
             <p className="muted" style={{ margin: 0 }}>
-              答错的句子循环重练直到全部正确，SRS间隔未受影响。
+              这是速度训练回合，目标是扩大输出速度，SRS间隔未受影响。
             </p>
           </div>
 
@@ -401,7 +401,7 @@ export function PracticeSession({
             <span className="badge success">待开始</span>
           </div>
           <p className="muted" style={{ margin: 0 }}>
-            用中文提示练习日文输出，严格匹配，答错自动重练。
+            面向全场景做随机抽题，专门拉高日文输出速度和稳定度。
           </p>
         </div>
 
@@ -512,6 +512,9 @@ export function PracticeSession({
               单词题会在 word review item 接入后自动出现。
             </p>
           ) : null}
+          <p className="muted" style={{ marginBottom: 0 }}>
+            这是全库速度训练，不挑收藏句，也不改变 SRS 间隔。
+          </p>
         </div>
 
         <div className="split-actions">

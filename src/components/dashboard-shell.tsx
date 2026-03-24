@@ -16,6 +16,7 @@ import {
   getNewSentenceCount,
   getNextAvailableLesson,
   getPhraseReviewItemCount,
+  getSpotlightReviewItems,
   getStudiedSentenceCount
 } from "@/lib/review/srs";
 import type { SceneSummary } from "@/lib/types/content";
@@ -44,6 +45,7 @@ export function DashboardShell({ scenes, lessonTitleMap }: DashboardShellProps) 
   const dueReviewCount = getDueReviewItems(storage).length;
   const newSentenceCount = getNewSentenceCount(storage);
   const masteredSentenceCount = getMasteredSentenceCount(storage);
+  const spotlightCount = getSpotlightReviewItems(storage).length;
   const studiedSentenceCount = getStudiedSentenceCount(storage);
   const departureReadyCount = getDepartureReadyReviewItems(storage).length;
   const nextLesson = getNextAvailableLesson(storage);
@@ -155,6 +157,22 @@ export function DashboardShell({ scenes, lessonTitleMap }: DashboardShellProps) 
               ) : null}
             </div>
           </div>
+          {spotlightCount > 0 ? (
+            <div className="summary-box">
+              <div className="page-stack" style={{ gap: 12 }}>
+                <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
+                  <span className="badge danger">重点巩固</span>
+                  <span className="badge">{spotlightCount} 句待回炉</span>
+                </div>
+                <p className="muted" style={{ margin: 0 }}>
+                  这些句子最近反复出错，已经在普通复习队列中前置，也可以直接进入专项复习。
+                </p>
+                <PixelButton href="/review?focus=1" variant="secondary" style={{ width: "100%" }}>
+                  专项复习
+                </PixelButton>
+              </div>
+            </div>
+          ) : null}
           <div className="stat-grid">
             <div className="stat-box">
               <span className="stat-label">今日复习</span>

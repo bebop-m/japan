@@ -12,6 +12,7 @@ import {
   buildPhraseCardMap,
   buildReviewQueue,
   getDueReviewItems,
+  getSpotlightReviewItems,
   type ReviewQueueEntry,
   type SrsRating
 } from "@/lib/review/srs";
@@ -23,21 +24,29 @@ import type { AppStorageState } from "@/lib/types/storage";
 
 interface ReviewSessionProps {
   cards: PhraseCard[];
+  mode?: "due" | "focus";
 }
 
 type ReviewPhase = "prompt" | "reveal" | "reinforce" | "done";
 
-export function ReviewSession({ cards }: ReviewSessionProps) {
+export function ReviewSession({ cards, mode = "due" }: ReviewSessionProps) {
   const [storage, setStorage] = useState<AppStorageState>(() => readStorageState());
   const [queue] = useState<ReviewQueueEntry[]>(() =>
-    buildReviewQueue(getDueReviewItems(readStorageState()))
+    buildReviewQueue(
+      mode === "focus"
+        ? getSpotlightReviewItems(readStorageState())
+        : getDueReviewItems(readStorageState())
+    )
   );
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<ReviewPhase>(() => (queue.length > 0 ? "prompt" : "done"));
   const [pendingRating, setPendingRating] = useState<SrsRating | null>(null);
-  const [feedback, setFeedback] = useState("翻开答案，然后自评。");
+  const [feedback, setFeedback] = useState(
+    mode === "focus" ? "这些句子近期反复出错，先集中回炉。" : "翻开答案，然后自评。"
+  );
   const [diffPreview, setDiffPreview] = useState<string[]>([]);
   const input = useJapaneseInput();
+  const isFocusMode = mode === "focus";
 
   const cardMap = useMemo(() => buildPhraseCardMap(cards), [cards]);
   const currentEntry = queue[index];
@@ -160,13 +169,15 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
       <PixelCard>
         <div className="page-stack">
           <div className="summary-box">
-            <h2 className="section-title" style={{ marginTop: 0 }}>
-              复习队列为空
-            </h2>
-            <p className="muted" style={{ margin: 0 }}>
-              当前没有到期的复习。完成课程并通过每日检验后再来。
-            </p>
-          </div>
+              <h2 className="section-title" style={{ marginTop: 0 }}>
+                {isFocusMode ? "当前没有重点巩固句" : "复习队列为空"}
+              </h2>
+              <p className="muted" style={{ margin: 0 }}>
+                {isFocusMode
+                  ? "最近 3 天没有反复出错的句子。正常去做课程、复习或练习就好。"
+                  : "当前没有到期的复习。完成课程并通过每日检验后再来。"}
+              </p>
+            </div>
           <div className="split-actions">
             <PixelButton href="/" variant="secondary">
               返回首页
@@ -182,7 +193,7 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
       <div className="page-stack" style={{ gap: 16 }}>
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
-            <span className="display">SRS 复习</span>
+            <span className="display">{isFocusMode ? "专项复习" : "SRS 复习"}</span>
             <span className="badge success">
               {phase === "done" ? "完成" : `${index + 1} / ${queue.length}`}
             </span>
@@ -306,10 +317,12 @@ export function ReviewSession({ cards }: ReviewSessionProps) {
           <div className="page-stack" style={{ gap: 12 }}>
             <div className="summary-box">
               <h2 className="section-title" style={{ marginTop: 0 }}>
-                复习完成
+                {isFocusMode ? "专项复习完成" : "复习完成"}
               </h2>
               <p className="muted" style={{ margin: 0 }}>
-                今日复习队列已完成，返回首页查看更新后的数据。
+                {isFocusMode
+                  ? "重点句已完成一轮回炉，返回首页继续今天的主任务。"
+                  : "今日复习队列已完成，返回首页查看更新后的数据。"}
               </p>
             </div>
             <div className="split-actions">

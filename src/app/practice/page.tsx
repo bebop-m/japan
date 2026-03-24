@@ -7,8 +7,8 @@ export default function PracticePage() {
     <div className="page-stack">
       <PixelHeading
         kicker="练习模式"
-        title="对已学句子进行精准练习。"
-        description="仅练习已完成第五步的句子，严格匹配日文，答错自动进入重练轮，不影响SRS间隔。"
+        title="用全场景随机抽题拉高输出速度。"
+        description="这里是速度训练场：对已学句子做严格匹配，答错自动重练，但不改 SRS 间隔。"
       />
       <PracticeSession
         scenes={getSceneSummaries()}

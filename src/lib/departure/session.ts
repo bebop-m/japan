@@ -1,4 +1,5 @@
 import type { PhraseCard, RubyToken, WordCard } from "@/lib/types/content";
+import { isSpotlightReviewItem } from "@/lib/review/srs";
 import { isDepartureReadyReviewItem } from "@/lib/storage/favorites";
 import type { AppStorageState, ReviewItem } from "@/lib/types/storage";
 
@@ -15,6 +16,7 @@ export interface DeparturePrompt {
   label: string;
   isFavorited: boolean;
   isCore: boolean;
+  isSpotlight: boolean;
 }
 
 function shuffle<T>(items: T[]): T[] {
@@ -39,6 +41,13 @@ function sortByPriority(left: ReviewItem, right: ReviewItem): number {
     return left.isCore ? -1 : 1;
   }
 
+  const leftSpotlight = isSpotlightReviewItem(left);
+  const rightSpotlight = isSpotlightReviewItem(right);
+
+  if (leftSpotlight !== rightSpotlight) {
+    return leftSpotlight ? -1 : 1;
+  }
+
   return left.contentId.localeCompare(right.contentId);
 }
 
@@ -46,7 +55,11 @@ function buildPhrasePrompts(storage: AppStorageState, phraseCards: PhraseCard[])
   const cardMap = Object.fromEntries(phraseCards.map((card) => [card.id, card]));
 
   return Object.values(storage.reviewItems)
-    .filter((item) => item.contentType === "phrase" && isDepartureReadyReviewItem(item))
+    .filter(
+      (item) =>
+        item.contentType === "phrase" &&
+        (isDepartureReadyReviewItem(item) || isSpotlightReviewItem(item))
+    )
     .sort(sortByPriority)
     .flatMap((item) => {
       const card = cardMap[item.contentId];
@@ -67,7 +80,8 @@ function buildPhrasePrompts(storage: AppStorageState, phraseCards: PhraseCard[])
         ruby: turn.ruby,
         label: turn.role === "learner" ? "YOU SAY" : "PARTNER SAYS",
         isFavorited: item.isFavorited,
-        isCore: item.isCore
+        isCore: item.isCore,
+        isSpotlight: isSpotlightReviewItem(item)
       }));
     });
 }
@@ -98,7 +112,8 @@ function buildWordPrompts(storage: AppStorageState, wordCards: WordCard[]): Depa
           ruby: card.ruby,
           label: "WORD BANK",
           isFavorited: item.isFavorited,
-          isCore: item.isCore
+          isCore: item.isCore,
+          isSpotlight: false
         }
       ];
     });

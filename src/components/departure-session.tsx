@@ -12,13 +12,13 @@ import {
 } from "@/lib/departure/session";
 import { useJapaneseInput } from "@/lib/ime/use-japanese-input";
 import { buildDiffTokens, isStrictMatch } from "@/lib/learn/answers";
-import { getNextAvailableLesson } from "@/lib/review/srs";
 import { cloneStorageState } from "@/lib/storage/clone";
 import {
   getDepartureReadyReviewItems,
   getFavoritedReviewItems
 } from "@/lib/storage/favorites";
 import { readStorageState, writeStorageState } from "@/lib/storage/local";
+import { getNextAvailableLesson, getSpotlightReviewItems } from "@/lib/review/srs";
 import type { PhraseCard, SceneId, SceneSummary, WordCard } from "@/lib/types/content";
 import type { AppStorageState } from "@/lib/types/storage";
 
@@ -62,7 +62,7 @@ export function DepartureSession({
   const [index, setIndex] = useState(0);
   const [resolvedPrompt, setResolvedPrompt] = useState<ResolvedPrompt | null>(null);
   const [feedback, setFeedback] = useState(
-    "本轮仅使用收藏句和核心句，答错循环重练直到全部正确。"
+    "只刷收藏句、核心句和近期高错句，目标是出发现场直接开口。"
   );
   const [seedCount, setSeedCount] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
@@ -89,6 +89,11 @@ export function DepartureSession({
   const coreOnlyItems = useMemo(
     () => readyItems.filter((item) => item.isCore && !item.isFavorited),
     [readyItems]
+  );
+  const spotlightItems = useMemo(
+    () =>
+      getSpotlightReviewItems(storage).filter((item) => !item.isFavorited && !item.isCore),
+    [storage]
   );
   const pool = useMemo(
     () => buildDeparturePool(storage, phraseCards, wordCards),
@@ -155,7 +160,7 @@ export function DepartureSession({
     setSeedCount(nextQueue.length);
     setAttemptCount(0);
     setMistakeCount(0);
-    setFeedback("仅中文提示，请完整输入日文答案。");
+    setFeedback("按出发现场节奏直接输出完整日文，答错立即重练。");
     input.reset();
   }
 
@@ -238,7 +243,7 @@ export function DepartureSession({
     }
 
     setPhase("done");
-    setFeedback("出发完成，所有题目已全部答对。");
+    setFeedback("出发素材已全部答对，临场句子更接近脱口而出。");
   }
 
   if (phase === "done") {
@@ -251,7 +256,7 @@ export function DepartureSession({
               <span className="badge success">准备登机</span>
             </div>
             <p className="muted" style={{ margin: 0 }}>
-              收藏句和核心句已全部答对，SRS间隔未受影响。
+              收藏句、核心句和高错句已完成冲刺，SRS间隔未受影响。
             </p>
           </div>
 
@@ -313,9 +318,9 @@ export function DepartureSession({
 
           <div className="meta-row">
             <span className="badge">{sceneLabel}</span>
-            <span className="badge">
-              {currentPrompt.isFavorited ? "收藏" : "核心"}
-            </span>
+            {currentPrompt.isFavorited ? <span className="badge">收藏</span> : null}
+            {currentPrompt.isCore ? <span className="badge">核心</span> : null}
+            {currentPrompt.isSpotlight ? <span className="badge danger">高错</span> : null}
             <span className="badge">
               {currentPrompt.contentType === "phrase" ? "句子" : "单词"}
             </span>
@@ -388,33 +393,37 @@ export function DepartureSession({
             <span className="badge success">待开始</span>
           </div>
           <p className="muted" style={{ margin: 0 }}>
-            本轮仅使用收藏句和核心句，答错循环重练直到全部正确。
+            临行前只刷真正要带走的句子：收藏句、核心句和近期高错句。
           </p>
         </div>
 
         <div className="stat-grid">
           <div className="stat-box">
-            <span className="stat-label">可用卡片</span>
+            <span className="stat-label">出发卡片</span>
             <strong className="stat-value">{readyItems.length}</strong>
           </div>
           <div className="stat-box">
-            <span className="stat-label">收藏</span>
-            <strong className="stat-value">{favoriteItems.length}</strong>
+            <span className="stat-label">高错句</span>
+            <strong className="stat-value">{spotlightItems.length}</strong>
           </div>
           <div className="stat-box">
-            <span className="stat-label">核心备份</span>
-            <strong className="stat-value">{coreOnlyItems.length}</strong>
+            <span className="stat-label">可用题目</span>
+            <strong className="stat-value">{pool.length}</strong>
           </div>
         </div>
 
         <div className="summary-box">
           <div className="meta-row">
             <span className="badge">仅收藏卡片：{favoriteOnlyItems.length}</span>
-            <span className="badge">可用题目：{pool.length}</span>
+            <span className="badge">核心备份：{coreOnlyItems.length}</span>
+            <span className="badge">高错句：{spotlightItems.length}</span>
             <span className="badge">已选：{requestedCount}</span>
           </div>
           <p className="muted" style={{ marginBottom: 0 }}>
             {feedback}
+          </p>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            这是临行冲刺，不做全库随机抽题，只保留最需要带走的句子。
           </p>
         </div>
 
