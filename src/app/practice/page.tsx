@@ -4,7 +4,7 @@ import { getAllPhraseCards, getAllWordCards, getSceneSummaries } from "@/lib/con
 
 export default function PracticePage() {
   return (
-    <div className="page-stack">
+    <div className="compact-page">
       <PixelHeading kicker="练习" title="速度训练" />
       <PracticeSession
         scenes={getSceneSummaries()}

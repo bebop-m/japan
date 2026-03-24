@@ -41,7 +41,7 @@ export function SceneBookPanel({ scene }: SceneBookPanelProps) {
   const startHref = `/scene/${scene.id}/study?type=${bookType}&count=${count}`;
 
   return (
-    <PixelCard>
+    <PixelCard className="machine-card">
       <div className="page-stack">
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">

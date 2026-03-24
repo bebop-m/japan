@@ -12,7 +12,7 @@ export default function ReviewPage({ searchParams }: ReviewPageProps) {
   const isFocusMode = searchParams?.focus === "1";
 
   return (
-    <div className="page-stack">
+    <div className="compact-page">
       <PixelHeading
         kicker={isFocusMode ? "回炉" : "复习"}
         title={isFocusMode ? "重点强化" : "今日到期"}

@@ -4,7 +4,7 @@ import { getAllPhraseCards, getAllWordCards, getSceneSummaries } from "@/lib/con
 
 export default function DeparturePage() {
   return (
-    <div className="page-stack">
+    <div className="compact-page">
       <PixelHeading kicker="出发" title="临行冲刺" />
       <DepartureSession
         scenes={getSceneSummaries()}

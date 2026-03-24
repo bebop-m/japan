@@ -258,16 +258,16 @@ export function PracticeSession({
 
   if (phase === "done") {
     return (
-      <PixelCard>
+      <PixelCard className="machine-card">
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
               <span className="display">练习完成</span>
               <span className="badge success">全部答对</span>
             </div>
-            <p className="muted" style={{ margin: 0 }}>
+            <div className="machine-feedback">
               这是速度训练回合，目标是扩大输出速度，SRS间隔未受影响。
-            </p>
+            </div>
           </div>
 
           <div className="stat-grid">
@@ -308,7 +308,7 @@ export function PracticeSession({
         : "下一题";
 
     return (
-      <PixelCard>
+      <PixelCard className="machine-card">
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
@@ -321,9 +321,9 @@ export function PracticeSession({
               </span>
               <ProgressBlocks current={roundProgressCurrent} total={roundProgressTotal} />
             </div>
-            <p className="muted" style={{ margin: 0 }}>
+            <div className="machine-feedback">
               {feedback}
-            </p>
+            </div>
           </div>
 
           <div className="meta-row">
@@ -393,16 +393,16 @@ export function PracticeSession({
   }
 
   return (
-    <PixelCard>
+    <PixelCard className="machine-card">
       <div className="page-stack">
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
             <span className="display">练习模式</span>
             <span className="badge success">待开始</span>
           </div>
-          <p className="muted" style={{ margin: 0 }}>
+          <div className="machine-feedback">
             面向全场景做随机抽题，专门拉高日文输出速度和稳定度。
-          </p>
+          </div>
         </div>
 
         <div className="page-stack" style={{ gap: 16 }}>
@@ -504,9 +504,9 @@ export function PracticeSession({
             <span className="badge">当前可用：{availableCount}</span>
             <span className="badge">已选：{requestedCount}</span>
           </div>
-          <p className="muted" style={{ marginBottom: 0 }}>
+          <div className="machine-feedback">
             {feedback}
-          </p>
+          </div>
           {practiceType !== "sentence" && wordPool.length === 0 ? (
             <p className="muted" style={{ marginBottom: 0 }}>
               单词题会在 word review item 接入后自动出现。

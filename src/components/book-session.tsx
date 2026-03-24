@@ -663,7 +663,7 @@ export function BookSession({ scene, bookType, count }: BookSessionProps) {
 
   if (batchEntries.length === 0) {
     return (
-      <PixelCard>
+      <PixelCard className="machine-card">
         <div className="page-stack">
           <div className="summary-box">
             <h2 className="section-title" style={{ marginTop: 0 }}>
@@ -682,7 +682,7 @@ export function BookSession({ scene, bookType, count }: BookSessionProps) {
   }
 
   return (
-    <PixelCard>
+    <PixelCard className="machine-card">
       <div className="page-stack" style={{ gap: 16 }}>
         <div className="hero" style={{ gap: 8 }}>
           <div className="meta-row" style={{ justifyContent: "space-between" }}>

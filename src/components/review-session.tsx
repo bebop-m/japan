@@ -166,17 +166,17 @@ export function ReviewSession({ cards, mode = "due" }: ReviewSessionProps) {
 
   if (!currentEntry || !currentCard || !currentItem || !currentTurn || !partnerTurn) {
     return (
-      <PixelCard>
+      <PixelCard className="machine-card">
         <div className="page-stack">
           <div className="summary-box">
               <h2 className="section-title" style={{ marginTop: 0 }}>
                 {isFocusMode ? "当前没有重点巩固句" : "复习队列为空"}
               </h2>
-              <p className="muted" style={{ margin: 0 }}>
+              <div className="machine-feedback">
                 {isFocusMode
                   ? "最近 3 天没有反复出错的句子。正常去做课程、复习或练习就好。"
                   : "当前没有到期的复习。完成课程并通过每日检验后再来。"}
-              </p>
+              </div>
             </div>
           <div className="split-actions">
             <PixelButton href="/" variant="secondary">
@@ -189,7 +189,7 @@ export function ReviewSession({ cards, mode = "due" }: ReviewSessionProps) {
   }
 
   return (
-    <PixelCard>
+    <PixelCard className="machine-card">
       <div className="page-stack" style={{ gap: 16 }}>
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
@@ -213,8 +213,8 @@ export function ReviewSession({ cards, mode = "due" }: ReviewSessionProps) {
               </PixelButton>
             </div>
           ) : null}
-          <div className="meta-row" style={{ justifyContent: "space-between" }}>
-            <span className="badge">{feedback}</span>
+          <div className="meta-row" style={{ justifyContent: "space-between", alignItems: "center" }}>
+            <span className="machine-feedback">{feedback}</span>
             <ProgressBlocks current={progressBlocksCurrent} total={progressBlocksTotal} />
           </div>
         </div>
@@ -319,11 +319,11 @@ export function ReviewSession({ cards, mode = "due" }: ReviewSessionProps) {
               <h2 className="section-title" style={{ marginTop: 0 }}>
                 {isFocusMode ? "专项复习完成" : "复习完成"}
               </h2>
-              <p className="muted" style={{ margin: 0 }}>
+              <div className="machine-feedback">
                 {isFocusMode
                   ? "重点句已完成一轮回炉，返回首页继续今天的主任务。"
                   : "今日复习队列已完成，返回首页查看更新后的数据。"}
-              </p>
+              </div>
             </div>
             <div className="split-actions">
               <PixelButton href="/" variant="secondary">

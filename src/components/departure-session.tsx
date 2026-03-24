@@ -248,16 +248,16 @@ export function DepartureSession({
 
   if (phase === "done") {
     return (
-      <PixelCard>
+      <PixelCard className="machine-card">
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
               <span className="display">出发完成</span>
               <span className="badge success">准备登机</span>
             </div>
-            <p className="muted" style={{ margin: 0 }}>
+            <div className="machine-feedback">
               收藏句、核心句和高错句已完成冲刺，SRS间隔未受影响。
-            </p>
+            </div>
           </div>
 
           <div className="stat-grid">
@@ -298,7 +298,7 @@ export function DepartureSession({
         : "下一题";
 
     return (
-      <PixelCard>
+      <PixelCard className="machine-card">
         <div className="page-stack">
           <div className="hero" style={{ gap: 12 }}>
             <div className="hero-title">
@@ -311,9 +311,9 @@ export function DepartureSession({
               </span>
               <ProgressBlocks current={progressBlocksCurrent} total={progressBlocksTotal} />
             </div>
-            <p className="muted" style={{ margin: 0 }}>
+            <div className="machine-feedback">
               {feedback}
-            </p>
+            </div>
           </div>
 
           <div className="meta-row">
@@ -385,16 +385,16 @@ export function DepartureSession({
   }
 
   return (
-    <PixelCard>
+    <PixelCard className="machine-card">
       <div className="page-stack">
         <div className="hero" style={{ gap: 12 }}>
           <div className="hero-title">
             <span className="display">出发模式</span>
             <span className="badge success">待开始</span>
           </div>
-          <p className="muted" style={{ margin: 0 }}>
+          <div className="machine-feedback">
             临行前只刷真正要带走的句子：收藏句、核心句和近期高错句。
-          </p>
+          </div>
         </div>
 
         <div className="stat-grid">
@@ -419,9 +419,9 @@ export function DepartureSession({
             <span className="badge">高错句：{spotlightItems.length}</span>
             <span className="badge">已选：{requestedCount}</span>
           </div>
-          <p className="muted" style={{ marginBottom: 0 }}>
+          <div className="machine-feedback">
             {feedback}
-          </p>
+          </div>
           <p className="muted" style={{ marginBottom: 0 }}>
             这是临行冲刺，不做全库随机抽题，只保留最需要带走的句子。
           </p>
